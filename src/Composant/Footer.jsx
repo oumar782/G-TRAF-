@@ -180,15 +180,7 @@ const Footer = () => {
               ))}
             </div>
 
-            <div className="footer-newsletter">
-              <h5 className="footer-newsletter-title">Newsletter</h5>
-              <div className="footer-newsletter-form">
-                <input type="email" placeholder="Votre email" className="footer-newsletter-input" />
-                <button className="footer-newsletter-btn">
-                  <MailIcon />
-                </button>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>

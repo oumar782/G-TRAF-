@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Expertise.css';
 
+// Import des images
+import constructionImage from '../assets/Image/P1035972.jpg';
+import industrielImage from '../assets/Image/P1035861.jpg';
+import designImage from '../assets/Image/P1035841.jpg';
+import maintenanceImage from '../assets/Image/P1035825.jpg';
+import conseilImage from '../assets/Image/P1035799.jpg';
+
 const Expertise = () => {
   const [activeExpertise, setActiveExpertise] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const ref = useRef(null); // Déclaration de la ref manquante
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,13 +32,34 @@ const Expertise = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Fermer le modal en cliquant à l'extérieur
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+
+    if (showModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'auto';
+    };
+  }, [showModal]);
+
   const expertises = [
     {
       icon: 'Skyscraper',
       title: 'Construction Neuve',
       subtitle: 'Édifices d\'exception',
       description: 'Conception et réalisation de bâtiments prestigieux, du résidentiel haut de gamme aux complexes commerciaux d\'envergure.',
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: constructionImage,
       features: ['Architecture sur-mesure', 'Matériaux premium', 'Technologies avancées', 'Finitions luxueuses'],
       color: 'blue'
     },
@@ -38,7 +68,7 @@ const Expertise = () => {
       title: 'Rénovation Prestige',
       subtitle: 'Renaissance architecturale',
       description: 'Transformation et modernisation de propriétés d\'exception, préservant le caractère tout en intégrant le confort moderne.',
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: constructionImage,
       features: ['Restauration patrimoniale', 'Modernisation énergétique', 'Design contemporain', 'Respect du cachet'],
       color: 'emerald'
     },
@@ -47,7 +77,7 @@ const Expertise = () => {
       title: 'Projets Industriels',
       subtitle: 'Infrastructure moderne',
       description: 'Réalisation d\'infrastructures industrielles et logistiques intégrant les dernières innovations technologiques.',
-      image: 'https://images.pexels.com/photos/1268390/pexels-photo-1268390.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: industrielImage,
       features: ['Automatisation avancée', 'Efficacité énergétique', 'Normes environnementales', 'Sécurité renforcée'],
       color: 'purple'
     },
@@ -56,7 +86,7 @@ const Expertise = () => {
       title: 'Design Intérieur',
       subtitle: 'Espaces sur-mesure',
       description: 'Création d\'ambiances uniques et d\'aménagements personnalisés pour des intérieurs d\'exception.',
-      image: 'https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: designImage,
       features: ['Mobilier sur-mesure', 'Éclairage d\'ambiance', 'Matériaux nobles', 'Ergonomie optimale'],
       color: 'rose'
     },
@@ -65,7 +95,7 @@ const Expertise = () => {
       title: 'Maintenance Premium',
       subtitle: 'Service d\'excellence',
       description: 'Maintenance préventive et curative de vos installations avec un service client dédié disponible 24h/24.',
-      image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: maintenanceImage,
       features: ['Intervention rapide', 'Pièces d\'origine', 'Garantie étendue', 'Suivi personnalisé'],
       color: 'orange'
     },
@@ -74,7 +104,7 @@ const Expertise = () => {
       title: 'Conseil & Expertise',
       subtitle: 'Accompagnement global',
       description: 'Conseil stratégique et expertise technique pour optimiser vos projets de construction et d\'investissement.',
-      image: 'https://images.pexels.com/photos/2736834/pexels-photo-2736834.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: conseilImage,
       features: ['Étude de faisabilité', 'Optimisation budgétaire', 'Gestion de projet', 'Suivi réglementaire'],
       color: 'amber'
     }
@@ -121,6 +151,15 @@ const Expertise = () => {
     return icons[iconName] || null;
   };
 
+  const handleCardClick = (index) => {
+    setActiveExpertise(index);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <section id="expertise" className={`expertise-section ${isVisible ? 'visible' : ''}`} ref={ref}>
       <div className="expertise-container">
@@ -146,7 +185,7 @@ const Expertise = () => {
               key={index}
               className={`expertise-card ${activeExpertise === index ? 'active' : ''} ${isVisible ? 'fade-in' : ''}`}
               style={{ transitionDelay: `${index * 100}ms` }}
-              onClick={() => setActiveExpertise(index)}
+              onClick={() => handleCardClick(index)}
             >
               <div className={`expertise-card-inner ${activeExpertise === index ? 'active-inner' : ''}`}>
                 <div className={`expertise-icon ${item.color}`}>
@@ -164,41 +203,79 @@ const Expertise = () => {
           ))}
         </div>
 
-        {/* Active Expertise Detail */}
-        <div className={`expertise-detail ${isVisible ? 'fade-in' : ''}`}>
-          <div className="expertise-detail-container">
-            <div className="expertise-detail-content">
-              <div className="expertise-detail-header">
-                <div className={`expertise-detail-icon ${expertises[activeExpertise].color}`}>
-                  {renderIcon(expertises[activeExpertise].icon)}
-                </div>
-                <div>
-                  <h3 className="expertise-detail-title">{expertises[activeExpertise].title}</h3>
-                  <p className="expertise-detail-subtitle">{expertises[activeExpertise].subtitle}</p>
-                </div>
-              </div>
-              <p className="expertise-detail-description">
-                {expertises[activeExpertise].description}
-              </p>
-              <div className="expertise-features">
-                {expertises[activeExpertise].features.map((feature, idx) => (
-                  <div key={idx} className="expertise-feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>{feature}</span>
+        {/* Modal */}
+        {showModal && (
+          <div className="expertise-modal">
+            <div className="expertise-modal-overlay"></div>
+            <div className="expertise-modal-container" ref={modalRef}>
+              <div className="expertise-modal-content">
+                <button className="expertise-modal-close" onClick={closeModal}>
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                  </svg>
+                </button>
+                
+                <div className="expertise-modal-grid">
+                  <div className="expertise-modal-media">
+                    <img 
+                      src={expertises[activeExpertise].image} 
+                      alt={expertises[activeExpertise].title}
+                      className="expertise-modal-image"
+                    />
+                    <div className="expertise-modal-icon-container">
+                      <div className={`expertise-modal-icon ${expertises[activeExpertise].color}`}>
+                        {renderIcon(expertises[activeExpertise].icon)}
+                      </div>
+                    </div>
                   </div>
-                ))}
+                  
+                  <div className="expertise-modal-body">
+                    <div className="expertise-modal-header">
+                      <h3 className="expertise-modal-title">
+                        {expertises[activeExpertise].title}
+                      </h3>
+                      <p className="expertise-modal-subtitle">
+                        {expertises[activeExpertise].subtitle}
+                      </p>
+                    </div>
+                    
+                    <p className="expertise-modal-description">
+                      {expertises[activeExpertise].description}
+                    </p>
+                    
+                    <div className="expertise-modal-features">
+                      <h4 className="features-title">Nos engagements</h4>
+                      <ul className="features-list">
+                        {expertises[activeExpertise].features.map((feature, idx) => (
+                          <li key={idx} className="feature-item">
+                            <span className="feature-icon">
+                              <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                              </svg>
+                            </span>
+                            <span className="feature-text">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="expertise-modal-actions">
+                      <button className="expertise-modal-cta-btn primary">
+                        <span>Demander un devis</span>
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                          <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                        </svg>
+                      </button>
+                      <button className="expertise-modal-cta-btn secondary" onClick={closeModal}>
+                        <span>Fermer</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button className="expertise-cta-btn">
-                <span>Demander un devis</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </button>
-            </div>
-            <div className="expertise-detail-image">
-              <img src={expertises[activeExpertise].image} alt={expertises[activeExpertise].title} />
-              <div className="image-overlay"></div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
