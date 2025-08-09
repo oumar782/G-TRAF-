@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr"> <!-- Changé à "fr" si votre public est francophone -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon optimisé -->
+    <link rel="icon" href="/src/assets/Image/gt.png" type="image/png" />
+    <!-- Version alternative pour différents appareils -->
+    <link rel="apple-touch-icon" href="/src/assets/Image/gt.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff">
+    <title>G-TRAF+</title>
+    
+    <!-- Préchargement pour meilleures performances -->
+    <link rel="preload" href="/src/assets/Image/gt.png" as="image">
+    
+    <!-- Style de secours si l'image ne charge pas -->
+    <style>
+      .logo-fallback {
+        display: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-fallback { color: #fff; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Fallback si JavaScript est désactivé -->
+    <noscript>
+      <div class="logo-fallback">G-TRAF+</div>
+    </noscript>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Script de vérification de l'image -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const img = new Image();
+        img.src = '/src/assets/Image/gt.png';
+        img.onerror = function() {
+          document.querySelector('.logo-fallback').style.display = 'block';
+          console.error("Le logo n'a pas pu charger. Vérifiez le chemin: " + this.src);
+        };
+      });
+    </script>
+  </body>
+</html>
