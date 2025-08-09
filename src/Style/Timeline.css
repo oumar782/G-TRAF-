@@ -9,13 +9,13 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #ffffff;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    color: #0f0707;
+    background: white;
     min-height: 100vh;
   }
   
   :root {
-    --itl-primary: #6366f1;
+    --itl-primary: #f7f7fa;
     --itl-electric: #00d9ff;
     --itl-neon: #39ff14;
     --itl-accent: #ff006e;
@@ -87,13 +87,13 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, 
-      rgba(10, 10, 10, 0.95) 0%, 
-      rgba(26, 26, 46, 0.9) 25%,
-      rgba(22, 33, 62, 0.9) 50%,
-      rgba(99, 102, 241, 0.1) 75%,
-      rgba(10, 10, 10, 0.95) 100%
+      rgba(247, 245, 245, 0.95) 0%, 
+      rgba(244, 244, 245, 0.9) 25%,
+      rgba(241, 241, 241, 0.9) 50%,
+      rgba(252, 252, 253, 0.1) 75%,
+      rgba(248, 247, 247, 0.95) 100%
     );
-    margin-top: 62px;
+    margin-top: -40px;
   }
   
   .itl-timeline-section::before {
@@ -104,9 +104,9 @@
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 25% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 75% 80%, rgba(0, 217, 255, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.05) 0%, transparent 70%);
+      radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 75% 80%, rgba(23, 122, 229, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
     pointer-events: none;
     animation: itl-pulse 8s ease-in-out infinite;
   }
@@ -161,24 +161,24 @@
   .itl-badge {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: var(--itl-glass-bg);
+    background: rgb(5, 36, 55);
     backdrop-filter: blur(20px);
     border: 1px solid var(--itl-glass-border);
     border-radius: 50px;
-    color: var(--itl-electric);
+    color: white;
     font-weight: 700;
     font-size: 0.875rem;
     margin-bottom: 2rem;
     animation: itl-scaleIn 0.8s ease-out;
     box-shadow: 
-      0 0 30px rgba(0, 217, 255, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      0 0 30px rgba(0, 60, 255, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 2);
     transition: all 0.3s ease;
   }
   
   .itl-badge:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 0 40px rgba(11, 24, 27, 0.4);
   }
   
   .itl-visible .itl-badge {
@@ -188,7 +188,7 @@
   .itl-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 900;
-    color: var(--itl-foreground);
+    color: black
     margin-bottom: 2rem;
     line-height: 1.1;
     animation: itl-textReveal 1s ease-out 0.2s both;
@@ -196,7 +196,7 @@
   }
   
   .itl-title-gradient {
-    background: linear-gradient(135deg, var(--itl-primary) 0%, var(--itl-electric) 50%, var(--itl-neon) 100%);
+    background: linear-gradient(135deg, rgb(3, 37, 42) 0%, skyblue 50%, rgb(2, 37, 47) 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -209,8 +209,8 @@
   }
   
   .itl-description {
-    font-size: 1.25rem;
-    color: var(--itl-muted-foreground);
+    font-size: 1.2rem;
+    color: gray;
     max-width: 64rem;
     margin: 0 auto;
     line-height: 1.7;
@@ -232,16 +232,16 @@
     bottom: 0;
     width: 4px;
     background: linear-gradient(to bottom, 
-      var(--itl-primary) 0%, 
-      var(--itl-electric) 25%, 
-      var(--itl-neon) 50%, 
-      var(--itl-accent) 75%, 
+      black 0%, 
+     blue, 
+      white 50%, 
+      skyblue, 
       var(--itl-luxury) 100%
     );
     border-radius: 2px;
     transform: translateX(-50%);
     opacity: 0.7;
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 20px rgba(2, 11, 65, 0.3);
   }
   
   .itl-timeline-line::after {
@@ -285,7 +285,7 @@
   }
   
   .itl-event-card {
-    background: var(--itl-glass-bg);
+    background: rgb(30, 47, 54);
     backdrop-filter: blur(20px);
     border: 1px solid var(--itl-glass-border);
     border-radius: 24px;
@@ -339,7 +339,7 @@
   .itl-year-badge {
     display: inline-block;
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, var(--itl-accent), var(--itl-luxury));
+    background: linear-gradient(135deg, white, skyblue);
     border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 900;
@@ -356,7 +356,7 @@
     color: var(--itl-foreground);
     margin-bottom: 1.2rem;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, var(--itl-foreground), var(--itl-electric));
+    background: linear-gradient(135deg, rgb(254, 254, 254), Skyblue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--itl-foreground);
     background-clip: text;
@@ -368,7 +368,7 @@
   }
   
   .itl-event-description {
-    color: var(--itl-muted-foreground);
+    color: white;
     line-height: 1.7;
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -379,7 +379,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1.2rem;
-    background: rgba(0, 217, 255, 0.1);
+    background: rgba(243, 244, 244, 0.1);
     border: 1px solid rgba(0, 217, 255, 0.2);
     border-radius: 50px;
     color: var(--itl-electric);
@@ -402,7 +402,7 @@
     z-index: 20;
     width: 5rem;
     height: 5rem;
-    background: var(--itl-glass-bg);
+    background: rgb(20, 41, 49);
     backdrop-filter: blur(20px);
     border: 2px solid var(--itl-glass-border);
     border-radius: 20px;
@@ -420,7 +420,7 @@
     transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
     box-shadow: 
       0 15px 50px rgba(0, 0, 0, 0.3),
-      0 0 50px rgba(0, 217, 255, 0.4),
+      0 0 50px skyblue(0, 217, 255, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-color: var(--itl-electric);
   }
@@ -460,7 +460,7 @@
   }
   
   .itl-detail-card {
-    background: var(--itl-glass-bg);
+    background: rgb(44, 71, 82);
     backdrop-filter: blur(20px);
     border: 1px solid var(--itl-glass-border);
     border-radius: 16px;
@@ -556,7 +556,7 @@
   }
   
   .itl-cta-card {
-    background: var(--itl-glass-bg);
+    background: rgb(44, 73, 85);
     backdrop-filter: blur(20px);
     border: 1px solid var(--itl-glass-border);
     border-radius: 24px;

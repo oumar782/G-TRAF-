@@ -5,9 +5,9 @@
     --btp-primary: #1a1a2e;
     --btp-secondary: #16213e;
     --btp-accent: #0f3460;
-    --btp-highlight: #e94560;
-    --btp-electric: #00f5d4;
-    --btp-neon: #9b5de5;
+    --btp-highlight: #df0e0e;
+    --btp-electric: #0c66cc;
+    --btp-neon: #0957b1;
     /* Couleurs Texte */
     --btp-text-light: #ffffff;
     --btp-text: #f1f1f1;
@@ -17,7 +17,7 @@
     --btp-glass-border: rgba(255, 255, 255, 0.15);
     /* Ombres */
     --btp-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --btp-shadow-neon: 0 0 15px rgba(233, 69, 96, 0.5);
+    --btp-shadow-neon: 0 0 15px rgba(5, 6, 88, 0.5);
     --btp-shadow-electric: 0 0 15px rgba(0, 245, 212, 0.5);
     /* Propriétés Ultra-Responsives */
     --btp-radius: clamp(6px, 0.8vw, 15px);
@@ -48,6 +48,7 @@
     margin: 0;
     padding: 0;
 }
+
 /* ===== CONTENEUR PRINCIPAL UNIVERSEL ===== */
 .btp-hero {
     position: relative;
@@ -59,6 +60,8 @@
     background: var(--btp-primary-dark);
     isolation: isolate;
     height: auto;
+    overflow: hidden;
+
 }
 /* ===== ARRIÈRE-PLAN ADAPTATIF ===== */
 .btp-hero__bg {
@@ -90,7 +93,7 @@
     inset: 0;
     background: linear-gradient(
         135deg,
-        rgba(10, 10, 26, 0.95) 0%,
+        rgba(9, 9, 59, 0.95) 0%,
         rgba(26, 26, 46, 0.85) 50%,
         rgba(15, 52, 96, 0.4) 100%
     );

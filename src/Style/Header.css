@@ -1,8 +1,8 @@
 /* Variables CSS */
 :root {
     --electric: #00f0ff;
-    --gradient-primary: linear-gradient(135deg, #6e00ff 0%, #00f0ff 100%);
-    --gradient-accent: linear-gradient(135deg, #ff00e6 0%, #ff8a00 100%);
+    --gradient-primary: linear-gradient(135deg, #062e36 0%, #00f0ff 100%);
+    --gradient-accent: linear-gradient(135deg, #0f6e88 0%, #171719 100%);
     --gradient-mesh: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.2) 0%, transparent 70%);
     --foreground: #ffffff;
     --muted-foreground: rgba(255, 255, 255, 0.7);
@@ -125,6 +125,7 @@
     transition: all var(--transition-duration) ease;
     animation: fade-in 0.5s ease both;
     white-space: nowrap;
+    gap: 1px;
   }
   
   .nav-link:hover {
@@ -213,6 +214,7 @@
     border: 1px solid var(--electric);
     box-shadow: 0 0 15px rgba(255, 0, 230, 0.3);
     white-space: nowrap;
+    color: var(--foreground);
   }
   
   .cta-button:hover {
