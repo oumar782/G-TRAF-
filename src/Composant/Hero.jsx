@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Hero.css';
 
+// Import des images
+import bg1 from '../assets/Image/P1035980.jpg';
+import bg2 from '../assets/Image/P1035799.jpg';
+import bg3 from '../assets/Image/P1035800.jpg';
+
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -8,18 +13,8 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const typingTimeoutRef = useRef(null);
 
-  // Chemins des images - à placer dans public/assets/Image/
-  const backgroundImages = [
-    '../assets/Image/P1035980.jpg',
-    '../assets/Image/P1035981.jpg',
-    '../assets/Image/P1035986.jpg'
-  ];
-
-  const stripImages = [
-    '../assets/Image/P1035977.jpg',
-    '../assets/Image/P1035978.jpg',
-    '../assets/Image/P1035988.jpg'
-  ];
+  // Tableaux d'images importées
+  const backgroundImages = [bg1, bg2, bg3];
 
   const textsToType = [
     "l'architecture du futur",
@@ -36,7 +31,7 @@ const HeroSection = () => {
     { label: 'Satisfaction', value: '99', suffix: '%' },
   ];
 
-  // Machine à écrire avec effacement
+  // Machine à écrire
   useEffect(() => {
     let currentIndex = 0;
     let isDeleting = false;
@@ -72,7 +67,7 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [currentText]);
 
-  // Initialisation : apparition + parallaxe + slideshow
+  // Parallaxe + slideshow
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
 
@@ -98,147 +93,145 @@ const HeroSection = () => {
   }, [backgroundImages.length]);
 
   return (
-    <section className="hero-section">
+    <section className="btp-hero">
       {/* Arrière-plans */}
-      <div className="hero-section__background">
+      <div className="btp-hero__bg">
         {backgroundImages.map((img, index) => (
           <div
             key={`bg-${index}`}
-            className={`hero-section__slide ${
-              index === currentSlide ? 'hero-section__slide--active' : ''
-            }`}
+            className={`btp-hero__slide ${index === currentSlide ? 'btp-hero__slide--active' : ''}`}
             style={{
               backgroundImage: `url(${img})`,
               transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 20}px, 0) scale(1.05)`
             }}
+            aria-label={`Background slide ${index + 1}`}
           />
         ))}
-        <div className="hero-section__overlay" />
+        <div className="btp-hero__overlay" />
       </div>
 
       {/* Éléments flottants */}
-      <div className="hero-section__floating-elements">
+      <div className="btp-hero__floaters">
         <div
-          className="hero-section__floating-circle hero-section__floating-circle--1"
+          className="btp-hero__floater btp-hero__floater--1"
           style={{ transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 10}px, 0)` }}
         />
         <div
-          className="hero-section__floating-circle hero-section__floating-circle--2"
+          className="btp-hero__floater btp-hero__floater--2"
           style={{ transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)` }}
         />
         <div
-          className="hero-section__floating-circle hero-section__floating-circle--3"
+          className="btp-hero__floater btp-hero__floater--3"
           style={{ transform: `translate3d(${mousePosition.x * 30}px, ${mousePosition.y * -10}px, 0)` }}
         />
       </div>
 
       {/* Contenu principal */}
-      <div className="hero-section__content">
-        <div className={`hero-section__wrapper ${isVisible ? 'hero-section__wrapper--visible' : ''}`}>
-          <div className="hero-section__badge">
-            <span className="hero-section__badge-icon">✨</span>
-            <span>Leader Technologique BTP - Innovation Depuis 1999</span>
+      <div className="btp-hero__main">
+        <div className="btp-hero__container">
+          <div className={`btp-hero__content ${isVisible ? 'btp-hero__content--visible' : ''}`}>
+            <div className="btp-hero__tag">
+              <span className="btp-hero__tag-icon">✨</span>
+              <span>Leader Technologique BTP  Innovation Depuis 1999</span>
+            </div>
+
+            <h1 className="btp-hero__heading">
+              <span className="btp-hero__heading-line">Créons ensemble</span>
+              <span className="btp-hero__typed">
+                {displayText}
+                <span className="btp-hero__caret">|</span>
+              </span>
+              <span className="btp-hero__heading-line btp-hero__highlight">aujourd'hui</span>
+            </h1>
+
+            <p className="btp-hero__subheading">
+              Nous révolutionnons l'industrie du BTP avec des technologies d'avant-garde et une{' '}
+              <span className="btp-hero__highlighted">vision architecturale révolutionnaire</span>{' '}
+              pour créer les monuments de demain.
+            </p>
+
+            <div className="btp-hero__actions">
+              <button className="btp-hero__btn btp-hero__btn--primary">
+                Lancer le projet
+                <span className="btp-hero__icon btp-hero__icon--arrow"></span>
+              </button>
+            </div>
+
+            <div className="btp-hero__metrics">
+              {stats.map((stat, index) => (
+                <div key={`stat-${index}`} className="btp-hero__metric">
+                  <div className="btp-hero__metric-icon">
+                    {index === 0 ? (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    ) : index === 1 ? (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    ) : (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C18.45 20.92 18 20.47 18 19.92V16.92C18 16.37 18.45 15.92 19 15.92H21C21.55 15.92 22 16.37 22 16.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M16 10.92V19.92C16 20.47 15.55 20.92 15 20.92H13C12.45 20.92 12 20.47 12 19.92V10.92C12 10.37 12.45 9.92 13 9.92H15C15.55 9.92 16 10.37 16 10.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M10 4.92V19.92C10 20.47 9.55 20.92 9 20.92H7C6.45 20.92 6 20.47 6 19.92V4.92C6 4.37 6.45 3.92 7 3.92H9C9.55 3.92 10 4.37 10 4.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </div>
+                  <div className="btp-hero__metric-value">
+                    {stat.value}<span>{stat.suffix}</span>
+                  </div>
+                  <div className="btp-hero__metric-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="hero-section__title">
-            <span className="hero-section__title-line">Créons ensemble</span>
-            <span className="hero-section__typed-text">
-              {displayText}
-              <span className="hero-section__cursor">|</span>
-            </span>
-            <span className="hero-section__title-line hero-section__highlight">aujourd'hui</span>
-          </h1>
-
-          <p className="hero-section__subtitle">
-            Nous révolutionnons l'industrie du BTP avec des technologies d'avant-garde et une{' '}
-            <span className="hero-section__highlight-text">vision architecturale révolutionnaire</span>{' '}
-            pour créer les monuments de demain.
-          </p>
-
-          {/* CTA */}
-          <div className="hero-section__ctas">
-            <button className="hero-section__cta hero-section__cta--primary">
-              Lancer le projet
-              <span className="icon arrow"></span>
-            </button>
-            <a href="#more" className="hero-section__cta hero-section__cta--secondary">
-              Voir plus
-              <span className="icon chevron"></span>
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div className="hero-section__stats">
-            {stats.map((stat, index) => (
-              <div key={`stat-${index}`} className="hero-section__stat">
-                <div className="hero-section__stat-icon">
-                  <span className={`icon stat-${index}`}></span>
-                </div>
-                <div className="hero-section__stat-value">
-                  {stat.value}<span>{stat.suffix}</span>
-                </div>
-                <div className="hero-section__stat-label">{stat.label}</div>
+          {/* Cartes flottantes */}
+          <div className={`btp-hero__cards ${isVisible ? 'btp-hero__cards--visible' : ''}`}>
+            <div
+              className="btp-hero__card btp-hero__card--project"
+              style={{ transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)` }}
+            >
+              <div className="btp-hero__card-header">
+                <span className="btp-hero__indicator"></span>
+                <span>PROJET EN COURS</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Cartes flottantes (droite) */}
-        <div className={`hero-section__cards ${isVisible ? 'hero-section__cards--visible' : ''}`}>
-          <div
-            className="hero-section__card hero-section__card--project"
-            style={{ transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)` }}
-          >
-            <div className="hero-section__card-header">
-              <span className="hero-section__status-indicator"></span>
-              <span>PROJET EN COURS</span>
+              <p className="btp-hero__card-desc">Tour Futuriste 250m - La Défense</p>
+              <div className="btp-hero__progress-container">
+                <div className="btp-hero__progress-bar"></div>
+              </div>
             </div>
-            <p className="hero-section__card-text">Tour Futuriste 250m - La Défense</p>
-            <div className="hero-section__progress-bar">
-              <div className="hero-section__progress"></div>
-            </div>
-          </div>
 
-          <div
-            className="hero-section__card hero-section__card--innovation"
-            style={{ transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 15}px, 0)` }}
-          >
-            <div className="hero-section__card-title">INNOVATION</div>
-            <p className="hero-section__card-text">IA • Robotique • Éco-construction</p>
-            <div className="hero-section__tech-dots">
-              <span className="hero-section__tech-dot"></span>
-              <span className="hero-section__tech-dot"></span>
-              <span className="hero-section__tech-dot"></span>
+            <div
+              className="btp-hero__card btp-hero__card--innovation"
+              style={{ transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 15}px, 0)` }}
+            >
+              <div className="btp-hero__card-title">INNOVATION</div>
+              <p className="btp-hero__card-desc">IA • Robotique • Éco-construction</p>
+              <div className="btp-hero__tech-icons">
+                <span className="btp-hero__tech-icon"></span>
+                <span className="btp-hero__tech-icon"></span>
+                <span className="btp-hero__tech-icon"></span>
+              </div>
             </div>
-          </div>
 
-          <div
-            className="hero-section__card hero-section__card--award"
-            style={{ transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -30}px, 0)` }}
-          >
-            <div className="hero-section__award-icon">🏆</div>
-            <div className="hero-section__award-title">PRIX ARCHITECTURE</div>
-            <div className="hero-section__award-subtitle">Innovation 2024</div>
+            <div
+              className="btp-hero__card btp-hero__card--award"
+              style={{ transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -30}px, 0)` }}
+            >
+              <div className="btp-hero__trophy">🏆</div>
+              <div className="btp-hero__award-name">PRIX ARCHITECTURE</div>
+              <div className="btp-hero__award-year">Innovation 2024</div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bande d'images (strip) */}
-      <div className="hero-section__image-strip">
-        {stripImages.map((img, i) => (
-          <div
-            key={`strip-${i}`}
-            className="hero-section__strip-image"
-            style={{ animationDelay: `${i * 0.3}s` }}
-            aria-label={`Projet ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Indicateur de scroll */}
-      <a href="#next" className="hero-section__scroll-indicator">
+      {/* Scroll indicator */}
+      <a href="#next" className="btp-hero__scroll">
         <span>Explorer</span>
-        <div className="hero-section__indicator-circle">
+        <div className="btp-hero__scroll-circle">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
