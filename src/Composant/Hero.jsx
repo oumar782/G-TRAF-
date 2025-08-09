@@ -8,17 +8,17 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const typingTimeoutRef = useRef(null);
 
-  // Chemins des images (vérifiez qu'elles existent dans public/assets/Image/)
+  // Chemins des images - à placer dans public/assets/Image/
   const backgroundImages = [
-    '/assets/Image/P1035980.jpg',
-    '/assets/Image/P1035981.jpg',
-    '/assets/Image/P1035986.jpg'
+    '../assets/Image/P1035980.jpg',
+    '../assets/Image/P1035981.jpg',
+    '../assets/Image/P1035986.jpg'
   ];
 
   const stripImages = [
-    '/assets/Image/P1035977.jpg',
-    '/assets/Image/P1035978.jpg',
-    '/assets/Image/P1035988.jpg'
+    '../assets/Image/P1035977.jpg',
+    '../assets/Image/P1035978.jpg',
+    '../assets/Image/P1035988.jpg'
   ];
 
   const textsToType = [
@@ -36,7 +36,7 @@ const HeroSection = () => {
     { label: 'Satisfaction', value: '99', suffix: '%' },
   ];
 
-  // Effet machine à écrire + effacement
+  // Machine à écrire avec effacement
   useEffect(() => {
     let currentIndex = 0;
     let isDeleting = false;
@@ -56,7 +56,7 @@ const HeroSection = () => {
       let speed = 100;
       if (isDeleting) speed = 50;
       if (!isDeleting && currentIndex === fullText.length) {
-        speed = 2000; // Pause avant effacement
+        speed = 2000;
         isDeleting = true;
       } else if (isDeleting && currentIndex === 0) {
         isDeleting = false;
@@ -66,16 +66,15 @@ const HeroSection = () => {
       timeout = setTimeout(type, speed);
     };
 
-    timeout = setTimeout(type, 500); // Démarrage après apparition
+    timeout = setTimeout(type, 800);
     typingTimeoutRef.current = timeout;
 
     return () => clearTimeout(timeout);
   }, [currentText]);
 
-  // Animation d'apparition et parallaxe
+  // Initialisation : apparition + parallaxe + slideshow
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
-    setIsVisible(true);
 
     const handleMouseMove = (e) => {
       setMousePosition({
@@ -86,7 +85,6 @@ const HeroSection = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Changement de fond toutes les 6 secondes
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
     }, 6000);
@@ -101,7 +99,7 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section">
-      {/* Arrière-plans animés */}
+      {/* Arrière-plans */}
       <div className="hero-section__background">
         {backgroundImages.map((img, index) => (
           <div
@@ -111,40 +109,32 @@ const HeroSection = () => {
             }`}
             style={{
               backgroundImage: `url(${img})`,
-              transform: `translate3d(${mousePosition.x * 15}px, ${mousePosition.y * 15}px, 0) scale(1.05)`,
+              transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 20}px, 0) scale(1.05)`
             }}
           />
         ))}
         <div className="hero-section__overlay" />
       </div>
 
-      {/* Éléments flottants décoratifs */}
+      {/* Éléments flottants */}
       <div className="hero-section__floating-elements">
         <div
           className="hero-section__floating-circle hero-section__floating-circle--1"
-          style={{
-            transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 10}px, 0)`,
-          }}
+          style={{ transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 10}px, 0)` }}
         />
         <div
           className="hero-section__floating-circle hero-section__floating-circle--2"
-          style={{
-            transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)`,
-            animationDelay: '2s',
-          }}
+          style={{ transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)` }}
         />
         <div
           className="hero-section__floating-circle hero-section__floating-circle--3"
-          style={{
-            transform: `translate3d(${mousePosition.x * 30}px, ${mousePosition.y * -10}px, 0)`,
-            animationDelay: '4s',
-          }}
+          style={{ transform: `translate3d(${mousePosition.x * 30}px, ${mousePosition.y * -10}px, 0)` }}
         />
       </div>
 
       {/* Contenu principal */}
       <div className="hero-section__content">
-        <div className={`hero-section__wrapper ${isVisible ? 'visible' : ''}`}>
+        <div className={`hero-section__wrapper ${isVisible ? 'hero-section__wrapper--visible' : ''}`}>
           <div className="hero-section__badge">
             <span className="hero-section__badge-icon">✨</span>
             <span>Leader Technologique BTP - Innovation Depuis 1999</span>
@@ -154,23 +144,20 @@ const HeroSection = () => {
             <span className="hero-section__title-line">Créons ensemble</span>
             <span className="hero-section__typed-text">
               {displayText}
-              <span className="hero-section__cursor" aria-hidden="true">
-                |
-              </span>
+              <span className="hero-section__cursor">|</span>
             </span>
             <span className="hero-section__title-line hero-section__highlight">aujourd'hui</span>
           </h1>
 
           <p className="hero-section__subtitle">
             Nous révolutionnons l'industrie du BTP avec des technologies d'avant-garde et une{' '}
-            <strong className="hero-section__highlight-text">vision architecturale révolutionnaire</strong>{' '}
+            <span className="hero-section__highlight-text">vision architecturale révolutionnaire</span>{' '}
             pour créer les monuments de demain.
           </p>
 
-          {/* Boutons CTA */}
+          {/* CTA */}
           <div className="hero-section__ctas">
             <button className="hero-section__cta hero-section__cta--primary">
-              <span className="icon sparkles"></span>
               Lancer le projet
               <span className="icon arrow"></span>
             </button>
@@ -188,7 +175,7 @@ const HeroSection = () => {
                   <span className={`icon stat-${index}`}></span>
                 </div>
                 <div className="hero-section__stat-value">
-                  {stat.value}<span className="suffix">{stat.suffix}</span>
+                  {stat.value}<span>{stat.suffix}</span>
                 </div>
                 <div className="hero-section__stat-label">{stat.label}</div>
               </div>
@@ -197,49 +184,41 @@ const HeroSection = () => {
         </div>
 
         {/* Cartes flottantes (droite) */}
-        <div className={`hero-section__cards ${isVisible ? 'visible' : ''}`}>
+        <div className={`hero-section__cards ${isVisible ? 'hero-section__cards--visible' : ''}`}>
           <div
             className="hero-section__card hero-section__card--project"
-            style={{
-              transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)`,
-            }}
+            style={{ transform: `translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -20}px, 0)` }}
           >
             <div className="hero-section__card-header">
-              <span className="hero-section__status-dot"></span>
-              <span className="hero-section__status-text">PROJET EN COURS</span>
+              <span className="hero-section__status-indicator"></span>
+              <span>PROJET EN COURS</span>
             </div>
             <p className="hero-section__card-text">Tour Futuriste 250m - La Défense</p>
             <div className="hero-section__progress-bar">
-              <div className="hero-section__progress-fill"></div>
+              <div className="hero-section__progress"></div>
             </div>
           </div>
 
           <div
             className="hero-section__card hero-section__card--innovation"
-            style={{
-              transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 15}px, 0)`,
-            }}
+            style={{ transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 15}px, 0)` }}
           >
             <div className="hero-section__card-title">INNOVATION</div>
-            <p className="hero-section__card-tech">IA • Robotique • Éco-construction</p>
+            <p className="hero-section__card-text">IA • Robotique • Éco-construction</p>
             <div className="hero-section__tech-dots">
-              <span className="dot dot-1"></span>
-              <span className="dot dot-2"></span>
-              <span className="dot dot-3"></span>
+              <span className="hero-section__tech-dot"></span>
+              <span className="hero-section__tech-dot"></span>
+              <span className="hero-section__tech-dot"></span>
             </div>
           </div>
 
           <div
             className="hero-section__card hero-section__card--award"
-            style={{
-              transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -30}px, 0)`,
-            }}
+            style={{ transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -30}px, 0)` }}
           >
-            <div className="hero-section__award-icon"></div>
-            <div className="hero-section__award-text">
-              <div className="award-title">PRIX ARCHITECTURE</div>
-              <div className="award-year">Innovation 2024</div>
-            </div>
+            <div className="hero-section__award-icon">🏆</div>
+            <div className="hero-section__award-title">PRIX ARCHITECTURE</div>
+            <div className="hero-section__award-subtitle">Innovation 2024</div>
           </div>
         </div>
       </div>
@@ -249,20 +228,20 @@ const HeroSection = () => {
         {stripImages.map((img, i) => (
           <div
             key={`strip-${i}`}
-            className="hero-section__strip-item"
-            style={{
-              backgroundImage: `url(${img})`,
-              animationDelay: `${i * 0.3}s`,
-            }}
-          ></div>
+            className="hero-section__strip-image"
+            style={{ animationDelay: `${i * 0.3}s` }}
+            aria-label={`Projet ${i + 1}`}
+          />
         ))}
       </div>
 
       {/* Indicateur de scroll */}
       <a href="#next" className="hero-section__scroll-indicator">
-        <span className="scroll-label">Explorer</span>
-        <div className="scroll-circle">
-          <div className="chevron"></div>
+        <span>Explorer</span>
+        <div className="hero-section__indicator-circle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </a>
     </section>
