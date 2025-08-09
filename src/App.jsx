@@ -8,6 +8,7 @@ import Expertise from './Composant/Expertise.jsx'; // Suppression des accolades
 import Stat from './Composant/Stat.jsx'; // Suppression des accolades
 import Certif from './Composant/Certificat.jsx'; // Suppression des accolades
 import Contact from './Composant/Contact.jsx'; // Suppression des accolades
+import Footer from './Composant/Footer.jsx'; // Suppression des accolades
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Stat/>
       <Portfolio/>
       <Contact/>
+      <Footer/>
     </>
   );
 }
