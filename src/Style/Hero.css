@@ -42,28 +42,24 @@
     --btp-text-3xl: clamp(2rem, 6vw, 3.5rem);
     --btp-text-4xl: clamp(2.5rem, 8vw, 5rem);
 }
-
 /* ===== RESET UNIVERSEL ULTRA-SOLIDE ===== */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 /* ===== CONTENEUR PRINCIPAL UNIVERSEL ===== */
 .btp-hero {
     position: relative;
     width: 100vw;
-    min-width: 200px;
+    min-width: 200px; /* Largeur minimale absolue */
     max-width: 100vw;
     min-height: 100vh;
     min-height: 100dvh;
     background: var(--btp-primary-dark);
     isolation: isolate;
     height: auto;
-    overflow: hidden;
 }
-
 /* ===== ARRIÈRE-PLAN ADAPTATIF ===== */
 .btp-hero__bg {
     position: absolute;
@@ -72,7 +68,6 @@
     height: 130vh;
     z-index: 1;
 }
-
 .btp-hero__slide {
     position: absolute;
     inset: 0;
@@ -86,12 +81,10 @@
     transform: scale(1);
     will-change: transform;
 }
-
 .btp-hero__slide--active {
     opacity: 1;
     transform: scale(clamp(1.02, 1.08, 1.1));
 }
-
 .btp-hero__overlay {
     position: absolute;
     inset: 0;
@@ -104,7 +97,6 @@
     z-index: 2;
     height: 126vh;
 }
-
 /* ===== EFFETS VISUELS ULTRA-ADAPTATIFS ===== */
 .btp-hero__floaters {
     position: absolute;
@@ -115,7 +107,6 @@
     z-index: 2;
     overflow: hidden;
 }
-
 .btp-hero__floater {
     position: absolute;
     border-radius: 50%;
@@ -124,7 +115,6 @@
     transition: var(--btp-transition);
     will-change: transform;
 }
-
 .btp-hero__floater--1 {
     width: clamp(80px, 20vw, 500px);
     height: clamp(80px, 20vw, 500px);
@@ -133,7 +123,6 @@
     left: clamp(-10%, 5%, 15%);
     animation: btp-float-1 12s ease-in-out infinite alternate;
 }
-
 .btp-hero__floater--2 {
     width: clamp(100px, 25vw, 600px);
     height: clamp(100px, 25vw, 600px);
@@ -142,7 +131,6 @@
     right: clamp(-15%, 5%, 15%);
     animation: btp-float-2 15s ease-in-out infinite alternate;
 }
-
 .btp-hero__floater--3 {
     width: clamp(60px, 15vw, 400px);
     height: clamp(60px, 15vw, 400px);
@@ -152,7 +140,6 @@
     transform: translate(-50%, -50%);
     animation: btp-float-3 10s ease-in-out infinite alternate;
 }
-
 /* ===== LAYOUT PRINCIPAL ULTRA-FLEXIBLE ===== */
 .btp-hero__main {
     position: relative;
@@ -164,7 +151,6 @@
     width: 100%;
     min-width: 0;
 }
-
 .btp-hero__container {
     width: var(--btp-container-width);
     margin: 0 auto;
@@ -175,9 +161,7 @@
     justify-content: center;
     gap: var(--btp-space-lg);
     min-width: 0;
-    max-width: 100%;
 }
-
 .btp-hero__content {
     width: 100%;
     max-width: clamp(300px, 80vw, 900px);
@@ -186,14 +170,11 @@
     transition: opacity 0.8s ease, transform 0.8s ease;
     text-align: center;
     min-width: 0;
-    line-height: 1.3;
 }
-
 .btp-hero__content--visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 /* ===== BADGE PREMIUM ULTRA-RESPONSIVE ===== */
 .btp-hero__tag {
     display: inline-flex;
@@ -209,27 +190,23 @@
     font-weight: 600;
     color: var(--btp-electric);
     border: 1px solid rgba(0, 245, 212, 0.2);
-    margin-top: 20px;
+    margin-top:20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: var(--btp-transition);
     max-width: clamp(180px, 70vw, 400px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    z-index: 4;
 }
-
 .btp-hero__tag:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(0, 245, 212, 0.2);
 }
-
 .btp-hero__tag-icon {
     font-size: clamp(0.7rem, 1.5vw, 1.3rem);
     animation: btp-pulse 2s infinite;
     flex-shrink: 0;
 }
-
 /* ===== TITRE ULTRA-RESPONSIVE ===== */
 .btp-hero__heading {
     font-size: 3.5rem;
@@ -240,16 +217,11 @@
     word-break: break-word;
     hyphens: auto;
     text-align: center;
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    max-width: 100%;
 }
-
 .btp-hero__heading-line {
     display: block;
     margin-bottom: var(--btp-space-xs);
 }
-
 .btp-hero__typed {
     color: var(--btp-electric);
     background: linear-gradient(90deg, var(--btp-electric), var(--btp-neon));
@@ -259,9 +231,7 @@
     position: relative;
     min-height: 1.2em;
     display: inline-block;
-    font-weight: 800;
 }
-
 .btp-hero__caret {
     display: inline-block;
     width: clamp(1.5px, 0.2vw, 4px);
@@ -271,34 +241,28 @@
     vertical-align: middle;
     animation: btp-blink 0.8s infinite;
 }
-
 .btp-hero__highlight {
     color: var(--btp-highlight);
     text-shadow: 0 0 15px rgba(233, 69, 96, 0.4);
 }
-
 /* ===== SOUS-TITRE ADAPTATIF ===== */
 .btp-hero__subheading {
     font-size: var(--btp-text-base);
-    max-width: clamp(250px, 75vw, 800px);
-    line-height: clamp(1.3, 1.6, 1.7);
-    margin: 0 auto var(--btp-space-lg);
-    color: var(--btp-text-secondary);
-    padding: 0 var(--btp-space-sm);
-    word-break: break-word;
-    hyphens: auto;
-    text-align: center;
-    font-weight: 400;
-    letter-spacing: 0.3px;
+max-width: clamp(250px, 75vw, 800px);  /* Largeur maximale contrôlée */
+line-height: clamp(1.3, 1.6, 1.7);
+margin: 0 auto var(--btp-space-lg);    /* Centrage horizontal */
+color: var(--btp-text-secondary);
+padding: 0 var(--btp-space-sm);
+word-break: break-word;               /* Césure forcée si nécessaire */
+hyphens: auto;                        /* Césure automatique */
+text-align: center;                   /* Texte centré */
 }
-
 .btp-hero__highlighted {
     color: var(--btp-highlight);
     font-weight: 600;
     position: relative;
     display: inline-block;
 }
-
 .btp-hero__highlighted::after {
     content: '';
     position: absolute;
@@ -311,12 +275,10 @@
     transform-origin: right;
     transition: transform 0.4s ease;
 }
-
 .btp-hero__highlighted:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
-
 /* ===== BOUTONS CTA ULTRA-ADAPTATIFS ===== */
 .btp-hero__actions {
     display: flex;
@@ -328,7 +290,6 @@
     width: 100%;
     max-width: clamp(300px, 80vw, 600px);
 }
-
 .btp-hero__btn {
     display: inline-flex;
     align-items: center;
@@ -346,72 +307,61 @@
     white-space: nowrap;
     border: none;
     text-align: center;
-    z-index: 4;
 }
-
 .btp-hero__btn--primary {
     background: linear-gradient(135deg, var(--btp-highlight), #c73252);
     color: white;
     box-shadow: var(--btp-shadow-neon);
 }
-
 .btp-hero__btn--primary:hover,
 .btp-hero__btn--primary:focus {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 12px 30px rgba(233, 69, 96, 0.6);
 }
-
 .btp-hero__icon {
     display: inline-block;
     transition: transform 0.3s ease;
     flex-shrink: 0;
 }
-
 .btp-hero__btn:hover .btp-hero__icon {
     transform: translateX(4px);
 }
-
 .btp-hero__icon--arrow {
     width: clamp(12px, 2vw, 20px);
     height: clamp(12px, 2vw, 20px);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
 }
-
 /* ===== MÉTRIQUES GRID ULTRA-INTELLIGENT ===== */
 .btp-hero__metrics {
     display: flex;
+    /* ↓ Cartes plus petites (ex: 120px min, 20vw adaptatif, 160px max) */
     grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 20vw, 160px), 3fr));
-    gap: 6px;
+    gap: 6px; /* Espacement très réduit entre les cartes */
     max-width: clamp(300px, 85vw, 1000px);
     margin-top: 25px;
-    justify-content: center;
 }
-
 .btp-hero__metric {
     background: var(--btp-glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: var(--btp-radius);
-    padding: 8px;
+    padding: 8px; /* Padding réduit pour compacter les cartes */
     border: 1px solid var(--btp-glass-border);
     transition: var(--btp-transition);
     text-align: center;
-    min-height: 60px;
-    width: 100%;
+    min-height: 60px; /* Hauteur fixe petite (ou utilisez clamp()) */
+    width: 200px; /* Largeur adaptative (surcharge le width: 200px) */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 3;
 }
-
 .btp-hero__metric:hover,
 .btp-hero__metric:focus {
     transform: translateY(-3px);
     box-shadow: var(--btp-shadow);
     border-color: var(--btp-highlight);
 }
-
 .btp-hero__metric-icon {
     width: clamp(25px, 5vw, 60px);
     height: clamp(25px, 5vw, 60px);
@@ -425,7 +375,6 @@
     font-size: clamp(0.8rem, 2vw, 1.8rem);
     flex-shrink: 0;
 }
-
 .btp-hero__metric-value {
     font-size: clamp(1rem, 3vw, 2.5rem);
     font-weight: 800;
@@ -436,14 +385,12 @@
     align-items: flex-end;
     line-height: 1;
 }
-
 .btp-hero__metric-value span {
     color: var(--btp-highlight);
     font-size: 0.8em;
     margin-left: 0.2em;
     font-weight: 600;
 }
-
 .btp-hero__metric-label {
     font-size: var(--btp-text-xs);
     font-weight: 600;
@@ -453,11 +400,10 @@
     line-height: 1.2;
     text-align: center;
 }
-
 /* ===== CARTES FLOTTANTES ULTRA-RESPONSIVES ===== */
 .btp-hero__cards {
     position: static;
-    display: flex;
+    display: Flex;
     grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 35vw, 350px), fr));
     gap: var(--btp-space-md);
     width: 100%;
@@ -465,14 +411,10 @@
     margin: var(--btp-space-xl) auto 0;
     opacity: 0;
     transition: opacity 0.8s ease 0.3s;
-    justify-content: center;
-    z-index: 3;
 }
-
 .btp-hero__cards--visible {
     opacity: 1;
 }
-
 .btp-hero__card {
     width: 100%;
     padding: var(--btp-space-md);
@@ -490,29 +432,24 @@
     justify-content: space-between;
     margin-bottom: -80px;
 }
-
 .btp-hero__card:hover,
 .btp-hero__card:focus {
     transform: translateY(-5px) scale(1.01);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
-
 .btp-hero__card--project {
     border-left: 4px solid var(--btp-highlight);
     margin-left: -200px;
     margin-top: 20px;
 }
-
 .btp-hero__card--innovation {
     border-left: 4px solid var(--btp-electric);
 }
-
 .btp-hero__card--award {
     border-left: 4px solid var(--btp-neon);
     margin-left: -200px;
     margin-top: 40px;
 }
-
 .btp-hero__card-header {
     display: flex;
     align-items: center;
@@ -524,7 +461,6 @@
     text-transform: uppercase;
     letter-spacing: clamp(0.3px, 0.08vw, 1px);
 }
-
 .btp-hero__indicator {
     width: clamp(6px, 0.8vw, 12px);
     height: clamp(6px, 0.8vw, 12px);
@@ -533,7 +469,6 @@
     animation: btp-pulse 2s infinite;
     flex-shrink: 0;
 }
-
 .btp-hero__card-title {
     font-size: var(--btp-text-lg);
     font-weight: 700;
@@ -541,7 +476,6 @@
     color: var(--btp-text-light);
     line-height: 1.3;
 }
-
 .btp-hero__card-desc {
     font-size: var(--btp-text-sm);
     color: var(--btp-text-secondary);
@@ -549,7 +483,6 @@
     line-height: 1.5;
     flex-grow: 1;
 }
-
 .btp-hero__progress-container {
     width: 100%;
     height: clamp(3px, 0.4vw, 8px);
@@ -558,7 +491,6 @@
     overflow: hidden;
     margin-bottom: var(--btp-space-xs);
 }
-
 .btp-hero__progress-bar {
     width: 75%;
     height: 100%;
@@ -567,13 +499,11 @@
     animation: btp-shimmer 3s infinite linear;
     background-size: 200% 100%;
 }
-
 .btp-hero__tech-icons {
     display: flex;
     gap: var(--btp-space-xs);
     margin-top: var(--btp-space-sm);
 }
-
 .btp-hero__tech-icon {
     width: clamp(4px, 0.8vw, 10px);
     height: clamp(4px, 0.8vw, 10px);
@@ -581,29 +511,24 @@
     background: var(--btp-electric);
     opacity: 0.7;
 }
-
 .btp-hero__tech-icon:nth-child(1) { animation: btp-pulse 2s infinite; }
 .btp-hero__tech-icon:nth-child(2) { animation: btp-pulse 2s infinite 0.5s; }
 .btp-hero__tech-icon:nth-child(3) { animation: btp-pulse 2s infinite 1s; }
-
 .btp-hero__trophy {
     font-size: clamp(1.2rem, 2.5vw, 2.5rem);
     margin-bottom: var(--btp-space-xs);
     color: var(--btp-neon);
 }
-
 .btp-hero__award-name {
     font-weight: 700;
     margin-bottom: var(--btp-space-xs);
     color: var(--btp-text-light);
     font-size: var(--btp-text-sm);
 }
-
 .btp-hero__award-year {
     font-size: var(--btp-text-xs);
     color: var(--btp-text-secondary);
 }
-
 /* ===== INDICATEUR SCROLL UNIVERSEL ===== */
 .btp-hero__scroll {
     position: fixed;
@@ -624,7 +549,6 @@
     animation: btp-fade-in 1s ease 2s forwards;
     cursor: pointer;
 }
-
 .btp-hero__scroll-circle {
     width: clamp(30px, 5vw, 60px);
     height: clamp(30px, 5vw, 60px);
@@ -639,12 +563,10 @@
     transition: var(--btp-transition);
     animation: btp-bounce 2s infinite;
 }
-
 .btp-hero__scroll-circle svg {
     width: clamp(12px, 2.5vw, 24px);
     height: clamp(12px, 2.5vw, 24px);
 }
-
 .btp-hero__scroll-circle:hover,
 .btp-hero__scroll-circle:focus {
     background: rgba(233, 69, 96, 0.2);
@@ -652,49 +574,40 @@
     transform: translateY(3px);
     animation: none;
 }
-
 /* ===== ANIMATIONS ULTRA-OPTIMISÉES ===== */
 @keyframes btp-float-1 {
     0% { transform: translate(0, 0) rotate(0deg); }
     100% { transform: translate(clamp(8px, 2vw, 25px), clamp(10px, 3vw, 35px)) rotate(5deg); }
 }
-
 @keyframes btp-float-2 {
     0% { transform: translate(0, 0) rotate(0deg); }
     100% { transform: translate(clamp(-12px, -3vw, -35px), clamp(-8px, -2vw, -25px)) rotate(-5deg); }
 }
-
 @keyframes btp-float-3 {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(clamp(-55%, -52%, -48%), clamp(-52%, -48%, -45%)) rotate(10deg); }
 }
-
 @keyframes btp-fade-in {
     from { opacity: 0; transform: translateX(-50%) translateY(10px); }
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
-
 @keyframes btp-blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
 }
-
 @keyframes btp-bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(clamp(-5px, -1vw, -12px)); }
     60% { transform: translateY(clamp(-2px, -0.5vw, -6px)); }
 }
-
 @keyframes btp-pulse {
     0%, 100% { opacity: 0.6; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.1); }
 }
-
 @keyframes btp-shimmer {
     0% { background-position: 100% 50%; }
     100% { background-position: -100% 50%; }
 }
-
 /* ===== RESPONSIVE ULTRA-COMPLET TOUTES LARGEURS ===== */
 /* Ultra-Wide 8K+ (3840px+) */
 @media screen and (min-width: 3840px) {
@@ -730,7 +643,6 @@
         max-width: 1000px;
     }
 }
-
 /* Large Desktop QHD (1920px - 2559px) */
 @media screen and (max-width: 2559px) and (min-width: 1920px) {
     .btp-hero__cards {
@@ -758,7 +670,6 @@
         max-width: 900px;
     }
 }
-
 /* Standard Desktop FHD (1440px - 1919px) */
 @media screen and (max-width: 1919px) and (min-width: 1440px) {
     .btp-hero__cards {
@@ -794,7 +705,6 @@
         height: clamp(300px, 22vw, 450px);
     }
 }
-
 /* Desktop Standard (1200px - 1439px) */
 @media screen and (max-width: 1439px) and (min-width: 1200px) {
     .btp-hero__container {
@@ -821,7 +731,6 @@
         height: clamp(250px, 20vw, 400px);
     }
 }
-
 /* Laptop Large (1024px - 1199px) */
 @media screen and (max-width: 1199px) and (min-width: 1024px) {
     .btp-hero__container {
@@ -854,7 +763,6 @@
         right: -10%;
     }
 }
-
 /* Laptop Standard (768px - 1023px) */
 @media screen and (max-width: 1023px) and (min-width: 768px) {
     .btp-hero__container {
@@ -894,7 +802,6 @@
         right: -15%;
     }
 }
-
 /* Tablette Portrait Large (600px - 767px) */
 @media screen and (max-width: 767px) and (min-width: 600px) {
     .btp-hero__container {
@@ -935,7 +842,6 @@
         right: -18%;
     }
 }
-
 /* Tablette Portrait Standard (480px - 599px) */
 @media screen and (max-width: 599px) and (min-width: 480px) {
     .btp-hero {
@@ -979,7 +885,6 @@
         height: clamp(80px, 15vw, 100px);
     }
 }
-
 /* Mobile Large (400px - 479px) */
 @media screen and (max-width: 479px) and (min-width: 400px) {
     .btp-hero__container {
@@ -1026,7 +931,6 @@
         right: -28%;
     }
 }
-
 /* Mobile Standard (350px - 399px) */
 @media screen and (max-width: 399px) and (min-width: 350px) {
     .btp-hero__container {
@@ -1081,7 +985,6 @@
         height: clamp(60px, 20vw, 80px);
     }
 }
-
 /* Mobile Compact (320px - 349px) */
 @media screen and (max-width: 349px) and (min-width: 320px) {
     .btp-hero__container {
@@ -1148,7 +1051,6 @@
         right: -38%;
     }
 }
-
 /* Très Petit Mobile (280px - 319px) */
 @media screen and (max-width: 319px) and (min-width: 280px) {
     .btp-hero__container {
@@ -1186,7 +1088,7 @@
         font-size: clamp(0.6rem, 4vw, 0.75rem);
     }
     .btp-hero__floater {
-        display: none;
+        display: none; /* Masqué sur très petits écrans */
     }
     .btp-hero__scroll {
         bottom: clamp(0.5rem, 3vw, 1rem);
@@ -1200,7 +1102,6 @@
         height: clamp(10px, 4vw, 16px);
     }
 }
-
 /* Ultra Petit Écran (240px - 279px) */
 @media screen and (max-width: 279px) and (min-width: 240px) {
     .btp-hero__container {
@@ -1238,7 +1139,6 @@
         display: none;
     }
 }
-
 /* Écran Extrêmement Petit (moins de 240px) */
 @media screen and (max-width: 239px) {
     .btp-hero__container {
@@ -1276,10 +1176,9 @@
         display: none;
     }
     .btp-hero__scroll {
-        display: none;
+        display: none; /* Masqué sur écrans ultra-petits */
     }
 }
-
 /* ===== ORIENTATION PAYSAGE TOUTES LARGEURS ===== */
 @media screen and (max-height: 600px) and (orientation: landscape) {
     .btp-hero {
@@ -1363,8 +1262,8 @@
         filter: blur(clamp(10px, 3vw, 25px));
     }
 }
-
 /* ===== OPTIMISATIONS AVANCÉES ===== */
+/* Écrans haute densité (Retina, 4K, etc.) */
 @media screen and (-webkit-min-device-pixel-ratio: 2), 
        screen and (min-resolution: 192dpi) {
     .btp-hero__caret {
@@ -1378,12 +1277,13 @@
         width: clamp(3px, 0.6vw, 8px);
         height: clamp(3px, 0.6vw, 8px);
     }
+    /* Amélioration de la netteté des textes */
     .btp-hero * {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 }
-
+/* Interfaces tactiles optimisées */
 @media (hover: none) and (pointer: coarse) {
     .btp-hero__btn,
     .btp-hero__metric,
@@ -1395,6 +1295,7 @@
     .btp-hero__tag {
         min-height: clamp(36px, 6vw, 44px);
     }
+    /* Désactivation des effets hover sur tactile */
     .btp-hero__btn:hover,
     .btp-hero__metric:hover,
     .btp-hero__card:hover,
@@ -1406,6 +1307,7 @@
         border-color: initial;
         background: initial;
     }
+    /* Effets de feedback tactile */
     .btp-hero__btn:active {
         transform: scale(0.98);
         transition-duration: 0.1s;
@@ -1424,7 +1326,7 @@
         transition-duration: 0.1s;
     }
 }
-
+/* Interfaces avec souris précise */
 @media (hover: hover) and (pointer: fine) {
     .btp-hero__btn:hover .btp-hero__icon {
         transform: translateX(clamp(2px, 0.5vw, 6px));
@@ -1436,8 +1338,8 @@
         transform: translateY(clamp(-2px, -0.6vw, -5px));
     }
 }
-
-/* ===== ACCESSIBILITÉ ET CONTRASTE ===== */
+/* ===== ACCESSIBILITÉ UNIVERSELLE ===== */
+/* Réduction de mouvement */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1447,12 +1349,55 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+    .btp-hero__slide {
+        transform: scale(1) !important;
+        transition: none !important;
+    }
+    .btp-hero__floater {
+        animation: none !important;
+        opacity: clamp(0.05, 0.1, 0.15) !important;
+        transform: none !important;
+    }
+    .btp-hero__caret {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+    .btp-hero__scroll-circle {
+        animation: none !important;
+    }
+    .btp-hero__indicator,
+    .btp-hero__tech-icon {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+    .btp-hero__progress-bar {
+        animation: none !important;
+    }
 }
-
+/* Contraste élevé */
 @media (prefers-contrast: high) {
     :root {
         --btp-glass: rgba(255, 255, 255, 0.2);
+        --btp-glass-border: rgba(255, 255, 255, 0.4);
         --btp-text-secondary: #cccccc;
+    }
+    .btp-hero__tag,
+    .btp-hero__metric,
+    .btp-hero__card,
+    .btp-hero__btn {
+        border-width: clamp(1px, 0.2vw, 3px);
+        border-color: var(--btp-highlight);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    .btp-hero__btn--primary {
+        border: clamp(1px, 0.2vw, 3px) solid var(--btp-highlight);
+        background: var(--btp-highlight);
+    }
+    .btp-hero__floater {
+        opacity: clamp(0.02, 0.05, 0.08) !important;
+    }
+    .btp-hero__overlay {
+        background: rgba(0, 0, 0, 0.85);
     }
     .btp-hero__heading,
     .btp-hero__card-title,
@@ -1460,14 +1405,350 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 }
-
+/* Mode sombre système */
 @media (prefers-color-scheme: dark) {
     :root {
         --btp-primary-dark: #000000;
+        --btp-primary: #050505;
+        --btp-secondary: #0a0a0a;
+        --btp-glass: rgba(255, 255, 255, 0.03);
+        --btp-glass-border: rgba(255, 255, 255, 0.08);
         --btp-text-secondary: #888888;
+        --btp-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    }
+    .btp-hero__overlay {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.98) 0%,
+            rgba(5, 5, 5, 0.95) 50%,
+            rgba(15, 52, 96, 0.3) 100%
+        );
+    }
+    .btp-hero__floater {
+        opacity: clamp(0.05, 0.15, 0.25);
     }
 }
-
-/* ===== PRINT & Fallbacks (inchangés) ===== */
-/* (Tout le reste est identique au fichier original) */
-/* ... (aucune modification) */
+/* Transparence réduite */
+@media (prefers-reduced-transparency) {
+    :root {
+        --btp-glass: rgba(26, 26, 46, 0.95);
+        --btp-glass-border: rgba(255, 255, 255, 0.3);
+    }
+    .btp-hero__tag,
+    .btp-hero__metric,
+    .btp-hero__card,
+    .btp-hero__scroll-circle {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--btp-glass);
+    }
+}
+/* ===== PRINT STYLES OPTIMISÉS ===== */
+@media print {
+    .btp-hero {
+        background: white !important;
+        color: black !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .btp-hero__bg,
+    .btp-hero__overlay,
+    .btp-hero__floaters,
+    .btp-hero__scroll {
+        display: none !important;
+    }
+    .btp-hero__heading,
+    .btp-hero__subheading,
+    .btp-hero__tag,
+    .btp-hero__card-title,
+    .btp-hero__metric-value,
+    .btp-hero__metric-label,
+    .btp-hero__card-desc {
+        color: black !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        -webkit-text-fill-color: black !important;
+    }
+    .btp-hero__btn {
+        border: 2px solid black !important;
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    .btp-hero__metric,
+    .btp-hero__card {
+        border: 1px solid #666 !important;
+        background: white !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    .btp-hero__container {
+        padding: 1rem !important;
+        gap: 1rem !important;
+    }
+    .btp-hero__actions {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    .btp-hero__cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin: 1rem auto !important;
+    }
+    .btp-hero__metrics {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem !important;
+    }
+}
+/* ===== FALLBACKS POUR ANCIENS NAVIGATEURS ===== */
+/* Fallback pour backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+    .btp-hero__tag,
+    .btp-hero__metric,
+    .btp-hero__card,
+    .btp-hero__scroll-circle {
+        background: rgba(26, 26, 46, 0.9);
+    }
+}
+/* Fallback pour clamp() */
+@supports not (width: clamp(1rem, 5vw, 3rem)) {
+    .btp-hero__container {
+        padding: 2rem;
+    }
+    .btp-hero__heading {
+        font-size: 3rem;
+    }
+    .btp-hero__subheading {
+        font-size: 1.1rem;
+    }
+    .btp-hero__btn {
+        font-size: 0.9rem;
+        padding: 1rem 2rem;
+        min-width: 180px;
+    }
+    .btp-hero__metric,
+    .btp-hero__card {
+        padding: 1.5rem;
+    }
+    /* Responsive alternatif pour anciens navigateurs */
+    @media screen and (max-width: 768px) {
+        .btp-hero__heading {
+            font-size: 2rem;
+        }
+        .btp-hero__subheading {
+            font-size: 0.9rem;
+        }
+        .btp-hero__btn {
+            font-size: 0.8rem;
+            padding: 0.8rem 1.5rem;
+            min-width: 150px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .btp-hero__heading {
+            font-size: 1.5rem;
+        }
+        .btp-hero__subheading {
+            font-size: 0.8rem;
+        }
+        .btp-hero__container {
+            padding: 1rem;
+        }
+    }
+}
+/* Fallback pour CSS Grid */
+@supports not (display: grid) {
+    .btp-hero__metrics,
+    .btp-hero__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .btp-hero__metric {
+        flex: 1;
+        min-width: 150px;
+        max-width: 200px;
+        margin: 0.5rem;
+    }
+    .btp-hero__card {
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        margin: 0.5rem;
+    }
+}
+/* Fallback pour flexbox */
+@supports not (display: flex) {
+    .btp-hero__main {
+        display: block;
+        text-align: center;
+        padding: 2rem;
+    }
+    .btp-hero__container {
+        display: block;
+        width: 100%;
+        max-width: 1200px;
+    }
+    .btp-hero__actions {
+        text-align: center;
+    }
+    .btp-hero__btn {
+        display: inline-block;
+        margin: 0.5rem;
+    }
+    .btp-hero__metric,
+    .btp-hero__card {
+        display: inline-block;
+        vertical-align: top;
+        margin: 1rem;
+        width: 200px;
+    }
+}
+/* ===== SÉCURITÉ ET ROBUSTESSE ULTIME ===== */
+/* Protection contre les débordements */
+.btp-hero,
+.btp-hero * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+/* Assurance de lisibilité minimale */
+.btp-hero__heading,
+.btp-hero__subheading,
+.btp-hero__card-title,
+.btp-hero__metric-label,
+.btp-hero__card-desc {
+    min-width: 0;
+    flex-shrink: 1;
+    word-break: break-word;
+}
+/* Protection des éléments interactifs */
+.btp-hero__btn,
+.btp-hero__card,
+.btp-hero__metric,
+.btp-hero__tag {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+}
+/* Force la qualité de rendu sur tous navigateurs */
+.btp-hero * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+/* Protection contre les variables CSS non supportées */
+.btp-hero {
+    background: #0a0a1a; /* Fallback */
+}
+.btp-hero__heading {
+    color: #ffffff; /* Fallback */
+}
+.btp-hero__subheading {
+    color: #b8b8b8; /* Fallback */
+}
+.btp-hero__btn--primary {
+    background: #e94560; /* Fallback */
+    color: white;
+}
+.btp-hero__tag {
+    color: #00f5d4; /* Fallback */
+    background: rgba(255, 255, 255, 0.08);
+}
+/* Performance - Force la création de couches composites */
+.btp-hero__slide,
+.btp-hero__floater,
+.btp-hero__card,
+.btp-hero__metric {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+/* Nettoyage after animations */
+.btp-hero__card:not(:hover),
+.btp-hero__metric:not(:hover),
+.btp-hero__btn:not(:hover) {
+    will-change: auto;
+}
+/* Protection contre les glitches de rendu */
+.btp-hero__container,
+.btp-hero__content,
+.btp-hero__cards,
+.btp-hero__metrics {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+/* Optimisation mémoire sur mobiles */
+@media screen and (max-width: 768px) {
+    .btp-hero__floater {
+        will-change: auto;
+        transform: none;
+        animation: none !important;
+    }
+}
+/* Protection finale - Assure la compatibilité totale */
+@media screen and (max-width: 200px) {
+    .btp-hero__container {
+        min-width: 200px;
+        padding: 0.2rem;
+    }
+    .btp-hero__heading {
+        font-size: 0.8rem !important;
+        line-height: 1 !important;
+    }
+    .btp-hero__subheading {
+        font-size: 0.6rem !important;
+        display: none; /* Masqué sur écrans ultra-petits */
+    }
+    .btp-hero__tag {
+        display: none; /* Masqué pour économiser l'espace */
+    }
+    .btp-hero__actions {
+        margin: 0.5rem 0;
+    }
+    .btp-hero__btn {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 0.5rem !important;
+        padding: 0.3rem !important;
+        min-height: 32px !important;
+    }
+    .btp-hero__cards,
+    .btp-hero__metrics {
+        display: none; /* Masqué pour se concentrer sur l'essentiel */
+    }
+    .btp-hero__floater,
+    .btp-hero__scroll {
+        display: none !important;
+    }
+}
+/* Message de compatibilité ultime */
+@media screen and (max-width: 150px) {
+    .btp-hero::before {
+        content: "Écran trop petit";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        z-index: 1000;
+        text-align: center;
+    }
+    .btp-hero > * {
+        display: none;
+    }
+}
