@@ -5,9 +5,9 @@
     --btp-primary: #1a1a2e;
     --btp-secondary: #16213e;
     --btp-accent: #0f3460;
-    --btp-highlight: #df0e0e;
-    --btp-electric: #0c66cc;
-    --btp-neon: #0957b1;
+    --btp-highlight: #19e2ed;
+    --btp-electric: #0cc6cc;
+    --btp-neon: #0b2d3d;
     /* Couleurs Texte */
     --btp-text-light: #ffffff;
     --btp-text: #f1f1f1;
@@ -312,9 +312,8 @@ text-align: center;                   /* Texte centré */
     text-align: center;
 }
 .btp-hero__btn--primary {
-    background: linear-gradient(135deg, var(--btp-highlight), #c73252);
+    background: linear-gradient(135deg, white, #07383b);
     color: white;
-    box-shadow: var(--btp-shadow-neon);
 }
 .btp-hero__btn--primary:hover,
 .btp-hero__btn--primary:focus {

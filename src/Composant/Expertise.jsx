@@ -25,7 +25,7 @@ const Expertise = () => {
 
   const expertises = [
     {
-      icon: 'Building2',
+      icon: 'Skyscraper',
       title: 'Construction Neuve',
       subtitle: 'Édifices d\'exception',
       description: 'Conception et réalisation de bâtiments prestigieux, du résidentiel haut de gamme aux complexes commerciaux d\'envergure.',
@@ -34,7 +34,7 @@ const Expertise = () => {
       color: 'blue'
     },
     {
-      icon: 'Home',
+      icon: 'Hammer',
       title: 'Rénovation Prestige',
       subtitle: 'Renaissance architecturale',
       description: 'Transformation et modernisation de propriétés d\'exception, préservant le caractère tout en intégrant le confort moderne.',
@@ -52,7 +52,7 @@ const Expertise = () => {
       color: 'purple'
     },
     {
-      icon: 'Palette',
+      icon: 'Brush',
       title: 'Design Intérieur',
       subtitle: 'Espaces sur-mesure',
       description: 'Création d\'ambiances uniques et d\'aménagements personnalisés pour des intérieurs d\'exception.',
@@ -61,7 +61,7 @@ const Expertise = () => {
       color: 'rose'
     },
     {
-      icon: 'Wrench',
+      icon: 'Tool',
       title: 'Maintenance Premium',
       subtitle: 'Service d\'excellence',
       description: 'Maintenance préventive et curative de vos installations avec un service client dédié disponible 24h/24.',
@@ -70,7 +70,7 @@ const Expertise = () => {
       color: 'orange'
     },
     {
-      icon: 'Shield',
+      icon: 'Compass',
       title: 'Conseil & Expertise',
       subtitle: 'Accompagnement global',
       description: 'Conseil stratégique et expertise technique pour optimiser vos projets de construction et d\'investissement.',
@@ -82,12 +82,41 @@ const Expertise = () => {
 
   const renderIcon = (iconName) => {
     const icons = {
-      Building2: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>,
-      Home: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>,
-      Factory: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.1-.9-2-2-2h-4l-2-2H8a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10z"></path><rect x="8" y="12" width="8" height="6" rx="1"></rect></svg>,
-      Palette: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="8" r="1"></circle><circle cx="12" cy="2" r="1"></circle><circle cx="6" cy="8" r="1"></circle><circle cx="6" cy="16" r="1"></circle><circle cx="12" cy="22" r="1"></circle><circle cx="18" cy="16" r="1"></circle></svg>,
-      Wrench: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>,
-      Shield: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      Skyscraper: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 22h18V10L12 2 3 10v12z" />
+          <path d="M9 22V12h6v10" />
+        </svg>
+      ),
+      Hammer: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 3L21 9l-3 3-6-6V3h3z" />
+          <path d="M3 21l9-9" />
+        </svg>
+      ),
+      Factory: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 21h18V8l-4 3V8l-4 3V8H3v13z" />
+        </svg>
+      ),
+      Brush: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 18a4 4 0 0 0 4 4h2v-4H2z" />
+          <path d="M22 2L11 13" />
+          <path d="M15 3h6v6" />
+        </svg>
+      ),
+      Tool: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3l1.6 1.6 3.8-3.8a6 6 0 0 1-7.9 7.9l-7 7a2 2 0 0 1-2.8-2.8l7-7a6 6 0 0 1 7.9-7.9l-3.8 3.8z" />
+        </svg>
+      ),
+      Compass: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="16 8 12 12 8 16 12 12" />
+        </svg>
+      )
     };
     return icons[iconName] || null;
   };
@@ -98,7 +127,7 @@ const Expertise = () => {
         {/* Header */}
         <div className={`expertise-header ${isVisible ? 'fade-in' : ''}`}>
           <div className="expertise-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="7" /></svg>
             <span>NOS EXPERTISES</span>
           </div>
           <h2 className="expertise-title">
@@ -128,7 +157,7 @@ const Expertise = () => {
                 <p className="expertise-card-desc">{item.description}</p>
                 <div className="expertise-more">
                   <span>En savoir plus</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
               </div>
             </div>
@@ -154,14 +183,14 @@ const Expertise = () => {
               <div className="expertise-features">
                 {expertises[activeExpertise].features.map((feature, idx) => (
                   <div key={idx} className="expertise-feature-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
               <button className="expertise-cta-btn">
                 <span>Demander un devis</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>
             </div>
             <div className="expertise-detail-image">

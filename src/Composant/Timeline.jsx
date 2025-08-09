@@ -173,7 +173,6 @@ const InteractiveTimeline = () => {
 
           <div className="itl-timeline-events">
             {events.map((event, index) => {
-              const isLeft = index % 2 === 0;
               const isActive = activeYear === index;
 
               return (

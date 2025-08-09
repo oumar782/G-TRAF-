@@ -8,70 +8,66 @@ const Certifications = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  // SVG Icons
+  // Icônes stylées et modernes
   const ShieldIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#1E40AF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <path d="M12 2L3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z" />
     </svg>
   );
 
   const AwardIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="8" r="7"></circle>
-      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <circle cx="12" cy="10" r="7" />
+      <path d="M9 15v6l3-3 3 3v-6" />
     </svg>
   );
 
   const LeafIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-      <line x1="16" y1="8" x2="2" y2="22"></line>
-      <line x1="17.5" y1="15" x2="9" y2="15"></line>
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <path d="M6 18s6-6 12-6c0 0-3 7-12 7z" />
+      <path d="M6 12s6 6 12 6" />
     </svg>
   );
 
   const UsersIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-      <circle cx="9" cy="7" r="4"></circle>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <circle cx="8" cy="7" r="4" />
+      <circle cx="17" cy="7" r="4" />
+      <path d="M3 21v-2a4 4 0 0 1 8 0v2" />
+      <path d="M13 21v-2a4 4 0 0 1 8 0v2" />
     </svg>
   );
 
   const CheckCircleIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M9 12l2 2 4-4" />
     </svg>
   );
 
   const StarIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#FBBF24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>
   );
 
   const ArrowRightIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="5" y1="12" x2="19" y2="12"></line>
-      <polyline points="12 5 19 12 12 19"></polyline>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#1E40AF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
     </svg>
   );
 
+  // Données certifs, partenaires & awards
   const certifications = [
     {
       icon: ShieldIcon,
@@ -79,7 +75,6 @@ const Certifications = () => {
       description: "Management de la qualité",
       details: "Certification internationale garantissant la qualité de nos processus et services",
       color: "blue",
-      bgColor: "blue",
       year: "2020"
     },
     {
@@ -88,7 +83,6 @@ const Certifications = () => {
       description: "Qualification professionnelle",
       details: "Reconnaissance officielle de notre expertise dans le BTP haut de gamme",
       color: "emerald",
-      bgColor: "emerald",
       year: "1998"
     },
     {
@@ -97,7 +91,6 @@ const Certifications = () => {
       description: "Reconnu Garant Environnement",
       details: "Spécialiste des travaux d'efficacité énergétique et énergies renouvelables",
       color: "green",
-      bgColor: "green",
       year: "2015"
     },
     {
@@ -106,7 +99,6 @@ const Certifications = () => {
       description: "Sécurité et prévention",
       details: "Engagement maximal pour la sécurité sur tous nos chantiers",
       color: "orange",
-      bgColor: "orange",
       year: "2010"
     }
   ];
@@ -167,7 +159,7 @@ const Certifications = () => {
 
   return (
     <section className={`certif-section ${isVisible ? 'visible' : ''}`} ref={ref}>
-      {/* Background Pattern */}
+      {/* Background effects */}
       <div className="certif-bg-effects">
         <div className="certif-bg-circle-1"></div>
         <div className="certif-bg-circle-2"></div>
@@ -189,7 +181,7 @@ const Certifications = () => {
           </p>
         </div>
 
-        {/* Certifications Grid */}
+        {/* Certifications */}
         <div className="certif-certifications">
           <div className={`certif-subheader ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '200ms' }}>
             <h3 className="certif-subtitle">Nos Certifications Qualité</h3>
@@ -199,11 +191,11 @@ const Certifications = () => {
           </div>
 
           <div className="certif-grid">
-            {certifications.map((cert, index) => (
+            {certifications.map((cert, i) => (
               <div
-                key={index}
+                key={i}
                 className={`certif-card certif-${cert.color} ${isVisible ? 'fade-in' : ''}`}
-                style={{ transitionDelay: `${index * 150 + 400}ms` }}
+                style={{ transitionDelay: `${i * 150 + 400}ms` }}
               >
                 <div className="certif-icon">
                   <cert.icon />
@@ -222,7 +214,7 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* Awards Section */}
+        {/* Awards */}
         <div className={`certif-awards ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '800ms' }}>
           <div className="certif-subheader">
             <h3 className="certif-subtitle">Prix & Distinctions</h3>
@@ -232,8 +224,8 @@ const Certifications = () => {
           </div>
 
           <div className="certif-awards-grid">
-            {awards.map((award, index) => (
-              <div key={index} className="certif-award-card">
+            {awards.map((award, i) => (
+              <div key={i} className="certif-award-card">
                 <div className="certif-award-header">
                   <div className="certif-award-icon">
                     <StarIcon />
@@ -250,7 +242,7 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* Partners Section */}
+        {/* Partners */}
         <div className={`certif-partners ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '1000ms' }}>
           <div className="certif-subheader">
             <h3 className="certif-subtitle">Nos Partenaires Stratégiques</h3>
@@ -261,8 +253,8 @@ const Certifications = () => {
 
           <div className="certif-partners-container">
             <div className="certif-partners-grid">
-              {partners.map((partner, index) => (
-                <div key={index} className="certif-partner-card">
+              {partners.map((partner, i) => (
+                <div key={i} className="certif-partner-card">
                   <div className="certif-partner-icon">
                     <span>{partner.name.charAt(0)}</span>
                   </div>
@@ -275,7 +267,7 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <div className={`certif-cta ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '1200ms' }}>
           <div className="certif-cta-box">
             <h3 className="certif-cta-title">Bénéficiez de notre expertise certifiée</h3>
