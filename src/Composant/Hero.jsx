@@ -9,7 +9,6 @@ import bg3 from '../assets/Image/P1035800.jpg';
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [displayText, setDisplayText] = useState('');
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const typingTimeoutRef = useRef(null);
 
@@ -28,12 +27,12 @@ const HeroSection = () => {
   const currentText = textsToType[currentTextIndex];
 
   const stats = [
-    { label: 'Projets réalisés', value: '500+', suffix: '' },
-    { label: 'Années d’expérience', value: '25+', suffix: '' },
-    { label: 'Satisfaction client', value: '99', suffix: '%' },
+    { label: 'Projets réalisés', value: '500+' },
+    { label: 'Années expérience', value: '25+' },
+    { label: 'Satisfaction client', value: '99%' },
   ];
 
-  // Effet machine à écrire
+  // Effet machine à écrire optimisé
   useEffect(() => {
     let currentIndex = 0;
     let isDeleting = false;
@@ -68,18 +67,9 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [currentText]);
 
-  // Slideshow + parallaxe
+  // Slideshow optimisé
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 300);
-
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
 
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
@@ -88,30 +78,33 @@ const HeroSection = () => {
     return () => {
       clearTimeout(timer);
       clearInterval(slideInterval);
-      window.removeEventListener('mousemove', handleMouseMove);
       if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
     };
   }, [backgroundImages.length]);
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="btp-hero">
-      {/* Background */}
+    <section className="btp-hero" id="A-propos">
+      {/* Background optimisé */}
       <div className="btp-hero__bg">
         {backgroundImages.map((img, index) => (
           <div
-            key={`bg-${index}`}
+            key={index}
             className={`btp-hero__slide ${index === currentSlide ? 'btp-hero__slide--active' : ''}`}
-            style={{
-              backgroundImage: `url(${img})`,
-              transform: `translate3d(${mousePosition.x * 20}px, ${mousePosition.y * 20}px, 0) scale(1.05)`
-            }}
+            style={{ backgroundImage: `url(${img})` }}
           />
         ))}
         <div className="btp-hero__overlay" />
       </div>
 
       {/* Contenu principal */}
-      <div className="btp-hero__main" id='A-propos'>
+      <div className="btp-hero__main">
         <div className="btp-hero__container">
           <div className={`btp-hero__content ${isVisible ? 'btp-hero__content--visible' : ''}`}>
             <div className="btp-hero__tag">
@@ -130,50 +123,33 @@ const HeroSection = () => {
 
             <p className="btp-hero__subheading">
               G-TRAF+ est une entreprise dynamique spécialisée dans la{' '}
-              <span className="btp-hero__highlighted">construction, l’aménagement d’infrastructures et la fourniture de matériel professionnel</span>.
-              Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation,
-              dans le respect des normes, des délais et de l’environnement.
+              <span className="btp-hero__highlighted">construction, l'aménagement d'infrastructures et la fourniture de matériel professionnel</span>.
+              Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation.
             </p>
 
             <div className="btp-hero__actions">
-            <button
-  className="btp-hero__btn btp-hero__btn--primary"
-  onClick={() => {
-    const section = document.getElementById('Notre-mission');
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
-  }}
-  style={{
-    backgroundColor: 'skyblue',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '25px',
-    padding: '10px 20px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease'
-  }}
->
-  Nous Découvrir
-  <span className="btp-hero__icon btp-hero__icon--arrow"></span>
-</button>
-
-</div>
-
+              <button
+                className="btp-hero__btn btp-hero__btn--primary"
+                onClick={() => scrollToSection('Notre-mission')}
+              >
+                Nous Découvrir
+                <span className="btp-hero__icon btp-hero__icon--arrow"></span>
+              </button>
+            </div>
 
             <div className="btp-hero__metrics">
               {stats.map((stat, index) => (
-                <div key={`stat-${index}`} className="btp-hero__metric">
-                  <div className="btp-hero__metric-value">
-                    {stat.value}<span>{stat.suffix}</span>
-                  </div>
+                <div key={index} className="btp-hero__metric">
+                  <div className="btp-hero__metric-value">{stat.value}</div>
                   <div className="btp-hero__metric-label">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Cartes flottantes */}
+          {/* Cartes flottantes optimisées */}
           <div className={`btp-hero__cards ${isVisible ? 'btp-hero__cards--visible' : ''}`}>
-            <div className="btp-hero__card btp-hero__card--project">
+            <div className="btp-hero__card btp-hero__card--mission">
               <div className="btp-hero__card-header">
                 <span className="btp-hero__indicator"></span>
                 <span>MISSION</span>
@@ -183,14 +159,12 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="btp-hero__card btp-hero__card--innovation">
+            <div className="btp-hero__card btp-hero__card--vision">
               <div className="btp-hero__card-title">VISION</div>
               <p className="btp-hero__card-desc">
                 Construire une Guinée moderne et durable, grâce à des projets structurants et respectueux des normes.
               </p>
             </div>
-
-           
           </div>
         </div>
       </div>
