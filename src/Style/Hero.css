@@ -442,16 +442,14 @@ text-align: center;                   /* Texte centré */
 .btp-hero__card--project {
     border-left: 4px solid var(--btp-highlight);
     margin-left: -200px;
-    margin-top: 20px;
+    margin-top: 65px;
 }
 .btp-hero__card--innovation {
     border-left: 4px solid var(--btp-electric);
+    margin-top:-36px;
+
 }
-.btp-hero__card--award {
-    border-left: 4px solid var(--btp-neon);
-    margin-left: -200px;
-    margin-top: 40px;
-}
+
 .btp-hero__card-header {
     display: flex;
     align-items: center;

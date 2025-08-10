@@ -136,11 +136,28 @@ const HeroSection = () => {
             </p>
 
             <div className="btp-hero__actions">
-              <button className="btp-hero__btn btp-hero__btn--primary">
-                Découvrir nos services
-                <span className="btp-hero__icon btp-hero__icon--arrow"></span>
-              </button>
-            </div>
+            <button
+  className="btp-hero__btn btp-hero__btn--primary"
+  onClick={() => {
+    const section = document.getElementById('Notre-mission');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }}
+  style={{
+    backgroundColor: 'skyblue',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '25px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease'
+  }}
+>
+  Nous Découvrir
+  <span className="btp-hero__icon btp-hero__icon--arrow"></span>
+</button>
+
+</div>
+
 
             <div className="btp-hero__metrics">
               {stats.map((stat, index) => (
