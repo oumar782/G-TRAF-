@@ -104,10 +104,17 @@ const Histoire = () => {
               </div>
             </div>
 
-            <button className={`about-button ${isVisible ? 'about-button-animate' : ''}`}>
-              <span>Découvrir nos réalisations</span>
-              <ArrowRight className="about-button-icon" />
-            </button>
+            <button
+  className={`about-button ${isVisible ? 'about-button-animate' : ''}`}
+  onClick={() => {
+    const section = document.getElementById('Nos-Réalisations');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }}
+>
+  <span>Découvrir nos réalisations</span>
+  <ArrowRight className="about-button-icon" />
+</button>
+
           </div>
 
           {/* Visual */}
