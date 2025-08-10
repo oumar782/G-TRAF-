@@ -118,7 +118,7 @@ const Project360Gallery = () => {
   };
 
   return (
-    <section ref={sectionRef} className="project360-section">
+    <section ref={sectionRef} className="project360-section" id='Nos-Réalisations'>
       <div className="project360-container">
         {/* Header */}
         <div className={`project360-header ${isVisible ? 'visible' : ''}`}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Expertise.css';
 
-// Import des images
+// Import images
 import constructionImage from '../assets/Image/P1035972.jpg';
 import industrielImage from '../assets/Image/P1035861.jpg';
 import designImage from '../assets/Image/P1035841.jpg';
@@ -12,27 +12,20 @@ const Expertise = () => {
   const [activeExpertise, setActiveExpertise] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const ref = useRef(null); // Déclaration de la ref manquante
+  const ref = useRef(null);
   const modalRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    }, { threshold: 0.1 });
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  // Fermer le modal en cliquant à l'extérieur
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -56,56 +49,56 @@ const Expertise = () => {
   const expertises = [
     {
       icon: 'Skyscraper',
-      title: 'Construction Neuve',
-      subtitle: 'Édifices d\'exception',
-      description: 'Conception et réalisation de bâtiments prestigieux, du résidentiel haut de gamme aux complexes commerciaux d\'envergure.',
+      title: 'Construction Signature',
+      subtitle: 'Des projets qui redéfinissent le skyline',
+      description: 'De la tour élégante au complexe futuriste, nous bâtissons des structures iconiques qui marquent leur époque.',
       image: constructionImage,
-      features: ['Architecture sur-mesure', 'Matériaux premium', 'Technologies avancées', 'Finitions luxueuses'],
+      features: ['Design architectural unique', 'Normes HQE et durabilité', 'Intégration smart building', 'Finitions haut de gamme'],
       color: 'blue'
     },
     {
       icon: 'Hammer',
       title: 'Rénovation Prestige',
-      subtitle: 'Renaissance architecturale',
-      description: 'Transformation et modernisation de propriétés d\'exception, préservant le caractère tout en intégrant le confort moderne.',
+      subtitle: 'L’alliance du cachet et du confort moderne',
+      description: 'Nous insufflons une seconde vie à vos espaces en respectant leur histoire tout en y intégrant l’innovation.',
       image: constructionImage,
-      features: ['Restauration patrimoniale', 'Modernisation énergétique', 'Design contemporain', 'Respect du cachet'],
+      features: ['Restauration patrimoniale', 'Performance énergétique optimisée', 'Matériaux nobles', 'Respect du style d’origine'],
       color: 'emerald'
     },
     {
       icon: 'Factory',
-      title: 'Projets Industriels',
-      subtitle: 'Infrastructure moderne',
-      description: 'Réalisation d\'infrastructures industrielles et logistiques intégrant les dernières innovations technologiques.',
+      title: 'Infrastructures Industrielles',
+      subtitle: 'Efficacité, sécurité et innovation',
+      description: 'Des installations pensées pour la performance, alliant technologies de pointe et normes internationales.',
       image: industrielImage,
-      features: ['Automatisation avancée', 'Efficacité énergétique', 'Normes environnementales', 'Sécurité renforcée'],
+      features: ['Automatisation et IA', 'Conception modulaire', 'Basse consommation énergétique', 'Sécurité renforcée'],
       color: 'purple'
     },
     {
       icon: 'Brush',
-      title: 'Design Intérieur',
-      subtitle: 'Espaces sur-mesure',
-      description: 'Création d\'ambiances uniques et d\'aménagements personnalisés pour des intérieurs d\'exception.',
+      title: 'Design d’Intérieur',
+      subtitle: 'Chaque détail compte',
+      description: 'Création d’environnements sur mesure qui reflètent votre identité et maximisent le confort.',
       image: designImage,
-      features: ['Mobilier sur-mesure', 'Éclairage d\'ambiance', 'Matériaux nobles', 'Ergonomie optimale'],
+      features: ['Éclairage sur mesure', 'Matériaux premium', 'Mobilier exclusif', 'Harmonie des espaces'],
       color: 'rose'
     },
     {
       icon: 'Tool',
       title: 'Maintenance Premium',
-      subtitle: 'Service d\'excellence',
-      description: 'Maintenance préventive et curative de vos installations avec un service client dédié disponible 24h/24.',
+      subtitle: 'Toujours opérationnel, toujours impeccable',
+      description: 'Un suivi proactif et réactif pour garantir la longévité et la performance de vos installations.',
       image: maintenanceImage,
-      features: ['Intervention rapide', 'Pièces d\'origine', 'Garantie étendue', 'Suivi personnalisé'],
+      features: ['Assistance 24/7', 'Techniciens experts', 'Pièces certifiées', 'Suivi digitalisé'],
       color: 'orange'
     },
     {
       icon: 'Compass',
-      title: 'Conseil & Expertise',
-      subtitle: 'Accompagnement global',
-      description: 'Conseil stratégique et expertise technique pour optimiser vos projets de construction et d\'investissement.',
+      title: 'Conseil & Stratégie',
+      subtitle: 'Vision, planification, succès',
+      description: 'Nous vous guidons de l’idée à la réalisation avec une expertise technique et stratégique éprouvée.',
       image: conseilImage,
-      features: ['Étude de faisabilité', 'Optimisation budgétaire', 'Gestion de projet', 'Suivi réglementaire'],
+      features: ['Études de faisabilité', 'Optimisation budgétaire', 'Gestion de projet clé en main', 'Veille réglementaire'],
       color: 'amber'
     }
   ];
@@ -156,14 +149,12 @@ const Expertise = () => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  const closeModal = () => setShowModal(false);
 
   return (
-    <section id="expertise" className={`expertise-section ${isVisible ? 'visible' : ''}`} ref={ref}>
+    <section id="Nos-expertises" className={`expertise-section ${isVisible ? 'visible' : ''}`} ref={ref}>
       <div className="expertise-container">
-        {/* Header */}
+        
         <div className={`expertise-header ${isVisible ? 'fade-in' : ''}`}>
           <div className="expertise-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="7" /></svg>
@@ -173,12 +164,10 @@ const Expertise = () => {
             Maîtrise <span className="highlight">Absolue</span>
           </h2>
           <p className="expertise-description">
-            Six domaines d'excellence où notre savoir-faire s'exprime pleinement, 
-            de la conception à la réalisation de vos projets les plus ambitieux.
+            Nos 6 piliers d’excellence couvrent l’intégralité du cycle de vie d’un projet, du croquis initial à la performance sur le long terme.
           </p>
         </div>
 
-        {/* Expertise Grid */}
         <div className="expertise-grid">
           {expertises.map((item, index) => (
             <div
@@ -203,7 +192,6 @@ const Expertise = () => {
           ))}
         </div>
 
-        {/* Modal */}
         {showModal && (
           <div className="expertise-modal">
             <div className="expertise-modal-overlay"></div>
@@ -214,7 +202,6 @@ const Expertise = () => {
                     <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                   </svg>
                 </button>
-                
                 <div className="expertise-modal-grid">
                   <div className="expertise-modal-media">
                     <img 
@@ -228,21 +215,12 @@ const Expertise = () => {
                       </div>
                     </div>
                   </div>
-                  
                   <div className="expertise-modal-body">
                     <div className="expertise-modal-header">
-                      <h3 className="expertise-modal-title">
-                        {expertises[activeExpertise].title}
-                      </h3>
-                      <p className="expertise-modal-subtitle">
-                        {expertises[activeExpertise].subtitle}
-                      </p>
+                      <h3 className="expertise-modal-title">{expertises[activeExpertise].title}</h3>
+                      <p className="expertise-modal-subtitle">{expertises[activeExpertise].subtitle}</p>
                     </div>
-                    
-                    <p className="expertise-modal-description">
-                      {expertises[activeExpertise].description}
-                    </p>
-                    
+                    <p className="expertise-modal-description">{expertises[activeExpertise].description}</p>
                     <div className="expertise-modal-features">
                       <h4 className="features-title">Nos engagements</h4>
                       <ul className="features-list">
@@ -258,7 +236,6 @@ const Expertise = () => {
                         ))}
                       </ul>
                     </div>
-                    
                     <div className="expertise-modal-actions">
                       <button className="expertise-modal-cta-btn primary">
                         <span>Demander un devis</span>

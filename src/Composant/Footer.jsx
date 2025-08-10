@@ -1,22 +1,24 @@
 import React from 'react';
 import '../Style/Footer.css';
+import Logo from '../assets/Image/gt.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    'Construction sur mesure',
-    'Rénovation haut de gamme',
-    'Extensions architecturales',
-    'Aménagements professionnels',
-    'Expertise & conseil technique'
+    'Travaux de génie civil et rural',
+    'Aménagement de pistes et voiries urbaines',
+    'Terrassement et assainissement',
+    'Aménagement hydro-agricole',
+    'Fourniture de matériel professionnel',
+    'Location de matériel BTP et transport minier',
+    'Décoration d’intérieur et aménagement d’espaces'
   ];
 
   const quickLinks = [
     { name: 'À propos', href: '#about' },
     { name: 'Nos réalisations', href: '#projects' },
     { name: 'Services', href: '#services' },
-    { name: 'Témoignages', href: '#testimonials' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -34,16 +36,6 @@ const Footer = () => {
     { name: 'Twitter', icon: 'Twitter', href: '#' }
   ];
 
-  // Nouveau logo SVG premium
-  const LogoIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64" fill="none">
-      <rect width="64" height="64" rx="12" fill="#1A1A1A"/>
-      <path d="M12 46L32 14L52 46H42L32 30L22 46H12Z" fill="#FFD700"/>
-      <path d="M24 46H40V50H24V46Z" fill="#FFD700"/>
-    </svg>
-  );
-
-  // Icônes modernisées
   const MapPinIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -112,36 +104,38 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-col">
             <div className="footer-logo">
-              <LogoIcon />
+              <img src={Logo} alt="G-TRAF+ Logo" className="logo-img" />
               <div>
-                <h3 className="footer-logo-title">ConstructLux</h3>
-                <p className="footer-logo-subtitle">Excellence & Innovation</p>
+                <h3 className="footer-logo-title">G-TRAF+</h3>
+                <p className="footer-logo-subtitle">Expertise & Solutions durables</p>
               </div>
             </div>
 
             <p className="footer-description">
-              Depuis 1999, ConstructLux réalise des projets d’exception alliant savoir-faire artisanal,
-              innovation technologique et respect des délais, pour une clientèle exigeante.
+              G-TRAF+ est une entreprise dynamique et pluridisciplinaire spécialisée dans les travaux de construction, 
+              l’aménagement d’infrastructures et la fourniture de matériel professionnel. 
+              Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation, 
+              dans le respect des normes, des délais et de l’environnement.
             </p>
 
             <div className="footer-contact">
               <div className="footer-contact-item">
                 <MapPinIcon />
-                <span>123 Avenue de la Grande Armée, 75017 Paris</span>
+                <span>Conakry, Guinée</span>
               </div>
               <div className="footer-contact-item">
                 <PhoneIcon />
-                <span>01 23 45 67 89</span>
+                <span>+224 621015699</span>
               </div>
               <div className="footer-contact-item">
                 <MailIcon />
-                <span>contact@constructlux.fr</span>
+                <span>Contact@gtrafplus.com</span>
               </div>
             </div>
           </div>
 
           <div className="footer-col">
-            <h4 className="footer-col-title">Nos Services</h4>
+            <h4 className="footer-col-title">Nos Domaines</h4>
             <ul className="footer-links">
               {services.map((service, index) => (
                 <li key={index}>
@@ -164,23 +158,14 @@ const Footer = () => {
 
           <div className="footer-col">
             <h4 className="footer-col-title">Suivez-nous</h4>
-            <p className="footer-social-desc">
-              Découvrez nos dernières réalisations et inspirations.
-            </p>
+            <p className="footer-social-desc">Suivez nos projets et réalisations.</p>
             <div className="footer-social-links">
               {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="footer-social-link"
-                  aria-label={social.name}
-                >
+                <a key={index} href={social.href} className="footer-social-link" aria-label={social.name}>
                   {renderIcon(social.icon)}
                 </a>
               ))}
             </div>
-
-          
           </div>
         </div>
       </div>
@@ -189,27 +174,25 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              © {currentYear} ConstructLux. Tous droits réservés. | 
-              <span> Certifié RGE & Qualibat</span>
+              © {currentYear} G-TRAF+. Tous droits réservés. | 
+              <span> Qualité & Sécurité garanties</span>
             </div>
             <div className="footer-legal-links">
               {legalLinks.map((link, index) => (
-                <a key={index} href={link.href} className="footer-legal-link">
-                  {link.name}
-                </a>
+                <a key={index} href={link.href} className="footer-legal-link">{link.name}</a>
               ))}
             </div>
           </div>
 
           <div className="footer-additional-info">
             <div className="footer-info-item">
-              <strong>SIRET:</strong> 123 456 789 00012
+              <strong>Mission:</strong> Offrir des solutions durables et efficaces.
             </div>
             <div className="footer-info-item">
-              <strong>Assurance décennale:</strong> AXA Pro BTP
+              <strong>Vision:</strong> Construire une Guinée moderne et durable.
             </div>
             <div className="footer-info-item">
-              <strong>Garantie financière:</strong> BNP Paribas
+              <strong>Valeurs:</strong> Fiabilité, Réactivité, Satisfaction client.
             </div>
           </div>
         </div>

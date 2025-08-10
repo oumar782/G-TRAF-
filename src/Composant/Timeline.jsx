@@ -146,7 +146,7 @@ const InteractiveTimeline = () => {
   );
 
   return (
-    <section ref={timelineRef} className={`itl-timeline-section ${isVisible ? 'itl-visible' : ''}`}>
+    <section ref={timelineRef}id='Nos-parcours' className={`itl-timeline-section ${isVisible ? 'itl-visible' : ''}`}>
       <div className="itl-floating-bg itl-bg-1"></div>
       <div className="itl-floating-bg itl-bg-2"></div>
       <div className="itl-floating-bg itl-bg-3"></div>

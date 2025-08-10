@@ -4,6 +4,28 @@
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: auto;
+    display: block;
+  }
+  
+  .footer-logo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .footer-logo-subtitle {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
   
   .footer-container {
     max-width: 1400px;
@@ -35,7 +57,7 @@
   .footer-logo-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    background: linear-gradient(135deg, #0bf5da, #013230);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -80,10 +102,10 @@
   }
   
   .footer-contact-item svg {
-    color: #fbbf24;
+    color: #92d4d4;
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 25px;
     margin-top: 3px;
   }
   

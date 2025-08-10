@@ -46,7 +46,7 @@ const Histoire = () => {
   ];
 
   return (
-    <section id="about" className="about-section" ref={ref}>
+    <section id="Notre-mission" className="about-section" ref={ref}>
       <div className="about-pattern"></div>
 
       <div className="about-container">

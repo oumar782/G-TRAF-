@@ -111,7 +111,7 @@ const HeroSection = () => {
       </div>
 
       {/* Contenu principal */}
-      <div className="btp-hero__main">
+      <div className="btp-hero__main" id='A-propos'>
         <div className="btp-hero__container">
           <div className={`btp-hero__content ${isVisible ? 'btp-hero__content--visible' : ''}`}>
             <div className="btp-hero__tag">
@@ -136,10 +136,14 @@ const HeroSection = () => {
             </p>
 
             <div className="btp-hero__actions">
-              <button className="btp-hero__btn btp-hero__btn--primary">
-                Découvrir nos services
-                <span className="btp-hero__icon btp-hero__icon--arrow"></span>
-              </button>
+            <button
+  className="btp-hero__btn btp-hero__btn--primary"
+  onClick={() => document.getElementById("Notre-mission")?.scrollIntoView({ behavior: "smooth" })}
+>
+  Nous Découvrir 
+  <span className="btp-hero__icon btp-hero__icon--arrow"></span>
+</button>
+
             </div>
 
             <div className="btp-hero__metrics">
