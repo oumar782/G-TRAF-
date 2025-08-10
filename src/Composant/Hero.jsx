@@ -136,14 +136,10 @@ const HeroSection = () => {
             </p>
 
             <div className="btp-hero__actions">
-            <button
-  className="btp-hero__btn btp-hero__btn--primary"
-  onClick={() => document.getElementById("Notre-mission")?.scrollIntoView({ behavior: "smooth" })}
->
-  Nous Découvrir 
-  <span className="btp-hero__icon btp-hero__icon--arrow"></span>
-</button>
-
+              <button className="btp-hero__btn btp-hero__btn--primary">
+                Découvrir nos services
+                <span className="btp-hero__icon btp-hero__icon--arrow"></span>
+              </button>
             </div>
 
             <div className="btp-hero__metrics">
@@ -177,11 +173,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="btp-hero__card btp-hero__card--award">
-              <div className="btp-hero__trophy">🏆</div>
-              <div className="btp-hero__award-name">ENGAGEMENTS</div>
-              <div className="btp-hero__award-year">Qualité • Sécurité • Satisfaction client</div>
-            </div>
+           
           </div>
         </div>
       </div>
