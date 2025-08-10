@@ -12,7 +12,7 @@ import Certif from './Composant/Certificat.jsx';
 import Contact from './Composant/Contact.jsx';
 import Footer from './Composant/Footer.jsx';
 
-const GA_TRACKING_ID = "GTM-KT43BVVV";
+const GA_TRACKING_ID = "G-ELTZL6VJ5L";
 
 const TrackPageView = () => {
   const location = useLocation();
