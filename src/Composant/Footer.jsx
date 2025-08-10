@@ -16,10 +16,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'À propos', href: '#about' },
-    { name: 'Nos réalisations', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Accueil', href: '#A-propos' },
+    { name: 'Nos réalisations', href: '#Nos-Réalisations' },
+    { name: 'Nos Expertises', href: '#Nos-expertises' },
+    { name: 'Notre parcours', href: '#Nos-parcours' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const legalLinks = [
