@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, Eye, Award, Shield, Users2, Wrench, ArrowRight } from 'lucide-react';
 import '../Style/Histoire.css';
-import imageEquipe from '../assets/Image/P1035866.jpg'; // ✅ import direct de l'image
+import imageEquipe from '../assets/Image/P1035866.webp'; // ✅ import direct de l'image
 
 const Histoire = () => {
   const [isVisible, setIsVisible] = useState(false);

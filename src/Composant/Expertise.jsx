@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Expertise.css';
 
 // Import images
-import constructionImage from '../assets/Image/P1035972.jpg';
-import industrielImage from '../assets/Image/P1035861.jpg';
-import designImage from '../assets/Image/P1035841.jpg';
-import maintenanceImage from '../assets/Image/P1035825.jpg';
-import conseilImage from '../assets/Image/P1035799.jpg';
+import constructionImage from '../assets/Image/P1035972.webp';
+import industrielImage from '../assets/Image/P1035861.webp';
+import designImage from '../assets/Image/P1035841.webp';
+import maintenanceImage from '../assets/Image/P1035825.webp';
+import conseilImage from '../assets/Image/P1035799.webp';
 
 const Expertise = () => {
   const [activeExpertise, setActiveExpertise] = useState(0);

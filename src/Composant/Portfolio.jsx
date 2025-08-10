@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../Style/Portfolio.css';
 
-import project1 from '../assets/Image/P1035850.jpg';
-import project2 from '../assets/Image/P1035851.jpg';
-import project3 from '../assets/Image/P1035852.jpg';
+import project1 from '../assets/Image/P1035850.webp';
+import project2 from '../assets/Image/P1035851.webp';
+import project3 from '../assets/Image/P1035852.webp';
 
 const Project360Gallery = () => {
   const [activeProject, setActiveProject] = useState(0);

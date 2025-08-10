@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Hero.css';
 
 // Import des images
-import bg1 from '../assets/Image/P1035980.jpg';
-import bg2 from '../assets/Image/P1035799.jpg';
-import bg3 from '../assets/Image/P1035800.jpg';
+import bg1 from '../assets/Image/P1035980.webp';
+import bg2 from '../assets/Image/P1035799.webp';
+import bg3 from '../assets/Image/P1035800.webp';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -122,7 +122,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="btp-hero__subheading">
-              G-TRAF+ est une entreprise dynamique spécialisée dans la{' '}
+            <span className="btp-hero__highlighted">G-TRAF+</span> est une entreprise dynamique spécialisée dans la{' '}
               <span className="btp-hero__highlighted">construction, l'aménagement d'infrastructures et la fourniture de matériel professionnel</span>.
               Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation.
             </p>

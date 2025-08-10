@@ -211,7 +211,7 @@
   
   /* ===== SOUS-TITRE ===== */
   .btp-hero__subheading {
-    font-size: var(--btp-text-base);
+    font-size: 15px;;
     max-width: clamp(280px, 75vw, 700px);
     line-height: clamp(1.4, 1.6, 1.7);
     margin: 0 auto var(--btp-space-lg);
