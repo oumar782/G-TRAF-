@@ -9,7 +9,7 @@
   --accent-foreground: #000000;
   --border: rgba(255, 255, 255, 0.1);
   --glass-bg: rgba(15, 15, 25, 0.5);
-  --header-height: 70px;
+  --header-height: 65px;
   --transition-duration: 0.3s;
 }
 
@@ -30,9 +30,9 @@
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 .header-content {
@@ -41,14 +41,15 @@
   justify-content: space-between;
   height: var(--header-height);
   position: relative;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* Logo Styles */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   min-width: max-content;
   z-index: 10;
@@ -57,8 +58,9 @@
 
 .logo-icon-container {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
 }
 
 .logo-image {
@@ -66,7 +68,7 @@
   height: 100%;
   object-fit: contain;
   transition: all 0.3s ease;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .logo-container:hover .logo-image {
@@ -76,7 +78,7 @@
 .logo-glow-effect {
   position: absolute;
   inset: 0;
-  border-radius: 6px;
+  border-radius: 4px;
   opacity: 0.5;
   animation: glow 2s infinite alternate;
   pointer-events: none;
@@ -85,47 +87,53 @@
 .logo-text {
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  min-width: max-content;
 }
 
 .logo-title {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 900;
   color: var(--foreground);
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
   margin: 0;
   white-space: nowrap;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .logo-subtitle {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: 600;
   color: var(--electric);
   margin: 0;
   animation: shimmer 3s infinite;
   white-space: nowrap;
+  line-height: 1;
 }
 
-/* Desktop Navigation */
+/* Navigation Styles */
 .desktop-nav {
   display: none;
   align-items: center;
-  gap: 12px;
-  margin: 0 8px;
+  gap: 6px;
+  margin: 0 4px;
   flex: 1;
   justify-content: center;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .nav-link {
   position: relative;
   color: var(--foreground);
   font-weight: 600;
-  padding: 6px 8px;
+  padding: 4px 6px;
   text-decoration: none;
   transition: all var(--transition-duration) ease;
   animation: fade-in 0.5s ease both;
   white-space: nowrap;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .nav-link:hover {
@@ -150,7 +158,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 240, 255, 0.05);
-  border-radius: 6px;
+  border-radius: 4px;
   transform: scale(0);
   transition: transform var(--transition-duration) ease;
   z-index: -1;
@@ -164,30 +172,34 @@
 .contact-cta-container {
   display: none;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .contact-info {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
+  flex-wrap: wrap;
 }
 
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   color: var(--muted-foreground);
   text-decoration: none;
   transition: color var(--transition-duration) ease;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 4px 6px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   white-space: nowrap;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  flex-shrink: 0;
 }
 
 .contact-link:hover {
@@ -195,8 +207,8 @@
 }
 
 .contact-icon {
-  height: 12px;
-  width: 12px;
+  height: 10px;
+  width: 10px;
   flex-shrink: 0;
 }
 
@@ -208,8 +220,8 @@
   background: var(--gradient-accent);
   color: var(--foreground);
   font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
   display: flex;
@@ -220,7 +232,8 @@
   border: 1px solid var(--electric);
   box-shadow: 0 0 15px rgba(255, 0, 230, 0.3);
   white-space: nowrap;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  flex-shrink: 0;
 }
 
 .cta-button:hover {
@@ -245,9 +258,9 @@
 }
 
 .cta-icon {
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
+  height: 10px;
+  width: 10px;
+  margin-right: 3px;
   flex-shrink: 0;
 }
 
@@ -258,11 +271,11 @@
 /* Mobile Menu Button */
 .mobile-menu-button {
   display: flex;
-  padding: 8px;
+  padding: 6px;
   color: var(--foreground);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all var(--transition-duration) ease;
@@ -276,8 +289,8 @@
 }
 
 .menu-icon {
-  height: 18px;
-  width: 18px;
+  height: 16px;
+  width: 16px;
 }
 
 /* Mobile Menu */
@@ -392,21 +405,13 @@
 
 /* Animations */
 @keyframes glow {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.7;
-  }
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
 }
 
 @keyframes shimmer {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes fade-in {
@@ -431,10 +436,131 @@
   }
 }
 
-/* Responsive Styles */
+/* BREAKPOINTS ULTRA-RESPONSIFS */
+
+/* 320px - Écrans très petits */
+@media (min-width: 320px) {
+  .header-container {
+    padding: 0 10px;
+  }
+  
+  .logo-icon-container {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-title {
+    font-size: 0.85rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.45rem;
+  }
+}
+
+/* 360px - Petits écrans */
+@media (min-width: 360px) {
+  .header-container {
+    padding: 0 14px;
+  }
+  
+  .logo-icon-container {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .logo-title {
+    font-size: 1rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.55rem;
+  }
+}
+
+/* 400px - Écrans mobiles moyens */
+@media (min-width: 400px) {
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .logo-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-text {
+    display: inline;
+  }
+}
+
+/* 480px - Écrans mobiles larges */
 @media (min-width: 480px) {
+  :root {
+    --header-height: 70px;
+  }
+  
+  .logo-icon-container {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .logo-title {
+    font-size: 1.1rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.6rem;
+  }
+  
+  .cta-text {
+    display: inline;
+  }
+  
+  .cta-button {
+    padding: 7px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* 640px - Tablettes portrait */
+@media (min-width: 640px) {
+  .header-content {
+    gap: 10px;
+  }
+  
+  .contact-cta-container {
+    gap: 6px;
+  }
+  
+  .contact-info {
+    gap: 4px;
+  }
+  
+  .contact-link {
+    padding: 5px 7px;
+    font-size: 0.7rem;
+  }
+  
+  .cta-button {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 768px - Tablettes et petits laptops */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 75px;
+  }
+  
   .header-container {
     padding: 0 20px;
+  }
+  
+  .header-content {
+    gap: 12px;
+    flex-wrap: nowrap;
   }
   
   .logo-icon-container {
@@ -450,45 +576,108 @@
     font-size: 0.65rem;
   }
   
-  .contact-text {
-    display: inline;
+  .mobile-menu {
+    display: none;
   }
   
-  .cta-text {
-    display: inline;
+  .desktop-nav {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 5px 7px;
+  }
+  
+  .contact-cta-container {
+    display: flex;
+  }
+  
+  .mobile-menu-button {
+    display: none;
   }
 }
 
-@media (min-width: 640px) {
+/* Optimisation pour les tablettes en mode paysage */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktop-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    font-size: 0.7rem;
+    padding: 4px 5px;
+  }
+  
+  .contact-cta-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .contact-info {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .contact-link {
+    padding: 3px 5px;
+    font-size: 0.6rem;
+  }
+  
+  .cta-button {
+    padding: 5px 8px;
+    font-size: 0.65rem;
+  }
+}
+
+/* 900px - Écrans moyens */
+@media (min-width: 900px) {
+  .header-content {
+    gap: 14px;
+  }
+  
+  .desktop-nav {
+    gap: 10px;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+  
+  .contact-cta-container {
+    gap: 8px;
+    flex-direction: row;
+  }
+  
+  .contact-link {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+  
+  .cta-button {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 1024px - Laptops standards */
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+  
   .header-content {
     gap: 16px;
   }
   
-  .contact-cta-container {
-    gap: 12px;
-  }
-  
-  .contact-info {
+  .logo-container {
     gap: 8px;
   }
-  
-  .contact-link {
-    padding: 8px 10px;
-    font-size: 0.8rem;
-  }
-  
-  .cta-button {
-    padding: 10px 16px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .header-container {
-    padding: 0 24px;
-  }
-  
-  --header-height: 75px;
   
   .logo-icon-container {
     width: 55px;
@@ -503,34 +692,75 @@
     font-size: 0.7rem;
   }
   
-  .mobile-menu {
-    display: none;
-  }
-  
   .desktop-nav {
-    display: flex;
-    gap: 16px;
+    gap: 12px;
   }
   
   .nav-link {
     font-size: 0.9rem;
-    padding: 8px 10px;
+    padding: 7px 10px;
   }
   
   .contact-cta-container {
-    display: flex;
+    gap: 10px;
   }
   
-  .mobile-menu-button {
-    display: none;
+  .contact-link {
+    font-size: 0.8rem;
+    padding: 7px 10px;
+  }
+  
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 9px 14px;
   }
 }
 
-@media (min-width: 1024px) {
-  :root {
-    --header-height: 80px;
+/* 1200px - Écrans larges */
+@media (min-width: 1200px) {
+  .header-content {
+    gap: 18px;
   }
   
+  .logo-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo-title {
+    font-size: 1.4rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .desktop-nav {
+    gap: 14px;
+  }
+  
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 8px 11px;
+  }
+  
+  .contact-cta-container {
+    gap: 12px;
+  }
+  
+  .contact-link {
+    font-size: 0.85rem;
+    padding: 8px 11px;
+  }
+  
+  .cta-button {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
+
+/* 1400px - Très grands écrans */
+@media (min-width: 1400px) {
   .header-content {
     gap: 20px;
   }
@@ -545,19 +775,15 @@
   }
   
   .logo-title {
-    font-size: 1.4rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
   }
   
   .desktop-nav {
-    gap: 18px;
+    gap: 16px;
   }
   
   .nav-link {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 8px 12px;
   }
   
@@ -566,63 +792,92 @@
   }
   
   .contact-link {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 8px 12px;
   }
   
   .cta-button {
-    font-size: 0.85rem;
-    padding: 10px 18px;
+    padding: 11px 18px;
+    font-size: 0.9rem;
   }
 }
 
-@media (min-width: 1280px) {
-  .logo-icon-container {
-    width: 75px;
-    height: 75px;
-  }
-  
-  .logo-title {
-    font-size: 1.5rem;
-  }
-  
+/* 1600px+ - Écrans ultra-larges */
+@media (min-width: 1600px) {
   .header-content {
     gap: 24px;
   }
   
-  .desktop-nav {
-    gap: 20px;
+  .logo-icon-container {
+    width: 70px;
+    height: 70px;
   }
   
-  .nav-link {
-    font-size: 1rem;
+  .desktop-nav {
+    gap: 18px;
   }
   
   .contact-cta-container {
     gap: 16px;
   }
   
-  .contact-link {
-    font-size: 0.9rem;
-  }
-  
   .cta-button {
     padding: 12px 20px;
-    font-size: 0.9rem;
   }
 }
 
-@media (min-width: 1536px) {
+/* 2000px+ - Écrans 4K et plus */
+@media (min-width: 2000px) {
+  .header-container {
+    max-width: 2000px;
+  }
+  
   .logo-icon-container {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
   }
   
-  .desktop-nav {
-    gap: 24px;
+  .logo-title {
+    font-size: 1.8rem;
   }
   
-  .contact-cta-container {
-    gap: 18px;
+  .logo-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+  
+  .contact-link {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
+  
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 15px 25px;
+  }
+}
+
+/* Correction pour les écrans paysage mobiles */
+@media (max-width: 900px) and (orientation: landscape) {
+  :root {
+    --header-height: 60px;
+  }
+  
+  .mobile-menu {
+    top: var(--header-height);
+    padding-bottom: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--header-height));
+  }
+  
+  .mobile-nav-link, 
+  .mobile-contact-link,
+  .mobile-cta-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }

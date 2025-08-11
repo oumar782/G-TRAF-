@@ -1,0 +1,415 @@
+.elegance-section {
+    padding: 120px 40px;
+    background: 
+    radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .elegance-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+    radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
+    opacity: 0.03;
+    z-index: 0;
+  }
+
+  .elegance-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .elegance-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: apparition 0.8s ease-out;
+  }
+
+  .elegance-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #f9f9f8;
+    text-transform: uppercase;
+    background: rgba(2, 35, 50, 0.902);
+    backdrop-filter: blur(5px);
+  }
+
+  .badge-icon {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .elegance-titre {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 300;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+
+  .highlights-text {
+    font-weight: 400;
+    background: linear-gradient(135deg, #8d8c88 0%, #032131 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .elegance-sous-titre {
+    font-size: 1.25rem;
+    color: #041f2d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .elegance-etapes-container {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  .elegance-etapes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 10;
+  }
+
+  @media (min-width: 1024px) {
+    .elegance-etapes-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .elegance-card {
+    padding: 40px 30px;
+    border-radius: 40px;
+    background-color: rgb(6, 61, 69);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .elegance-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #14b5d9, #c0c0c0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .elegance-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .elegance-card:hover::before {
+    opacity: 1;
+  }
+
+  .etape-numero-container {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .etape-numero {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    background-color: #c7cacc;
+   
+
+  }
+
+  .etape-ornement {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    opacity: 0.8;
+    transform: rotate(15deg);
+  }
+
+  .etape-titre {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #f3ecec;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .etape-titre::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, #37bad4, transparent);
+  }
+
+  .etape-description {
+    color: #faf8f8;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  .etape-details {
+    margin-bottom: 30px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .detail-icon {
+    color: #5cd0ed;
+    margin-right: 12px;
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-top: 4px;
+    
+  }
+
+  .etape-indicateur {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .indicateur-point {
+    width: 8px;
+    height: 8px;
+    background-color: #f4f3f0;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .indicateur-point::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid #5fc5e8;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .elegance-separateur {
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .separateur-ligne {
+    width: 1000px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #02433f, transparent);
+    opacity: 0.5;
+  }
+
+  .elegance-infos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .elegance-infos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .elegance-info-card {
+    padding: 40px 30px;
+    border-radius: 12px;
+    background: rgba(2, 43, 56, 0.900);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .elegance-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.20);
+    background: rgba(7, 70, 101, 0.9);
+  }
+
+  .info-icone {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fafafa;
+    opacity: 0.8;
+  }
+
+  .info-titre {
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #f7f3f3;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+
+  .info-texte {
+    font-size: 15px;
+    color: #777;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .elegance-cta {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .cta-bouton {
+    padding: 18px 40px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #1a1a1a, #333333);
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bouton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #d4af37, #f0e6c2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cta-bouton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  }
+
+  .cta-bouton:hover::before {
+    opacity: 0.1;
+  }
+
+  .cta-fleche {
+    margin-left: 12px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-bouton:hover .cta-fleche {
+    transform: translateX(5px);
+  }
+
+  /* Animations */
+  @keyframes apparition {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  /* Appliquer les animations avec délai */
+  .card-delay-0 {
+    animation: scaleIn 0.6s ease-out 0s forwards;
+  }
+
+  .card-delay-1 {
+    animation: scaleIn 0.6s ease-out 0.15s forwards;
+  }
+
+  .card-delay-2 {
+    animation: scaleIn 0.6s ease-out 0.3s forwards;
+  }
+
+  .card-delay-3 {
+    animation: scaleIn 0.6s ease-out 0.45s forwards;
+  }

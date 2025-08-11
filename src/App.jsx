@@ -1,17 +1,20 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+// App.jsx
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
-import RevolutionaryHeader from './Composant/Header.jsx';
-import Hero from './Composant/Hero.jsx';
-import Timeline from './Composant/Timeline.jsx';
-import Histoire from './Composant/Histoire.jsx';
-import Portfolio from './Composant/Portfolio.jsx';
-import Expertise from './Composant/Expertise.jsx';
-import Stat from './Composant/Stat.jsx';
-import Certif from './Composant/Certificat.jsx';
-import Contact from './Composant/Contact.jsx';
-import Footer from './Composant/Footer.jsx';
+// Layout
+import MainLayout from './Composant/MainLayout.jsx';
 
+// Pages
+import Accueil from './page/Accueil.jsx';
+import APropos from './Composant/Hero.jsx';
+import Realisations from './Composant/Portfolio.jsx';
+import Expertises from './Composant/Expertise.jsx';
+import Parcours from './Composant/Timeline.jsx';
+import Flottes from './Composant/Parking.jsx';
+import ContactPage from './Composant/Contact.jsx';
+
+// Google Analytics
 const GA_TRACKING_ID = "G-QWVBXGWGD2";
 
 const TrackPageView = () => {
@@ -31,31 +34,18 @@ const TrackPageView = () => {
 function App() {
   return (
     <>
-      <RevolutionaryHeader />
-
+      <TrackPageView />
       <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <Histoire />
-            <Timeline />
-            <Expertise />
-            <Certif />
-            <Stat />
-            <Portfolio />
-            <Contact />
-          </>
-        } />
-        
-        <Route path="/A-propos" element={<Hero />} />
-        <Route path="/Notre-Mission" element={<Histoire />} />
-        <Route path="/Nos-Réalisations" element={<Portfolio />} />
-        <Route path="/Nos-expertises" element={<Expertise />} />
-        <Route path="/Nos-parcourt" element={<Timeline />} />
-        <Route path="/ Nous-contact" element={<Contact />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Accueil />} />
+          <Route path="a-propos" element={<APropos />} />
+          <Route path="realisations" element={<Realisations />} />
+          <Route path="expertises" element={<Expertises />} />
+          <Route path="parcours" element={<Parcours />} />
+          <Route path="flottes" element={<Flottes />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
       </Routes>
-
-      <Footer />
     </>
   );
 }

@@ -1,0 +1,328 @@
+.prestige-section {
+    padding: 120px 40px;
+    background: 
+    radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .prestige-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://example.com/luxury-pattern.png') center/cover no-repeat;
+    opacity: 0.03;
+    z-index: 0;
+  }
+
+  .prestige-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .prestige-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: apparition 0.8s ease-out;
+  }
+
+  .prestige-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(244, 243, 242, 0.3);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #f7f7f6;
+    text-transform: uppercase;
+    background: rgba(1, 47, 59, 0.902);
+    backdrop-filter: blur(5px);
+  }
+
+  .badge-icon {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .prestige-titre {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 300;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+
+  .highlight-text {
+    font-weight: 400;
+    background: linear-gradient(135deg, #01363e 0%, #9bb6c4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .prestige-sous-titre {
+    font-size: 1.25rem;
+    color: #120667;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .prestige-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1024px) {
+    .prestige-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .prestige-card {
+    padding: 50px 40px;
+    border-radius: 16px;
+    background-color: rgb(4, 71, 95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .prestige-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #024949, #c0c0c0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .prestige-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .prestige-card:hover::before {
+    opacity: 1;
+  }
+
+  .citation-icone {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 80px;
+    opacity: 0.1;
+    color: #fdfcf8;
+    font-family: 'Times New Roman', serif;
+    line-height: 0;
+  }
+
+  .note-etoiles {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+
+  .etoile {
+    color: #f1f1ee;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .prestige-citation {
+    color: #f5f2f2;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .projet-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(253, 252, 249, 0.1);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #f4f4f4;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .badge-label {
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .client-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(251, 249, 249, 0.700);
+    padding-top: 20px;
+  }
+
+  .client-initiales {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .client-details {
+    flex: 1;
+  }
+
+  .client-nom {
+    font-weight: 400;
+    color: #f0eeee;
+    letter-spacing: 0.5px;
+  }
+
+  .client-titre {
+    font-size: 14px;
+    color: #777;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  .client-entreprise {
+    font-size: 14px;
+    color: #e20909;
+    font-weight: 400;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .prestige-indicateurs {
+    background: rgba(1, 36, 53, 0.900);
+    backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  }
+
+  .indicateurs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    
+  }
+
+  @media (min-width: 768px) {
+    .indicateurs-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .indicateur-item {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: apparition 0.6s ease-out forwards;
+  }
+
+  .indicateur-delay-0 {
+    animation-delay: 0s;
+  }
+
+  .indicateur-delay-1 {
+    animation-delay: 0.15s;
+  }
+
+  .indicateur-delay-2 {
+    animation-delay: 0.3s;
+  }
+
+  .indicateur-delay-3 {
+    animation-delay: 0.45s;
+  }
+
+  .indicateur-valeur {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .indicateur-label {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .indicateur-details {
+    font-size: 14px;
+    color: #999;
+    font-weight: 300;
+  }
+
+  /* Animations */
+  @keyframes apparition {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Appliquer les animations avec délai */
+  .card-delay-0 {
+    animation: scaleIn 0.6s ease-out 0s forwards;
+  }
+
+  .card-delay-1 {
+    animation: scaleIn 0.6s ease-out 0.15s forwards;
+  }
+
+  .card-delay-2 {
+    animation: scaleIn 0.6s ease-out 0.3s forwards;
+  }

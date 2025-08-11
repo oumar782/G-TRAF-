@@ -33,20 +33,20 @@ const ContactForm = () => {
     {
       icon: 'Phone',
       title: 'Téléphone',
-      content: '01 23 45 67 89',
+      content: '+224 621015699',
       subtitle: 'Lun-Ven 8h-19h'
     },
     {
       icon: 'Mail',
       title: 'Email',
-      content: 'contact@constructlux.fr',
+      content: 'Contact@gtrafplus.com',
       subtitle: 'Réponse sous 24h'
     },
     {
       icon: 'MapPin',
       title: 'Adresse',
-      content: '123 Avenue de la Grande Armée',
-      subtitle: '75017 Paris'
+      content: 'Conakry KALOUM KOULEWONDY',
+   
     },
     {
       icon: 'Clock',

@@ -1,0 +1,277 @@
+.elegance-section {
+    padding: 120px 40px;
+   background: 
+    radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
+    color: #e8e8e8;
+    font-family: "Garamond", "Times New Roman", serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .elegance-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.02)" d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>') repeat,
+      linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+    background-size: 20px 20px, 20px 20px, 20px 20px;
+    pointer-events: none;
+  }
+
+  .elegance-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .elegances-header {
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 0 20px;
+  }
+
+  .elegancess-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(210, 180, 140, 0.3);
+    border-radius: 50px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(3, 48, 61, 1);
+    backdrop-filter: blur(5px);
+    color: #fefefe;
+  }
+
+  .badge-ornement {
+    margin-right: 12px;
+    font-size: 16px;
+  }
+
+  .elegance-titre {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: #f5f5f5;
+  }
+
+  .titre-gradient {
+    background: linear-gradient(90deg, #034c69 0%, #ddc9c9 50%, #04365b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 400;
+  }
+
+  .elegance-sous-titre {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #03151c;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .prestige-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 100px;
+  }
+
+  .prestige-cards {
+    position: relative;
+    padding: 40px;
+    border-radius: 50px;
+    background: rgba(2, 28, 31, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .prestige-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(210, 180, 140, 0.05) 0%, transparent 100%);
+    z-index: -1;
+  }
+
+  .card-contours {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    border: 1px solid rgba(235, 247, 247, 0.1);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .prestige-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .prestige-card:hover .card-contour {
+    border-color: rgba(210, 180, 140, 0.3);
+  }
+
+  .prestige-icone {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #fefefd;
+    opacity: 0.8;
+  }
+
+  .prestige-distinction {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  .prestige-distinction span {
+    font-size: 12px;
+    padding: 5px 12px;
+    background: rgba(232, 230, 228, 0.1);
+    border: 1px solid rgba(210, 180, 140, 0.2);
+    border-radius: 50px;
+    color: #f3f3f3;
+    letter-spacing: 1px;
+  }
+
+  .prestige-titres {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    letter-spacing: 0.5px;
+  }
+
+  .prestige-description {
+    color: #b0b0b0;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 1.05rem;
+  }
+
+  .prestige-garantie {
+    display: flex;
+    align-items: center;
+    color: #ce554a;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .garantie-ornement {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  .exception-stats {
+    background: rgba(2, 41, 51, 0.900);
+    border-top: 1px solid rgba(210, 180, 140, 0.1);
+    border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+    padding: 60px 40px;
+    backdrop-filter: blur(5px);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stat-item {
+    text-align: center;
+    position: relative;
+  }
+
+  .stat-item::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60px;
+    background: rgba(210, 180, 140, 0.1);
+  }
+
+  .stat-item:last-child::after {
+    display: none;
+  }
+
+  .stat-valeur {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .stat-ornement {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #d2b48c 50%, transparent 100%);
+  }
+
+  .stat-libelle {
+    font-size: 14px;
+    color: #d2b48c;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .stat-suffixe {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .elegance-section {
+      padding: 80px 20px;
+    }
+    
+    .elegance-titre {
+      font-size: 2.5rem;
+    }
+    
+    .elegance-sous-titre {
+      font-size: 1.1rem;
+    }
+    
+    .prestige-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .stat-item::after {
+      display: none;
+    }
+  }
