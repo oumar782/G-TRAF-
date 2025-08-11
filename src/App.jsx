@@ -6,7 +6,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import MainLayout from './Page/Mainlayout.jsx';
 
 // Pages
-import Accueil from './Composant/Accueil.jsx';
+import Accueil from './Page/Accueil.jsx';
 import APropos from './Composant/Hero.jsx';
 import Realisations from './Composant/Portfolio.jsx';
 import Expertises from './Composant/Expertise.jsx';
