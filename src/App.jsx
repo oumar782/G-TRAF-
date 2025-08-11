@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 // Layout
-import MainLayout from './Composant/MainLayout.jsx';
+import MainLayout from './Page/Mainlayout.jsx';
 
 // Pages
 import Accueil from './page/Accueil.jsx';
