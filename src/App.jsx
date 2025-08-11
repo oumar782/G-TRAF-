@@ -7,6 +7,8 @@ import MainLayout from './Page/Mainlayout.jsx';
 
 // Pages
 import Accueil from './Page/Accueil.jsx';
+
+// Composants
 import APropos from './Composant/Hero.jsx';
 import Realisations from './Composant/Portfolio.jsx';
 import Expertises from './Composant/Expertise.jsx';
@@ -15,14 +17,14 @@ import Flottes from './Composant/Parking.jsx';
 import ContactPage from './Composant/Contact.jsx';
 
 // Google Analytics
-const GA_TRACKING_ID = "G-QWVBXGWGD2";
+const GA_TRACKING_ID = 'G-QWVBXGWGD2';
 
 const TrackPageView = () => {
   const location = useLocation();
 
   useEffect(() => {
     if (window.gtag) {
-      window.gtag("config", GA_TRACKING_ID, {
+      window.gtag('config', GA_TRACKING_ID, {
         page_path: location.pathname,
       });
     }
