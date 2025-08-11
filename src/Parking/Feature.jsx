@@ -97,7 +97,7 @@ const EleganceSection = () => {
 
                 {/* Distinction */}
                 <div className="prestige-distinction">
-                  <span>{prestige.distinction}</span>
+                  <span>{prestige.disffftinction}</span>
                 </div>
 
                 {/* Contenu */}
