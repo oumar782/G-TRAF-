@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr"> <!-- Changé à "fr" si votre public est francophone -->
+<html lang="fr">
   <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -9,21 +9,31 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX', { page_path: window.location.pathname });
     </script>
+
     <meta charset="UTF-8" />
-    <!-- Favicon optimisé -->
-    <link rel="icon" href="/src/assets/Image/gt.png" type="image/png" />
-    <!-- Version alternative pour différents appareils -->
-    <link rel="apple-touch-icon" href="/src/assets/Image/gt.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#ffffff">
-    <title>G-TRAF+</title>
-    
+
+    <!-- SEO -->
+    <title>G-TRAF+ | Matériels BTP, Location, Décoration et Aménagement en Guinée</title>
+    <meta name="description" content="G-TRAF+ propose un large choix de matériels de construction, électriques et informatiques, location de matériel BTP et transport minier, ainsi que des services de décoration et aménagement professionnels en Guinée. Qualité, fiabilité et satisfaction client garanties.">
+    <meta name="keywords" content="matériel BTP Guinée, location engins BTP, transport minier Guinée, décoration intérieure Guinée, aménagement bureaux Guinée, matériel électrique Guinée, matériel informatique Guinée">
+    <meta name="author" content="G-TRAF+">
+    <meta property="og:title" content="G-TRAF+ | Matériels BTP, Location, Décoration et Aménagement en Guinée">
+    <meta property="og:description" content="Matériels de construction, location BTP, transport minier, décoration intérieure et aménagement d'espaces professionnels en Guinée. Qualité et satisfaction garanties.">
+    <meta property="og:image" content="/src/assets/Image/gt.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/src/assets/Image/gt.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/src/assets/Image/gt.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Préchargement pour meilleures performances -->
     <link rel="preload" href="/src/assets/Image/gt.png" as="image">
-    
-    <!-- Style de secours si l'image ne charge pas -->
+
+    <!-- Style fallback -->
     <style>
       .logo-fallback {
         display: none;
@@ -37,17 +47,13 @@
     </style>
   </head>
   <body>
-
     <div id="root"></div>
-    
-    <!-- Fallback si JavaScript est désactivé -->
+
     <noscript>
       <div class="logo-fallback">G-TRAF+</div>
     </noscript>
-    
+
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Script de vérification de l'image -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const img = new Image();
