@@ -1,20 +1,20 @@
-/* Variables CSS */
+/* Variables CSS - Préfixées pour éviter les collisions */
 :root {
-  --electric: #00f0ff;
-  --gradient-primary: linear-gradient(135deg, #062e36 0%, #00f0ff 100%);
-  --gradient-accent: linear-gradient(135deg, #0f6e88 0%, #171719 100%);
-  --gradient-mesh: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.2) 0%, transparent 70%);
-  --foreground: #ffffff;
-  --muted-foreground: rgba(255, 255, 255, 0.7);
-  --accent-foreground: #000000;
-  --border: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(15, 15, 25, 0.5);
-  --header-height: 65px;
-  --transition-duration: 0.3s;
+  --gtraf-electric: #00f0ff;
+  --gtraf-gradient-primary: linear-gradient(135deg, #062e36 0%, #00f0ff 100%);
+  --gtraf-gradient-accent: linear-gradient(135deg, #0f6e88 0%, #171719 100%);
+  --gtraf-gradient-mesh: radial-gradient(circle at 50% 50%, rgba(110, 0, 255, 0.2) 0%, transparent 70%);
+  --gtraf-foreground: #ffffff;
+  --gtraf-muted-foreground: rgba(255, 255, 255, 0.7);
+  --gtraf-accent-foreground: #000000;
+  --gtraf-border: rgba(255, 255, 255, 0.1);
+  --gtraf-glass-bg: rgba(15, 15, 25, 0.5);
+  --gtraf-header-height: 65px;
+  --gtraf-transition-duration: 0.3s;
 }
 
 /* Base Styles */
-.revolutionary-header {
+.gtraf-header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -23,30 +23,30 @@
   background-color: transparent;
 }
 
-.revolutionary-header.scrolled {
-  background: var(--glass-bg);
+.gtraf-header--scrolled {
+  background: var(--gtraf-glass-bg);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 30px rgba(0, 240, 255, 0.1);
 }
 
-.header-container {
+.gtraf-header__container {
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 12px;
 }
 
-.header-content {
+.gtraf-header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
+  height: var(--gtraf-header-height);
   position: relative;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-/* Logo Styles */
-.logo-container {
+/* Logo Section */
+.gtraf-header__brand {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -56,142 +56,145 @@
   flex-shrink: 0;
 }
 
-.logo-icon-container {
+.gtraf-header__logo-wrapper {
   position: relative;
   width: 35px;
   height: 35px;
   flex-shrink: 0;
 }
 
-.logo-image {
+.gtraf-header__logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: all 0.3s ease;
+  transition: all var(--gtraf-transition-duration) ease;
   border-radius: 4px;
 }
 
-.logo-container:hover .logo-image {
+.gtraf-header__brand:hover .gtraf-header__logo-img {
   transform: scale(1.05);
 }
 
-.logo-glow-effect {
+.gtraf-header__logo-glow {
   position: absolute;
   inset: 0;
   border-radius: 4px;
   opacity: 0.5;
-  animation: glow 2s infinite alternate;
+  animation: gtraf-glow 2s infinite alternate;
   pointer-events: none;
 }
 
-.logo-text {
+.gtraf-header__brand-text {
   opacity: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity var(--gtraf-transition-duration) ease, 
+              transform var(--gtraf-transition-duration) ease;
   min-width: max-content;
 }
 
-.logo-title {
+.gtraf-header__brand-title {
   font-size: 0.95rem;
   font-weight: 900;
-  color: var(--foreground);
+  color: var(--gtraf-foreground);
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
   margin: 0;
   white-space: nowrap;
   line-height: 1.1;
 }
 
-.logo-subtitle {
+.gtraf-header__brand-subtitle {
   font-size: 0.5rem;
   font-weight: 600;
-  color: var(--electric);
+  color: var(--gtraf-electric);
   margin: 0;
-  animation: shimmer 3s infinite;
+  animation: gtraf-shimmer 3s infinite;
   white-space: nowrap;
   line-height: 1;
 }
 
-/* Navigation Styles */
-.desktop-nav {
+/* Desktop Navigation */
+.gtraf-header__desktop-nav {
   display: none;
   align-items: center;
   gap: 6px;
-  margin: 0 4px;
-  flex: 1;
+  margin: 0 auto;
+  flex: 1 1 auto;
   justify-content: center;
-  flex-wrap: wrap;
   min-width: 0;
+  max-width: 60%;
+  padding: 0 10px;
 }
 
-.nav-link {
+.gtraf-header__nav-link {
   position: relative;
-  color: var(--foreground);
+  color: var(--gtraf-foreground);
   font-weight: 600;
   padding: 4px 6px;
   text-decoration: none;
-  transition: all var(--transition-duration) ease;
-  animation: fade-in 0.5s ease both;
+  transition: all var(--gtraf-transition-duration) ease;
+  animation: gtraf-fade-in 0.5s ease both;
   white-space: nowrap;
   font-size: 0.75rem;
   border-radius: 4px;
   flex-shrink: 0;
 }
 
-.nav-link:hover {
-  color: var(--electric);
+.gtraf-header__nav-link:hover {
+  color: var(--gtraf-electric);
 }
 
-.nav-link-underline {
+.gtraf-header__nav-underline {
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-primary);
-  transition: all var(--transition-duration) ease;
+  background: var(--gtraf-gradient-primary);
+  transition: all var(--gtraf-transition-duration) ease;
 }
 
-.nav-link:hover .nav-link-underline {
+.gtraf-header__nav-link:hover .gtraf-header__nav-underline {
   width: 100%;
 }
 
-.nav-link-hover-bg {
+.gtraf-header__nav-hover-bg {
   position: absolute;
   inset: 0;
   background: rgba(0, 240, 255, 0.05);
   border-radius: 4px;
   transform: scale(0);
-  transition: transform var(--transition-duration) ease;
+  transition: transform var(--gtraf-transition-duration) ease;
   z-index: -1;
 }
 
-.nav-link:hover .nav-link-hover-bg {
+.gtraf-header__nav-link:hover .gtraf-header__nav-hover-bg {
   transform: scale(1);
 }
 
-/* Contact & CTA Styles */
-.contact-cta-container {
+/* Actions Section */
+.gtraf-header__actions {
   display: none;
   align-items: center;
   gap: 4px;
   flex-shrink: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
+  min-width: max-content;
 }
 
-.contact-info {
+.gtraf-header__contact-info {
   display: flex;
   align-items: center;
   gap: 3px;
   flex-wrap: wrap;
 }
 
-.contact-link {
+.gtraf-header__contact-link {
   display: flex;
   align-items: center;
   gap: 3px;
-  color: var(--muted-foreground);
+  color: var(--gtraf-muted-foreground);
   text-decoration: none;
-  transition: color var(--transition-duration) ease;
+  transition: color var(--gtraf-transition-duration) ease;
   padding: 4px 6px;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.05);
@@ -202,23 +205,17 @@
   flex-shrink: 0;
 }
 
-.contact-link:hover {
-  color: var(--electric);
+.gtraf-header__contact-link:hover {
+  color: var(--gtraf-electric);
 }
 
-.contact-icon {
-  height: 10px;
-  width: 10px;
-  flex-shrink: 0;
-}
-
-.contact-text {
+.gtraf-header__contact-text {
   display: none;
 }
 
-.cta-button {
-  background: var(--gradient-accent);
-  color: var(--foreground);
+.gtraf-header__cta-btn {
+  background: var(--gtraf-gradient-accent);
+  color: var(--gtraf-foreground);
   font-weight: 700;
   padding: 6px 8px;
   border-radius: 6px;
@@ -226,22 +223,22 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: all var(--transition-duration) ease;
+  transition: all var(--gtraf-transition-duration) ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--electric);
+  border: 1px solid var(--gtraf-electric);
   box-shadow: 0 0 15px rgba(255, 0, 230, 0.3);
   white-space: nowrap;
   font-size: 0.65rem;
   flex-shrink: 0;
 }
 
-.cta-button:hover {
+.gtraf-header__cta-btn:hover {
   box-shadow: 0 0 30px rgba(255, 0, 230, 0.6);
   transform: translateY(-2px);
 }
 
-.cta-button::after {
+.gtraf-header__cta-btn::after {
   content: '';
   position: absolute;
   top: 0;
@@ -253,103 +250,94 @@
   transition: opacity 0.3s ease;
 }
 
-.cta-button:hover::after {
+.gtraf-header__cta-btn:hover::after {
   opacity: 1;
 }
 
-.cta-icon {
+.gtraf-header__cta-icon {
   height: 10px;
   width: 10px;
   margin-right: 3px;
   flex-shrink: 0;
 }
 
-.cta-text {
+.gtraf-header__cta-text {
   display: none;
 }
 
-/* Mobile Menu Button */
-.mobile-menu-button {
+/* Mobile Toggle Button */
+.gtraf-header__mobile-toggle {
   display: flex;
   padding: 6px;
-  color: var(--foreground);
+  color: var(--gtraf-foreground);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: all var(--transition-duration) ease;
+  transition: all var(--gtraf-transition-duration) ease;
   z-index: 10;
   flex-shrink: 0;
 }
 
-.mobile-menu-button:hover {
-  color: var(--electric);
+.gtraf-header__mobile-toggle:hover {
+  color: var(--gtraf-electric);
   transform: translateY(-2px);
 }
 
-.menu-icon {
-  height: 16px;
-  width: 16px;
-}
-
-/* Mobile Menu */
-.mobile-menu {
+/* Mobile Navigation */
+.gtraf-header__mobile-nav {
   position: fixed;
-  top: var(--header-height);
+  top: var(--gtraf-header-height);
   left: 0;
   right: 0;
-  bottom: 0;
   background: rgba(15, 15, 25, 0.98);
   backdrop-filter: blur(20px);
-  border-top: 1px solid var(--electric);
-  animation: slide-in 0.3s ease;
+  border-top: 1px solid var(--gtraf-electric);
+  animation: gtraf-slide-in 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
-  padding-bottom: 20px;
-}
-
-.mobile-nav {
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-height: calc(100vh - var(--gtraf-header-height));
 }
 
-.mobile-nav-link {
+.gtraf-header__mobile-nav-link {
   display: block;
-  color: var(--foreground);
+  color: var(--gtraf-foreground);
   font-weight: 600;
   padding: 12px;
-  transition: all var(--transition-duration) ease;
+  transition: all var(--gtraf-transition-duration) ease;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   text-decoration: none;
-  animation: fade-in 0.3s ease both;
+  animation: gtraf-fade-in 0.3s ease both;
   text-align: center;
   font-size: 0.95rem;
 }
 
-.mobile-nav-link:hover {
-  color: var(--electric);
+.gtraf-header__mobile-nav-link:hover {
+  color: var(--gtraf-electric);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
 }
 
-.mobile-contact-container {
+.gtraf-header__mobile-contact {
   padding-top: 16px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--gtraf-border);
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 8px;
 }
 
-.mobile-contact-link {
+.gtraf-header__mobile-contact-link {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--muted-foreground);
+  color: var(--gtraf-muted-foreground);
   text-decoration: none;
   padding: 12px;
   background: rgba(255, 255, 255, 0.05);
@@ -358,17 +346,10 @@
   font-size: 0.9rem;
 }
 
-.mobile-contact-icon {
-  height: 16px;
-  width: 16px;
-  color: var(--electric);
-  flex-shrink: 0;
-}
-
-.mobile-cta-button {
+.gtraf-header__mobile-cta {
   width: 100%;
-  background: var(--gradient-accent);
-  color: var(--foreground);
+  background: var(--gtraf-gradient-accent);
+  color: var(--gtraf-foreground);
   font-weight: 700;
   padding: 12px;
   border-radius: 10px;
@@ -377,44 +358,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-duration) ease;
-  border: 1px solid var(--electric);
+  transition: all var(--gtraf-transition-duration) ease;
+  border: 1px solid var(--gtraf-electric);
   font-size: 0.9rem;
   margin-top: 6px;
 }
 
-.mobile-cta-button:hover {
+.gtraf-header__mobile-cta:hover {
   box-shadow: 0 0 30px rgba(255, 0, 230, 0.6);
 }
 
-.mobile-cta-icon {
-  height: 16px;
-  width: 16px;
-  margin-right: 6px;
-  flex-shrink: 0;
-}
-
-/* Ambient Light */
-.ambient-light {
+/* Ambient Light Effect */
+.gtraf-header__ambient-light {
   position: absolute;
   inset: 0;
-  background: var(--gradient-mesh);
+  background: var(--gtraf-gradient-mesh);
   opacity: 0.3;
   pointer-events: none;
 }
 
 /* Animations */
-@keyframes glow {
+@keyframes gtraf-glow {
   0% { opacity: 0.3; }
   100% { opacity: 0.7; }
 }
 
-@keyframes shimmer {
+@keyframes gtraf-shimmer {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 
-@keyframes fade-in {
+@keyframes gtraf-fade-in {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -425,7 +399,7 @@
   }
 }
 
-@keyframes slide-in {
+@keyframes gtraf-slide-in {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -436,448 +410,98 @@
   }
 }
 
-/* BREAKPOINTS ULTRA-RESPONSIFS */
-
-/* 320px - Écrans très petits */
-@media (min-width: 320px) {
-  .header-container {
-    padding: 0 10px;
-  }
-  
-  .logo-icon-container {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .logo-title {
-    font-size: 0.85rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.45rem;
-  }
-}
-
-/* 360px - Petits écrans */
-@media (min-width: 360px) {
-  .header-container {
-    padding: 0 14px;
-  }
-  
-  .logo-icon-container {
-    width: 38px;
-    height: 38px;
-  }
-  
-  .logo-title {
-    font-size: 1rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.55rem;
-  }
-}
-
-/* 400px - Écrans mobiles moyens */
+/* Responsive Breakpoints */
 @media (min-width: 400px) {
-  .header-container {
-    padding: 0 16px;
-  }
-  
-  .logo-icon-container {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .contact-text {
+  .gtraf-header__contact-text {
     display: inline;
   }
 }
 
-/* 480px - Écrans mobiles larges */
 @media (min-width: 480px) {
   :root {
-    --header-height: 70px;
+    --gtraf-header-height: 70px;
   }
   
-  .logo-icon-container {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .logo-title {
-    font-size: 1.1rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.6rem;
-  }
-  
-  .cta-text {
+  .gtraf-header__cta-text {
     display: inline;
   }
-  
-  .cta-button {
-    padding: 7px 10px;
-    font-size: 0.7rem;
-  }
 }
 
-/* 640px - Tablettes portrait */
-@media (min-width: 640px) {
-  .header-content {
-    gap: 10px;
-  }
-  
-  .contact-cta-container {
-    gap: 6px;
-  }
-  
-  .contact-info {
-    gap: 4px;
-  }
-  
-  .contact-link {
-    padding: 5px 7px;
-    font-size: 0.7rem;
-  }
-  
-  .cta-button {
-    padding: 8px 12px;
-    font-size: 0.75rem;
-  }
-}
-
-/* 768px - Tablettes et petits laptops */
 @media (min-width: 768px) {
   :root {
-    --header-height: 75px;
+    --gtraf-header-height: 75px;
   }
   
-  .header-container {
-    padding: 0 20px;
-  }
-  
-  .header-content {
-    gap: 12px;
-    flex-wrap: nowrap;
-  }
-  
-  .logo-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .logo-title {
-    font-size: 1.2rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.65rem;
-  }
-  
-  .mobile-menu {
+  .gtraf-header__mobile-toggle {
     display: none;
   }
   
-  .desktop-nav {
+  .gtraf-header__desktop-nav {
     display: flex;
     gap: 8px;
   }
   
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 5px 7px;
-  }
-  
-  .contact-cta-container {
+  .gtraf-header__actions {
     display: flex;
   }
   
-  .mobile-menu-button {
-    display: none;
-  }
-}
-
-/* Optimisation pour les tablettes en mode paysage */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .desktop-nav {
+  /* Optimisation pour les tablettes */
+  .gtraf-header__desktop-nav {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 60%;
     margin: 0 auto;
   }
-  
-  .nav-link {
-    font-size: 0.7rem;
-    padding: 4px 5px;
-  }
-  
-  .contact-cta-container {
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .contact-info {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  .contact-link {
-    padding: 3px 5px;
-    font-size: 0.6rem;
-  }
-  
-  .cta-button {
-    padding: 5px 8px;
-    font-size: 0.65rem;
-  }
 }
 
-/* 900px - Écrans moyens */
 @media (min-width: 900px) {
-  .header-content {
+  .gtraf-header__content {
     gap: 14px;
   }
   
-  .desktop-nav {
+  .gtraf-header__desktop-nav {
     gap: 10px;
   }
   
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 6px 8px;
-  }
-  
-  .contact-cta-container {
+  .gtraf-header__actions {
     gap: 8px;
     flex-direction: row;
   }
-  
-  .contact-link {
-    font-size: 0.75rem;
-    padding: 6px 8px;
-  }
-  
-  .cta-button {
-    padding: 8px 12px;
-    font-size: 0.75rem;
-  }
 }
 
-/* 1024px - Laptops standards */
 @media (min-width: 1024px) {
   :root {
-    --header-height: 80px;
+    --gtraf-header-height: 80px;
   }
   
-  .header-content {
-    gap: 16px;
-  }
-  
-  .logo-container {
-    gap: 8px;
-  }
-  
-  .logo-icon-container {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .logo-title {
-    font-size: 1.3rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.7rem;
-  }
-  
-  .desktop-nav {
+  .gtraf-header__desktop-nav {
     gap: 12px;
+    flex-wrap: nowrap;
   }
   
-  .nav-link {
+  .gtraf-header__nav-link {
     font-size: 0.9rem;
-    padding: 7px 10px;
-  }
-  
-  .contact-cta-container {
-    gap: 10px;
-  }
-  
-  .contact-link {
-    font-size: 0.8rem;
-    padding: 7px 10px;
-  }
-  
-  .cta-button {
-    font-size: 0.8rem;
-    padding: 9px 14px;
   }
 }
 
-/* 1200px - Écrans larges */
 @media (min-width: 1200px) {
-  .header-content {
-    gap: 18px;
-  }
-  
-  .logo-icon-container {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .logo-title {
-    font-size: 1.4rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.75rem;
-  }
-  
-  .desktop-nav {
+  .gtraf-header__desktop-nav {
     gap: 14px;
   }
   
-  .nav-link {
-    font-size: 0.95rem;
-    padding: 8px 11px;
-  }
-  
-  .contact-cta-container {
+  .gtraf-header__actions {
     gap: 12px;
   }
-  
-  .contact-link {
-    font-size: 0.85rem;
-    padding: 8px 11px;
-  }
-  
-  .cta-button {
-    font-size: 0.85rem;
-    padding: 10px 16px;
-  }
 }
 
-/* 1400px - Très grands écrans */
-@media (min-width: 1400px) {
-  .header-content {
-    gap: 20px;
-  }
-  
-  .logo-container {
-    gap: 10px;
-  }
-  
-  .logo-icon-container {
-    width: 65px;
-    height: 65px;
-  }
-  
-  .logo-title {
-    font-size: 1.5rem;
-  }
-  
-  .desktop-nav {
-    gap: 16px;
-  }
-  
-  .nav-link {
-    font-size: 1rem;
-    padding: 8px 12px;
-  }
-  
-  .contact-cta-container {
-    gap: 14px;
-  }
-  
-  .contact-link {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-  
-  .cta-button {
-    padding: 11px 18px;
-    font-size: 0.9rem;
-  }
-}
-
-/* 1600px+ - Écrans ultra-larges */
-@media (min-width: 1600px) {
-  .header-content {
-    gap: 24px;
-  }
-  
-  .logo-icon-container {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .desktop-nav {
-    gap: 18px;
-  }
-  
-  .contact-cta-container {
-    gap: 16px;
-  }
-  
-  .cta-button {
-    padding: 12px 20px;
-  }
-}
-
-/* 2000px+ - Écrans 4K et plus */
-@media (min-width: 2000px) {
-  .header-container {
-    max-width: 2000px;
-  }
-  
-  .logo-icon-container {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .logo-title {
-    font-size: 1.8rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.9rem;
-  }
-  
-  .nav-link {
-    font-size: 1.2rem;
-    padding: 10px 15px;
-  }
-  
-  .contact-link {
-    font-size: 1.1rem;
-    padding: 10px 15px;
-  }
-  
-  .cta-button {
-    font-size: 1.1rem;
-    padding: 15px 25px;
-  }
-}
-
-/* Correction pour les écrans paysage mobiles */
+/* Correction pour les mobiles en mode paysage */
 @media (max-width: 900px) and (orientation: landscape) {
   :root {
-    --header-height: 60px;
+    --gtraf-header-height: 60px;
   }
   
-  .mobile-menu {
-    top: var(--header-height);
-    padding-bottom: 10px;
-    overflow-y: auto;
-    max-height: calc(100vh - var(--header-height));
-  }
-  
-  .mobile-nav-link, 
-  .mobile-contact-link,
-  .mobile-cta-button {
-    padding: 8px 12px;
-    font-size: 0.8rem;
+  .gtraf-header__mobile-nav {
+    top: var(--gtraf-header-height);
+    max-height: calc(100vh - var(--gtraf-header-height));
   }
 }
