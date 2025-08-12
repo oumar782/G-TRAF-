@@ -1,8 +1,7 @@
-import '../Parkstyle/Heropark.css';
 import React from 'react';
 import '../Parkstyle/Heropark.css';
 
-// Icônes SVG premium
+// Icônes SVG
 const LuxuryIconArrow = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14" stroke="#f5f5f5"/>
@@ -22,6 +21,7 @@ const LuxuryIconStar = () => (
   </svg>
 );
 
+// ✅ On garde TON image d'origine
 import heroBackground from '../assets/Image/P1035850.webp';
 
 const LuxuryHeroSection = () => {
@@ -29,7 +29,7 @@ const LuxuryHeroSection = () => {
     <section className="luxury-hero-container">
       {/* Fond d'écran avec overlay */}
       <div className="luxury-hero-backdrop">
-        <img src={heroBackground} alt="Engins de chantier haut de gamme" className="luxury-hero-image" />
+        <img src={heroBackground} alt="Parking G-TRAF+ | Véhicules disponibles à Kipé" className="luxury-hero-image" />
         <div className="luxury-overlay-gradient"></div>
       </div>
 
@@ -39,37 +39,56 @@ const LuxuryHeroSection = () => {
         <div className="luxury-text-section">
           <div className="luxury-badge">
             <LuxuryIconStar />
-            <span>Excellence Industrielle</span>
+            <span>G-TRAF+ | Kipé, Conakry</span>
           </div>
 
           <h1 className="luxury-main-heading">
-            <span className="luxury-heading-line">Location d'élite</span>
-            <span className="luxury-gradient-text">Machinerie Premium</span>
+            <span className="luxury-heading-line">Votre Prochain</span>
+            <span className="luxury-gradient-text">Véhicule Vous Attend</span>
           </h1>
 
           <p className="luxury-subtext">
-            Découvrez notre collection exclusive d'engins de chantier haut de gamme. 
-            Performance inégalée, fiabilité absolue et design d'exception pour vos projets les plus ambitieux.
+            Parking professionnel avec voitures d’occasion certifiées et pickups tout-terrain. 
+            À partir de <strong>500.000 GNF</strong> — importation directe, prix justes, service rapide.
           </p>
 
-          <div className="luxury-button-group">
-            <button className="luxury-primary-btn">
-              <span>Explorer la collection</span>
-              <div className="luxury-btn-icon">
-                <LuxuryIconArrow />
-              </div>
-            </button>
-            <button className="luxury-secondary-btn">
-              <LuxuryIconPhone />
-              <span>Conciergerie Privée</span>
-            </button>
+          <div className="luxury-button-group" >
+          <button 
+  className="luxury-primary-btn" 
+  onClick={() => {
+    const section = document.getElementById('Nos-Catalogue');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn("Section 'Nos-Catalogue' non trouvée !");
+    }
+  }}
+>
+  <span>Voir les véhicules</span>
+  <div className="luxury-btn-icon">
+    <LuxuryIconArrow />
+  </div>
+</button>
+            <button 
+  className="luxury-secondary-btn"
+  onClick={() => {
+    const message = encodeURIComponent(
+      "Bonjour, je viens de votre site. Je souhaite des informations sur vos véhicules disponibles."
+    );
+    window.open(`https://wa.me/224621015699?text=${message}`, '_blank');
+  }}
+>
+  <LuxuryIconPhone />
+  <span>Contacter sur WhatsApp</span>
+</button>
           </div>
 
+          {/* Statistiques */}
           <div className="luxury-stats-container">
             {[
-              { value: "500+", label: "Unités disponibles" },
-              { value: "24/7", label: "Service VIP" },
-              { value: "15 ans", label: "Expertise" }
+              { value: "80+", label: "Véhicules en stock" },
+              { value: "5 ans", label: "Expérience" },
+              { value: "24h", label: "Disponibilité" }
             ].map((stat, index) => (
               <div key={index} className="luxury-stat-item" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="luxury-stat-value">{stat.value}</div>
@@ -79,26 +98,26 @@ const LuxuryHeroSection = () => {
           </div>
         </div>
 
-        {/* Partie droite - Carte premium */}
+        {/* Partie droite - Carte d'information */}
         <div className="luxury-feature-card">
           <div className="luxury-card-header">
             <div className="luxury-card-icon">
               <LuxuryIconStar />
             </div>
             <div>
-              <h3 className="luxury-card-title">Normes d'Excellence</h3>
+              <h3 className="luxury-card-title">Pourquoi nous choisir ?</h3>
               <p className="luxury-card-description">
-                Chaque engin est minutieusement inspecté selon nos critères premium.
+                Un parking sérieux, bien organisé, avec des véhicules vérifiés.
               </p>
             </div>
           </div>
 
           <ul className="luxury-feature-list">
             {[
-              "Maintenance certifiée",
-              "Livraison prioritaire",
-              "Assurance tout risque",
-              "Service sur mesure"
+              "Voitures et pickups disponibles",
+              "Contrôle mécanique complet",
+              "Prix transparents (GNF)",
+              "Livraison possible à Conakry"
             ].map((feature, index) => (
               <li key={index} className="luxury-feature-item">
                 <span>{feature}</span>

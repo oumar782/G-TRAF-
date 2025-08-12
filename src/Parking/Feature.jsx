@@ -1,57 +1,58 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import '../Parkstyle/Feature.css';
+
 const EleganceSection = () => {
   const prestiges = [
     {
-      titre: "Excellence Méticuleuse",
-      description: "Chaque véhicule subit un processus de certification rigoureux par nos maîtres artisans.",
-      distinction: "Certification Or",
-      icone: "🜛"
+      titre: "Véhicules Contrôlés",
+      description: "Chaque voiture est inspectée avant arrivage : moteur, transmission, carrosserie.",
+      distinction: "État impeccable",
+      icone: "✅"
     },
     {
-      titre: "Performance Absolue",
-      description: "Technologies de pointe sélectionnées pour répondre aux exigences les plus élevées.",
-      distinction: "Édition Limitée",
+      titre: "Disponibilité Rapide",
+      description: "Des véhicules prêts à partir — pas d’attente, livraison possible sous 24h.",
+      distinction: "Prêt à rouler",
       icone: "⚡"
     },
     {
-      titre: "Savoir-Faire Artisanal",
-      description: "Maintenance réalisée par nos experts formés aux plus hauts standards internationaux.",
-      distinction: "Atelier Privé",
-      icone: "✧"
+      titre: "Origine Garantie",
+      description: "Importation directe d'Europe et du Japon. Pas d’intermédiaire, prix maîtrisés.",
+      distinction: "Origine vérifiée",
+      icone: "🌍"
     },
     {
-      titre: "Service Sur Mesure",
-      description: "Livraison personnalisée selon vos préférences et contraintes exclusives.",
-      distinction: "Conciergerie 24/7",
-      icone: "⧉"
+      titre: "Prix Compétitifs",
+      description: "Des berlines à partir de 500.000 GNF, pickups à 700.000 GNF — sans surprise.",
+      distinction: "Meilleur rapport qualité-prix",
+      icone: "💰"
     },
     {
-      titre: "Disponibilité Exclusive",
-      description: "Accès prioritaire à notre flotte pour clients privilégiés.",
-      distinction: "Accès VIP",
-      icone: "♕"
+      titre: "Service Après-Vente",
+      description: "Assistance mécanique, conseils d’entretien, et suivi après achat ou location.",
+      distinction: "Soutien local",
+      icone: "🔧"
     },
     {
-      titre: "Héritage d'Excellence",
-      description: "Une réputation bâtie sur des décennies de perfection et d'innovation.",
-      distinction: "Depuis 1987",
-      icone: "⌬"
+      titre: "Parking Sécurisé",
+      description: "Parc bien gardé à Kipé, avec vidéosurveillance et personnel formé.",
+      distinction: "Lieu sécurisé",
+      icone: "🔐"
     }
   ];
 
   const statistiques = [
-    { valeur: "500+", libellé: "Pièces d'exception", suffixe: "en collection" },
-    { valeur: "99.7%", libellé: "Taux de satisfaction", suffixe: "clients privilégiés" },
-    { valeur: "24", libellé: "Heures sur 24", suffixe: "service dédié" },
-    { valeur: "1:1", libellé: "Ratio personnel", suffixe: "accompagnement sur mesure" }
+    { valeur: "80+", libellé: "Véhicules en stock", suffixe: "toujours disponibles" },
+    { valeur: "5 ans+", libellé: "Expérience terrain", suffixe: "dans l’importation" },
+    { valeur: "95%", libellé: "Clients satisfaits", suffixe: "selon retour terrain" },
+    { valeur: "5 min", libellé: "Temps d’accueil", suffixe: "prise en charge rapide" }
   ];
 
   return (
     <section className="elegance-section">
       <div className="elegance-container">
-        {/* En-tête Prestige */}
+        {/* En-tête */}
         <motion.div 
           className="elegances-header"
           initial={{ opacity: 0, y: 20 }}
@@ -59,18 +60,18 @@ const EleganceSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="elegancess-badge">
-            <span className="badge-ornement">⌖</span>
-            <span>L'Art de la Performance</span>
+            <span className="badge-ornement">📍</span>
+            <span>Parking G-TRAF+ | Kipé, Conakry</span>
           </div>
           <h2 className="elegance-titre">
-            <span className="titre-gradient">L'Excellence</span> Réinventée
+            <span className="titre-gradient">Votre Prochain</span> Véhicule Vous Attend
           </h2>
           <p className="elegance-sous-titre">
-            Découvrez un univers où chaque détail est pensé pour surpasser vos attentes les plus exigeantes.
+            Un parking moderne, bien organisé, où chaque véhicule est choisi avec soin pour sa fiabilité et son rapport qualité-prix.
           </p>
         </motion.div>
 
-        {/* Grille Prestige */}
+        {/* Grille des atouts */}
         <div className="prestige-grid">
           {prestiges.map((prestige, index) => (
             <motion.div
@@ -90,17 +91,17 @@ const EleganceSection = () => {
             >
               <div className="card-contours"></div>
               <div className="card-content">
-                {/* Icône artisanale */}
+                {/* Icône */}
                 <div className="prestige-icone">
                   {prestige.icone}
                 </div>
 
                 {/* Distinction */}
                 <div className="prestige-distinction">
-                  <span>{prestige.disffftinction}</span>
+                  <span>{prestige.distinction}</span>
                 </div>
 
-                {/* Contenu */}
+                {/* Titre */}
                 <h3 className="prestige-titres">
                   {prestige.titre}
                 </h3>
@@ -108,17 +109,17 @@ const EleganceSection = () => {
                   {prestige.description}
                 </p>
 
-                {/* Garantie */}
+                {/* Garantie locale */}
                 <div className="prestige-garantie">
                   <span className="garantie-ornement">✧</span>
-                  <span>Signature Prestige</span>
+                  <span>Toujours à Kipé</span>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Statistiques d'Exception */}
+        {/* Statistiques réelles */}
         <motion.div 
           className="exception-stats"
           initial={{ opacity: 0 }}
@@ -139,8 +140,6 @@ const EleganceSection = () => {
           </div>
         </motion.div>
       </div>
-
-  
     </section>
   );
 };

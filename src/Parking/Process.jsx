@@ -1,34 +1,51 @@
 import React from 'react';
-import '../Parkstyle/Process.css'
+import '../Parkstyle/Process.css';
+
 const EleganceProcess = () => {
   const etapes = [
     {
-      numero: "I",
-      titre: "Sélection Exclusive",
-      description: "Explorez notre collection d'exception et choisissez le véhicule qui correspond à vos exigences.",
-      details: ["Collection exclusive de 200 modèles", "Filtres par prestige et performance", "Service conseil personnalisé"],
-      couleur: "linear-gradient(135deg, #d4af37 0%, #f0e6c2 100%)"
+      numero: "1",
+      titre: "Visite & Sélection",
+      description: "Découvrez nos véhicules disponibles à Kipé et choisissez celui qui vous convient.",
+      details: [
+        "80+ véhicules en stock",
+        "Berlines, pickups, utilitaires",
+        "Prix affichés en GNF"
+      ],
+      couleur: "linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%)"
     },
     {
-      numero: "II",
-      titre: "Réservation Privée",
-      description: "Confirmez votre sélection avec notre système de réservation sur mesure.",
-      details: ["Disponibilité en temps réel", "Service concierge disponible", "Paiement crypté"],
-      couleur: "linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%)"
+      numero: "2",
+      titre: "Contrôle & Essai",
+      description: "Testez le véhicule et vérifiez son état avec notre mécanicien.",
+      details: [
+        "Inspection mécanique complète",
+        "Essai routier possible",
+        "Documents en ordre"
+      ],
+      couleur: "linear-gradient(135deg, #43a047 0%, #81c784 100%)"
     },
     {
-      numero: "III",
-      titre: "Accord Numérique",
-      description: "Finalisez votre contrat avec notre système de signature électronique sécurisé.",
-      details: ["Documents chiffrés", "Validation en 3 clics", "Archivage sécurisé"],
-      couleur: "linear-gradient(135deg, #000000 0%, #333333 100%)"
+      numero: "3",
+      titre: "Accord & Paiement",
+      description: "Finalisez l’achat ou la location avec un contrat clair et sécurisé.",
+      details: [
+        "Paiement en espèces ou mobile money",
+        "Contrat simple et transparent",
+        "Pas de frais cachés"
+      ],
+      couleur: "linear-gradient(135deg, #fb8c00 0%, #ffcc80 100%)"
     },
     {
-      numero: "IV",
-      titre: "Livraison Sur Mesure",
-      description: "Recevez votre véhicule selon vos préférences avec notre service blanc-gants.",
-      details: ["Livraison discrète 24h/24", "Préparation exemplaire", "Service d'accompagnement"],
-      couleur: "linear-gradient(135deg, #1a1a1a 0%, #4d4d4d 100%)"
+      numero: "4",
+      titre: "Livraison Immédiate",
+      description: "Repartez avec votre véhicule le jour même – prêt à rouler.",
+      details: [
+        "Livraison à Kipé ou Conakry",
+        "Assistance au départ",
+        "Conseils d’entretien offerts"
+      ],
+      couleur: "linear-gradient(135deg, #5e35b1 0%, #9575cd 100%)"
     }
   ];
 
@@ -38,18 +55,18 @@ const EleganceProcess = () => {
         {/* En-tête */}
         <div className="elegance-header">
           <div className="elegance-badge">
-            <span className="badge-icon">✧</span>
-            <span>Expérience Exclusive</span>
+            <span className="badge-icon">🚗</span>
+            <span>G-TRAF+ | Kipé, Conakry</span>
           </div>
           <h2 className="elegance-titre">
-            Un processus d'<span className="highlights-text">exception</span>
+            Un processus <span className="highlights-text">simple et rapide</span>
           </h2>
           <p className="elegance-sous-titre">
-            Conçu pour les clients exigeants, notre service allie perfection technique et élégance discrète.
+            Pas de complications. Choisissez, vérifiez, payez, roulez — en quelques heures seulement.
           </p>
         </div>
 
-        {/* Étapes */}
+        {/* Étapes du processus */}
         <div className="elegance-etapes-container">
           <div className="elegance-etapes-grid">
             {etapes.map((etape, index) => (
@@ -57,26 +74,26 @@ const EleganceProcess = () => {
                 key={index}
                 className={`elegance-card card-delay-${index}`}
               >
-                {/* Numéro */}
+                {/* Numéro de l'étape */}
                 <div className="etape-numero-container">
                   <div 
                     className="etape-numero" 
-                    style={{background: etape.couleur}}
+                    style={{ background: etape.couleur }}
                   >
                     {etape.numero}
                   </div>
                   <div 
                     className="etape-ornement"
-                    style={{background: etape.couleur}}
+                    style={{ background: etape.couleur }}
                   >
-                    {index === 0 && "✧"}
-                    {index === 1 && "✦"}
-                    {index === 2 && "✧"}
-                    {index === 3 && "✦"}
+                    {index === 0 && "✓"}
+                    {index === 1 && "🔧"}
+                    {index === 2 && "📝"}
+                    {index === 3 && "🔑"}
                   </div>
                 </div>
 
-                {/* Contenu */}
+                {/* Titre et description */}
                 <h3 className="etape-titre">
                   {etape.titre}
                 </h3>
@@ -94,7 +111,7 @@ const EleganceProcess = () => {
                   ))}
                 </ul>
 
-                {/* Indicateur */}
+                {/* Indicateur de progression (visuel) */}
                 <div className="etape-indicateur">
                   <div className="indicateur-point"></div>
                 </div>
@@ -111,28 +128,24 @@ const EleganceProcess = () => {
         {/* Informations complémentaires */}
         <div className="elegance-infos-grid">
           <div className="elegance-info-card">
-            <div className="info-icone">⏳</div>
-            <h3 className="info-titre">Discretion</h3>
-            <p className="info-texte">Service entièrement confidentiel</p>
+            <div className="info-icone">📍</div>
+            <h3 className="info-titre">Parking à Kipé</h3>
+            <p className="info-texte">Accès facile, bien gardé, ouvert 7j/7</p>
           </div>
 
           <div className="elegance-info-card">
-            <div className="info-icone">✧</div>
-            <h3 className="info-titre">Exclusivité</h3>
-            <p className="info-texte">Accès à des modèles uniques</p>
+            <div className="info-icone">✔️</div>
+            <h3 className="info-titre">Véhicules Vérifiés</h3>
+            <p className="info-texte">Contrôle technique fait avant mise en vente</p>
           </div>
 
           <div className="elegance-info-card">
-            <div className="info-icone">✦</div>
-            <h3 className="info-titre">Sur Mesure</h3>
-            <p className="info-texte">Personnalisation à votre image</p>
+            <div className="info-icone">📞</div>
+            <h3 className="info-titre">Contact Direct</h3>
+            <p className="info-texte">Appelez-nous pour réserver ou poser une question</p>
           </div>
         </div>
-
-
       </div>
-
-
     </section>
   );
 };

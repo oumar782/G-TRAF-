@@ -1,56 +1,57 @@
 import React from 'react';
-import '../Parkstyle/Testimonial.css'
+import '../Parkstyle/Testimonial.css';
+
 const PrestigeTestimonials = () => {
   const avisClients = [
     {
       id: 1,
-      nom: "Marie-Claire de Montpellier",
-      titre: "Directrice de Chantier",
-      entreprise: "Édifices & Prestige",
+      nom: "Mamadou Sow",
+      titre: "Transporteur",
+      entreprise: "Sow Logistics",
       note: 5,
-      citation: "L'excellence à chaque interaction. Leur parc matériel est impeccable et leur service sur mesure a transformé notre façon de travailler.",
-      projet: "Hôtel Particulier - Paris 16e"
+      citation: "J’ai acheté un Toyota Hilux 2021, toujours impeccable après 18 mois. Le contrôle mécanique était sérieux, et le prix juste. Je recommande à tous les chauffeurs.",
+      projet: "Livraison Conakry - Nzérékoré"
     },
     {
       id: 2,
-      nom: "Jean-Édouard Laurent",
-      titre: "PDG",
-      entreprise: "Transport d'Exception",
+      nom: "Aïssatou Diallo",
+      titre: "Commerçante",
+      entreprise: "Diallo Import",
       note: 5,
-      citation: "Une relation client qui transcende la simple location. Leur attention aux détails et leur discrétion professionnelle sont remarquables.",
-      projet: "Collection Privée - Monaco"
+      citation: "J’ai loué une Corolla pour 3 mois – très propre, économique, et service rapide. Le personnel est courtois et disponible même le week-end.",
+      projet: "Transport de marchandises"
     },
     {
       id: 3,
-      nom: "Sophie-Hélène Van Der Leyen",
-      titre: "Architecte d'Intérieur",
-      entreprise: "Atelier Signature",
-      note: 5,
-      citation: "Pour nos chantiers les plus exigeants, nous n'avons qu'un seul partenaire. Leur service blanc-gants est à la hauteur de nos clients les plus prestigieux.",
-      projet: "Résidence Côte d'Azur"
+      nom: "Ibrahima Camara",
+      titre: "Chef de Chantier",
+      entreprise: "BTP Kourouma",
+      note: 4,
+      citation: "Nous louons régulièrement des pickups pour le transport de matériel. Véhicules solides, bien entretenus, et livrés à temps. Un partenaire fiable.",
+      projet: "Construction à Matam"
     }
   ];
 
   const indicateursConfiance = [
     {
-      valeur: "4.98/5",
+      valeur: "4.8/5",
       label: "Note moyenne",
-      details: "Sur 1500 évaluations"
+      details: "Sur 120 retours clients"
     },
     {
-      valeur: "100%",
-      label: "Clients fidèles",
-      details: "Taux de rétention"
+      valeur: "95%",
+      label: "Clients satisfaits",
+      details: "Selon enquête terrain"
     },
     {
-      valeur: "24/7",
-      label: "Service Concierge",
-      details: "Disponibilité permanente"
+      valeur: "24h",
+      label: "Disponibilité",
+      details: "Livraison rapide possible"
     },
     {
-      valeur: "20 ans",
-      label: "D'expérience exclusive",
-      details: "Depuis 2003"
+      valeur: "5 ans+",
+      label: "D’expérience locale",
+      details: "Depuis 2019 à Kipé"
     }
   ];
 
@@ -60,14 +61,14 @@ const PrestigeTestimonials = () => {
         {/* En-tête */}
         <div className="prestige-header">
           <div className="prestige-badge">
-            <span className="badge-icon">✧</span>
-            <span>Nos Clients d'Exception</span>
+            <span className="badge-icon">👥</span>
+            <span>G-TRAF+ | Kipé, Conakry</span>
           </div>
           <h2 className="prestige-titre">
-            La confiance des <span className="highlight-text">connaisseurs</span>
+            Ce que disent nos <span className="highlight-text">clients</span>
           </h2>
           <p className="prestige-sous-titre">
-            Ceux qui exigent le meilleur partagent leur expérience avec nous.
+            Des professionnels et particuliers satisfaits partagent leur expérience avec notre parc automobile.
           </p>
         </div>
 
@@ -81,7 +82,7 @@ const PrestigeTestimonials = () => {
               {/* Icône de citation */}
               <div className="citation-icone">“</div>
 
-              {/* Note */}
+              {/* Note en étoiles */}
               <div className="note-etoiles">
                 {[...Array(avis.note)].map((_, i) => (
                   <span key={i} className="etoile">✧</span>
@@ -93,15 +94,19 @@ const PrestigeTestimonials = () => {
                 {avis.citation}
               </blockquote>
 
-              {/* Badge de projet */}
+              {/* Projet ou usage */}
               <div className="projet-badge">
-                <span className="badge-label">Projet :</span> {avis.projet}
+                <span className="badge-label">Usage :</span> {avis.projet}
               </div>
 
-              {/* Information client */}
+              {/* Informations client */}
               <div className="client-info">
                 <div className="client-initiales">
-                  {avis.nom.split(' ').map(n => n[0]).join('')}
+                  {avis.nom
+                    .split(' ')
+                    .map(nom => nom[0])
+                    .join('')
+                    .toUpperCase()}
                 </div>
                 <div className="client-details">
                   <div className="client-nom">{avis.nom}</div>
@@ -129,8 +134,6 @@ const PrestigeTestimonials = () => {
           </div>
         </div>
       </div>
-
-  
     </section>
   );
 };
