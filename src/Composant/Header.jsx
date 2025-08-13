@@ -18,6 +18,7 @@ export const GtrafHeader = () => {
     { name: 'Accueil', to: '/' },
     { name: 'Nos réalisations', to: '/realisations' },
     { name: 'Nos Expertises', to: '/expertises' },
+    { name: 'Nos Certifications', to: 'Nos-certifications' },
     { name: 'Notre parcours', to: '/parcours' },
     { name: 'Flottes & Location', to: '/flottes' },
     { name: 'Contact', to: '/contact' },
@@ -62,7 +63,7 @@ export const GtrafHeader = () => {
                 <Phone size={18} />
                 <span className="gtraf-header__contact-text">+224 621 01 56 99</span>
               </a>
-              <a href="mailto:contact@gtrafplus.com" className="gtraf-header__contact-link">
+              <a href="mailto:contacts@gtrafplus.com" className="gtraf-header__contact-link">
                 <Mail size={18} />
                 <span className="gtraf-header__contact-text">Email</span>
               </a>

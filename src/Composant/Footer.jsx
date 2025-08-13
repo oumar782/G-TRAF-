@@ -130,7 +130,7 @@ const Footer = () => {
               </div>
               <div className="footer-contact-item">
                 <MailIcon />
-                <span>Contact@gtrafplus.com</span>
+                <span>Contacts@gtrafplus.com</span>
               </div>
             </div>
           </div>

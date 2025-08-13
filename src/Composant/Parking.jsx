@@ -1,9 +1,9 @@
 import React from 'react';
-import HeroPark from '../Parking/heropark'; // Majuscule cohérente
-import Catalogue from '../Parking/Catalogue'; // Majuscule cohérente
-import Feature from '../Parking/Feature'; // Majuscule cohérente
-import Process from '../Parking/Process'; // Majuscule cohérente
-import Testimonial from '../Parking/Testimoniale'; // Majuscule cohérente
+import HeroPark from '../Parking/heropark';
+import Catalogue from '../Parking/Catalogue';
+import Feature from '../Parking/Feature';
+import Process from '../Parking/Process';
+import Testimonial from '../Parking/Testimoniale';
 
 const Parking = () => {
   return (

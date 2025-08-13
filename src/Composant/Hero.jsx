@@ -11,6 +11,7 @@ const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const typingTimeoutRef = useRef(null);
+  const heroRef = useRef(null);
 
   const backgroundImages = [bg1, bg2, bg3];
 
@@ -67,16 +68,25 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [currentText]);
 
-  // Slideshow optimisé
+  // Slideshow et intersection observer
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 300);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (heroRef.current) observer.observe(heroRef.current);
 
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
     }, 6000);
 
     return () => {
-      clearTimeout(timer);
+      observer.disconnect();
       clearInterval(slideInterval);
       if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
     };
@@ -90,14 +100,15 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="btp-hero" id="A-propos">
-      {/* Background optimisé */}
+    <section className="btp-hero" id="A-propos" ref={heroRef}>
+      {/* Background optimisé avec parallax */}
       <div className="btp-hero__bg">
         {backgroundImages.map((img, index) => (
           <div
             key={index}
             className={`btp-hero__slide ${index === currentSlide ? 'btp-hero__slide--active' : ''}`}
             style={{ backgroundImage: `url(${img})` }}
+            aria-hidden={index !== currentSlide}
           />
         ))}
         <div className="btp-hero__overlay" />
@@ -122,7 +133,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="btp-hero__subheading">
-            <span className="btp-hero__highlighted">G-TRAF+</span> est une entreprise dynamique spécialisée dans la{' '}
+              <span className="btp-hero__highlighted">G-TRAF+</span> est une entreprise dynamique spécialisée dans la{' '}
               <span className="btp-hero__highlighted">construction, l'aménagement d'infrastructures et la fourniture de matériel professionnel</span>.
               Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation.
             </p>
@@ -131,6 +142,7 @@ const HeroSection = () => {
               <button
                 className="btp-hero__btn btp-hero__btn--primary"
                 onClick={() => scrollToSection('Notre-mission')}
+                aria-label="Découvrir nos services"
               >
                 Nous Découvrir
                 <span className="btp-hero__icon btp-hero__icon--arrow"></span>
@@ -147,7 +159,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Cartes flottantes optimisées */}
+          {/* Cartes flottantes */}
           <div className={`btp-hero__cards ${isVisible ? 'btp-hero__cards--visible' : ''}`}>
             <div className="btp-hero__card btp-hero__card--mission">
               <div className="btp-hero__card-header">
@@ -160,7 +172,10 @@ const HeroSection = () => {
             </div>
 
             <div className="btp-hero__card btp-hero__card--vision">
-              <div className="btp-hero__card-title">VISION</div>
+              <div className="btp-hero__card-header">
+                <span className="btp-hero__indicator"></span>
+                <span>VISION</span>
+              </div>
               <p className="btp-hero__card-desc">
                 Construire une Guinée moderne et durable, grâce à des projets structurants et respectueux des normes.
               </p>

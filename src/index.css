@@ -1,2 +1,73 @@
-/* Import d'une police élégante (Avenir est bon, mais on peut aller plus haut) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+/* ----- Import des polices ----- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600&family=Oswald:wght@400;500;700&display=swap');
+
+/* ----- Styles globaux ----- */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #1e1e1e;
+}
+
+/* ----- Titres (impact sérieux) ----- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; }
+
+/* ----- Paragraphes ----- */
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+/* ----- Notes / textes secondaires ----- */
+.note {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ----- Liens ----- */
+a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  color: #1e1e1e;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Boutons ----- */
+button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* ----- Classes utilitaires pour polices ----- */
+.oswald-bold { font-family: 'Oswald', sans-serif; font-weight: 700; }
+.lato-regular { font-family: 'Lato', sans-serif; font-weight: 400; }
+.lato-bold { font-family: 'Lato', sans-serif; font-weight: 700; }
+.montserrat-medium { font-family: 'Montserrat', sans-serif; font-weight: 500; }

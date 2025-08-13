@@ -12,9 +12,9 @@ import Accueil from './Page/Accueil.jsx';
 import APropos from './Composant/Hero.jsx';
 import Realisations from './Composant/Portfolio.jsx';
 import Expertises from './Composant/Expertise.jsx';
-import Parcours from './Composant/Timeline.jsx';
 import Flottes from './Composant/Parking.jsx';
 import ContactPage from './Composant/Contact.jsx';
+import Certification from './Composant/Certificat.jsx';
 
 // Google Analytics
 const GA_TRACKING_ID = "G-QWVBXGWGD2";
@@ -43,9 +43,9 @@ function App() {
           <Route path="a-propos" element={<APropos />} />
           <Route path="realisations" element={<Realisations />} />
           <Route path="expertises" element={<Expertises />} />
-          <Route path="parcours" element={<Parcours />} />
           <Route path="flottes" element={<Flottes />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="Nos-certifications" element={<Certification />} />
         </Route>
       </Routes>
     </>

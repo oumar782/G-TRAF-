@@ -51,54 +51,84 @@ const Expertise = () => {
       icon: 'Skyscraper',
       title: 'Construction Signature',
       subtitle: 'Des projets qui redéfinissent le skyline',
-      description: 'De la tour élégante au complexe futuriste, nous bâtissons des structures iconiques qui marquent leur époque.',
+      description: 'De la tour élégante au complexe futuriste, nous bâtissons des structures iconiques qui marquent leur époque avec une précision d\'horloger et une vision audacieuse.',
       image: constructionImage,
-      features: ['Design architectural unique', 'Normes HQE et durabilité', 'Intégration smart building', 'Finitions haut de gamme'],
+      features: [
+        'Design architectural unique et personnalisé',
+        'Normes HQE et durabilité certifiées',
+        'Intégration smart building dernier cri',
+        'Finitions artisanales haut de gamme'
+      ],
       color: 'blue'
     },
     {
       icon: 'Hammer',
       title: 'Rénovation Prestige',
-      subtitle: 'L’alliance du cachet et du confort moderne',
-      description: 'Nous insufflons une seconde vie à vos espaces en respectant leur histoire tout en y intégrant l’innovation.',
+      subtitle: 'L\'alliance du cachet et du confort moderne',
+      description: 'Nous insufflons une seconde vie à vos espaces en respectant leur histoire tout en y intégrant les innovations les plus abouties pour un résultat sans compromis.',
       image: constructionImage,
-      features: ['Restauration patrimoniale', 'Performance énergétique optimisée', 'Matériaux nobles', 'Respect du style d’origine'],
+      features: [
+        'Restauration patrimoniale certifiée',
+        'Performance énergétique optimisée',
+        'Matériaux nobles et authentiques',
+        'Respect scrupuleux du style d\'origine'
+      ],
       color: 'emerald'
     },
     {
       icon: 'Factory',
       title: 'Infrastructures Industrielles',
       subtitle: 'Efficacité, sécurité et innovation',
-      description: 'Des installations pensées pour la performance, alliant technologies de pointe et normes internationales.',
+      description: 'Des installations pensées pour la performance industrielle, alliant technologies de pointe et normes internationales les plus strictes.',
       image: industrielImage,
-      features: ['Automatisation et IA', 'Conception modulaire', 'Basse consommation énergétique', 'Sécurité renforcée'],
+      features: [
+        'Automatisation et IA intégrées',
+        'Conception modulaire évolutive',
+        'Basse consommation énergétique certifiée',
+        'Systèmes de sécurité renforcée'
+      ],
       color: 'purple'
     },
     {
       icon: 'Brush',
-      title: 'Design d’Intérieur',
+      title: 'Design d\'Intérieur',
       subtitle: 'Chaque détail compte',
-      description: 'Création d’environnements sur mesure qui reflètent votre identité et maximisent le confort.',
+      description: 'Création d\'environnements sur mesure qui reflètent votre identité exclusive tout en maximisant le confort et l\'ergonomie.',
       image: designImage,
-      features: ['Éclairage sur mesure', 'Matériaux premium', 'Mobilier exclusif', 'Harmonie des espaces'],
+      features: [
+        'Éclairage architectural sur mesure',
+        'Matériaux premium et exclusifs',
+        'Mobilier design exclusif',
+        'Harmonie parfaite des espaces'
+      ],
       color: 'rose'
     },
     {
       icon: 'Tool',
       title: 'Maintenance Premium',
       subtitle: 'Toujours opérationnel, toujours impeccable',
-      description: 'Un suivi proactif et réactif pour garantir la longévité et la performance de vos installations.',
+      description: 'Un suivi proactif et réactif de haute précision pour garantir la longévité et la performance optimale de vos installations.',
       image: maintenanceImage,
-      features: ['Assistance 24/7', 'Techniciens experts', 'Pièces certifiées', 'Suivi digitalisé'],
+      features: [
+        'Assistance technique 24/7',
+        'Techniciens experts certifiés',
+        'Pièces d\'origine garanties',
+        'Suivi digitalisé en temps réel'
+      ],
       color: 'orange'
     },
     {
       icon: 'Compass',
       title: 'Conseil & Stratégie',
       subtitle: 'Vision, planification, succès',
-      description: 'Nous vous guidons de l’idée à la réalisation avec une expertise technique et stratégique éprouvée.',
+      description: 'Nous vous guidons de l\'idée à la réalisation avec une expertise technique et stratégique éprouvée par des décennies d\'expérience.',
       image: conseilImage,
-      features: ['Études de faisabilité', 'Optimisation budgétaire', 'Gestion de projet clé en main', 'Veille réglementaire'],
+      features: [
+        'Études de faisabilité approfondies',
+        'Optimisation budgétaire rigoureuse',
+        'Gestion de projet clé en main',
+        'Veille réglementaire exhaustive'
+      ],
       color: 'amber'
     }
   ];
@@ -106,38 +136,40 @@ const Expertise = () => {
   const renderIcon = (iconName) => {
     const icons = {
       Skyscraper: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 22h18V10L12 2 3 10v12z" />
-          <path d="M9 22V12h6v10" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 8v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4m-4 0h4"/>
         </svg>
       ),
       Hammer: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M15 3L21 9l-3 3-6-6V3h3z" />
-          <path d="M3 21l9-9" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+          <path d="M17.64 15 22 10.64"/>
+          <path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/>
         </svg>
       ),
       Factory: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 21h18V8l-4 3V8l-4 3V8H3v13z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+          <path d="M17 18h1"/>
+          <path d="M12 18h1"/>
+          <path d="M7 18h1"/>
         </svg>
       ),
       Brush: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M2 18a4 4 0 0 0 4 4h2v-4H2z" />
-          <path d="M22 2L11 13" />
-          <path d="M15 3h6v6" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/>
+          <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/>
         </svg>
       ),
       Tool: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14.7 6.3l1.6 1.6 3.8-3.8a6 6 0 0 1-7.9 7.9l-7 7a2 2 0 0 1-2.8-2.8l7-7a6 6 0 0 1 7.9-7.9l-3.8 3.8z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
         </svg>
       ),
       Compass: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <polygon points="16 8 12 12 8 16 12 12" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
         </svg>
       )
     };
@@ -154,18 +186,29 @@ const Expertise = () => {
   return (
     <section id="Nos-expertises" className={`expertise-section ${isVisible ? 'visible' : ''}`} ref={ref}>
       <div className="expertise-container">
-        
-        <div className={`expertise-header ${isVisible ? 'fade-in' : ''}`}>
-          <div className="expertise-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="7" /></svg>
-            <span>NOS EXPERTISES</span>
+        {/* Background decorative elements */}
+        <div className="expertise-bg-pattern"></div>
+        <div className="expertise-bg-shape-1"></div>
+        <div className="expertise-bg-shape-2"></div>
+
+        <div className={`expertise-header-wrapper ${isVisible ? 'fade-in' : ''}`}>
+          <div className="expertise-header">
+            <div className="expertise-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2s3.5 2 3.5 7l-.5 5.5h-6L8.5 9c0-5 3.5-7 3.5-7z"/>
+                <path d="M5 15s1 2 7 2 7-2 7-2"/>
+                <path d="M12 22v-3"/>
+              </svg>
+              <span>DOMAINES D'EXCELLENCE</span>
+            </div>
+            <h2 className="expertise-title">
+              <span className="title-line">Savoir-Faire</span>
+              <span className="title-highlight">d'Exception</span>
+            </h2>
+            <p className="expertise-description">
+              Nos six piliers d'expertise couvrent l'intégralité du cycle de vie d'un projet, conjuguant innovation technique et excellence exécutive pour des réalisations sans compromis.
+            </p>
           </div>
-          <h2 className="expertise-title">
-            Maîtrise <span className="highlight">Absolue</span>
-          </h2>
-          <p className="expertise-description">
-            Nos 6 piliers d’excellence couvrent l’intégralité du cycle de vie d’un projet, du croquis initial à la performance sur le long terme.
-          </p>
         </div>
 
         <div className="expertise-grid">
@@ -184,10 +227,14 @@ const Expertise = () => {
                 <p className="expertise-card-subtitle">{item.subtitle}</p>
                 <p className="expertise-card-desc">{item.description}</p>
                 <div className="expertise-more">
-                  <span>En savoir plus</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  <span>Explorer cette expertise</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
                 </div>
               </div>
+              <div className="expertise-card-decoration"></div>
             </div>
           ))}
         </div>
@@ -199,7 +246,7 @@ const Expertise = () => {
               <div className="expertise-modal-content">
                 <button className="expertise-modal-close" onClick={closeModal}>
                   <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
                   </svg>
                 </button>
                 <div className="expertise-modal-grid">
@@ -222,13 +269,13 @@ const Expertise = () => {
                     </div>
                     <p className="expertise-modal-description">{expertises[activeExpertise].description}</p>
                     <div className="expertise-modal-features">
-                      <h4 className="features-title">Nos engagements</h4>
+                      <h4 className="features-title">Nos engagements qualité</h4>
                       <ul className="features-list">
                         {expertises[activeExpertise].features.map((feature, idx) => (
                           <li key={idx} className="feature-item">
                             <span className="feature-icon">
                               <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                               </svg>
                             </span>
                             <span className="feature-text">{feature}</span>
@@ -238,9 +285,9 @@ const Expertise = () => {
                     </div>
                     <div className="expertise-modal-actions">
                       <button className="expertise-modal-cta-btn primary">
-                        <span>Demander un devis</span>
+                        <span>Demander une consultation</span>
                         <svg viewBox="0 0 24 24" width="20" height="20">
-                          <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                          <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
                         </svg>
                       </button>
                       <button className="expertise-modal-cta-btn secondary" onClick={closeModal}>

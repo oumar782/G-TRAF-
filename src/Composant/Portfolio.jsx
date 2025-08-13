@@ -15,14 +15,14 @@ const Project360Gallery = () => {
   const projects = [
     {
       id: 1,
-      title: 'Neo-Skyscraper Complex',
-      category: 'Architecture Futuriste',
-      location: 'La Défense, Paris',
+      title: 'Clinique Jean Paul 2 – Bâtiment Principal',
+      category: 'Construction & Architecture',
+      location: 'Conakry',
       budget: '180M€',
       year: '2024',
       image: project1,
-      description: 'Tour révolutionnaire de 300m intégrant IA, énergie solaire avancée et espaces modulables intelligents.',
-      technologies: ['IA Structurelle', 'Panneaux Solaires 4.0', 'Verre Intelligent', 'Système IoT'],
+      description: 'Bâtiment principal de 300m conçu avec des matériaux durables et des espaces modulables intelligemment pensés.',
+      technologies: ['Béton armé', 'Verre haute résistance', 'Isolation thermique avancée', 'Système de ventilation optimisé'],
       stats: {
         surface: '45,000m²',
         duration: '36 mois',
@@ -32,39 +32,40 @@ const Project360Gallery = () => {
     },
     {
       id: 2,
-      title: 'Smart Living Penthouse',
-      category: 'Résidentiel Ultra-Premium',
-      location: 'Neuilly-sur-Seine',
-      budget: '12M€',
-      year: '2023',
+      title: 'Clinique Jean Paul 2 – Pavillon d’Accueil',
+      category: 'Construction & Architecture',
+      location: 'Conakry',
+      budget: '180M€',
+      year: '2024',
       image: project2,
-      description: 'Penthouse de 800m² avec domotique révolutionnaire, murs végétalisés et technologies immersives.',
-      technologies: ['Domotique IA', 'Réalité Augmentée', 'Éco-matériaux', 'Serre Hydroponique'],
+      description: 'Pavillon d’accueil moderne, conçu pour optimiser l’espace et le confort des visiteurs.',
+      technologies: ['Charpente métallique', 'Revêtement en pierre', 'Éclairage naturel optimisé', 'Sols résistants'],
       stats: {
-        surface: '800m²',
-        duration: '18 mois',
-        team: '50 specialists'
+        surface: '5,000m²',
+        duration: '12 mois',
+        team: '30 experts'
       },
       gallery: [project2, project1, project3]
     },
     {
       id: 3,
-      title: 'Quantum Bridge Infrastructure',
-      category: 'Infrastructure Révolutionnaire',
-      location: 'Lyon Confluence',
-      budget: '95M€',
-      year: '2023',
+      title: 'Clinique Jean Paul 2 – Espaces Techniques',
+      category: 'Construction & Architecture',
+      location: 'Conakry',
+      budget: '180M€',
+      year: '2024',
       image: project3,
-      description: 'Pont intelligent avec capteurs quantiques, éclairage adaptatif et structure auto-réparante.',
-      technologies: ['Matériaux Quantiques', 'Éclairage Adaptatif', 'Auto-Diagnostic', 'Énergie Cinétique'],
+      description: 'Zones techniques et infrastructures de support réalisées avec des standards professionnels élevés.',
+      technologies: ['Béton haute performance', 'Toitures renforcées', 'Systèmes d’assainissement modernes', 'Équipements techniques robustes'],
       stats: {
-        surface: '2,500m',
+        surface: '10,000m²',
         duration: '24 mois',
-        team: '120 ingénieurs'
+        team: '50 experts'
       },
       gallery: [project3, project1, project2]
     }
   ];
+  
 
   const currentProject = projects[activeProject];
 
@@ -122,9 +123,9 @@ const Project360Gallery = () => {
       <div className="project360-container">
         {/* Header */}
         <div className={`project360-header ${isVisible ? 'visible' : ''}`}>
-          <div className="project360-badge">🌟 PROJETS RÉVOLUTIONNAIRES 360°</div>
+          <div className="project360-badge"> Nos realisations RÉVOLUTIONNAIRES 360°</div>
           <h2 className="project360-title">
-            Portfolio<span> Immersif</span>
+            Nos realisations<span> Immersif</span>
           </h2>
           <p className="project360-subtitle">
             Explorez nos réalisations révolutionnaires avec une expérience immersive à 360°. 
@@ -147,10 +148,7 @@ const Project360Gallery = () => {
                 className="project360-main-image"
               />
               <div className="project360-overlay"></div>
-              <div className="project360-budget-badge">
-                <div className="project360-budget">{currentProject.budget}</div>
-                <div className="project360-year">{currentProject.year}</div>
-              </div>
+           
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 className="project360-play-button"
