@@ -128,11 +128,7 @@ const Histoire = () => {
               />
               
               {/* Floating Stats */}
-              <div className={`about-stat about-stat-left ${isVisible ? 'about-stat-left-animate' : ''}`}>
-                <div className="about-stat-number">25+</div>
-                <div className="about-stat-label">Années d'expérience</div>
-              </div>
-              
+             
               <div className={`about-stat about-stat-right ${isVisible ? 'about-stat-right-animate' : ''}`}>
                 <div className="about-stat-number">500+</div>
                 <div className="about-stat-label">Projets réalisés</div>

@@ -20,7 +20,6 @@ const Footer = () => {
     { name: 'Nos réalisations', to: '/realisations' },
     { name: 'Nos Expertises', to: '/expertises' },
     { name: 'Nos Certifications', to: 'Nos-certifications' },
-    { name: 'Notre parcours', to: '/parcours' },
     { name: 'Flottes & Location', to: '/flottes' },
     { name: 'Contact', to: '/contact' },
   ];

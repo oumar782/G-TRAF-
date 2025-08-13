@@ -1,14 +1,37 @@
+/* Variables CSS */
+:root {
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+  --color-dark: #0f172a;
+  --color-dark-2: #1e293b;
+  --color-light: #f8fafc;
+  --color-light-2: #e2e8f0;
+  --color-blue: #1d4ed8;
+  --color-blue-light: #3b82f6;
+  --color-emerald: #047857;
+  --color-emerald-light: #10b981;
+  --color-purple: #7c3aed;
+  --color-purple-light: #8b5cf6;
+  --color-rose: #e11d48;
+  --color-rose-light: #f43f5e;
+  --color-orange: #ea580c;
+  --color-orange-light: #f97316;
+  --color-amber: #d97706;
+  --color-amber-light: #f59e0b;
+  --color-gold: #d97706;
+  --color-silver: #94a3b8;
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
 /* Base styles */
 .expertise-section {
-  padding: 10rem 2rem;
-  background: 
-    radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
   position: relative;
+  padding: 12rem 2rem;
+  background-color: #ffffff;
   overflow: hidden;
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s var(--ease-out-quint);
 }
 
 .expertise-section.visible {
@@ -19,14 +42,47 @@
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+/* Background decorative elements */
+.expertise-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.expertise-bg-shape-1 {
+  position: absolute;
+  top: -300px;
+  right: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.expertise-bg-shape-2 {
+  position: absolute;
+  bottom: -400px;
+  left: -400px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  z-index: 0;
 }
 
 /* Header */
 .expertise-header-wrapper {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s var(--ease-out-quint);
   margin-bottom: 6rem;
 }
 
@@ -39,15 +95,17 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .expertise-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: rgba(15, 25, 28, 0.2);
-  color: #072836;
-  padding: 0.75rem 1.25rem;
+  background-color: rgba(15, 23, 42, 0.1);
+  color: var(--color-dark);
+  padding: 0.75rem 1.5rem;
   border-radius: 100px;
   font-weight: 600;
   font-size: 0.875rem;
@@ -55,10 +113,12 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(7, 40, 76, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.3);
 }
 
 .expertise-badge svg {
+  width: 16px;
+  height: 16px;
   animation: pulse 2s infinite;
 }
 
@@ -70,36 +130,41 @@
 
 .expertise-title {
   font-size: clamp(2.5rem, 5vw, 3.75rem);
-  font-weight: 800;
-  color: rgb(7, 51, 76);
+  font-weight: 700;
+  color: var(--color-dark);
   margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.expertise-title .highlight {
-  background: linear-gradient(to right, #1c626f, #0b6161);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  display: inline-block;
+.expertise-title .title-line {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.expertise-title .highlight::after {
+.expertise-title .title-highlight {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, var(--color-blue), var(--color-emerald-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.expertise-title .title-highlight::after {
   content: '';
   position: absolute;
   bottom: 8px;
   left: 0;
   width: 100%;
   height: 8px;
-  background: linear-gradient(to right, rgba(28, 98, 111, 0.2), rgba(11, 97, 97, 0.2));
+  background: linear-gradient(to right, rgba(29, 78, 216, 0.2), rgba(16, 185, 129, 0.2));
   z-index: -1;
   border-radius: 4px;
 }
 
 .expertise-description {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #0a0b0c;
+  color: var(--color-dark-2);
   line-height: 1.7;
   margin: 0 auto;
   max-width: 700px;
@@ -109,43 +174,25 @@
 /* Grid */
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .expertise-card {
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.6s var(--ease-out-quint);
   opacity: 0;
   transform: translateY(40px);
-  background: linear-gradient(135deg, rgba(20, 48, 61, 0.9), rgba(7, 11, 12, 0.9));
+  background: white;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
   isolation: isolate;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.expertise-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
-  z-index: -1;
-}
-
-.expertise-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .expertise-card.fade-in {
@@ -156,11 +203,12 @@
 .expertise-card.active {
   transform: scale(1.03);
   z-index: 10;
+  box-shadow: 0 30px 50px -10px rgba(0, 0, 0, 0.2);
 }
 
 .expertise-card:not(.active):hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.15);
 }
 
 .expertise-card-inner {
@@ -169,32 +217,46 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .expertise-card-inner.active-inner {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+.expertise-card-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, currentColor, transparent 70%);
+  opacity: 0.1;
+  border-bottom-left-radius: 100%;
+  z-index: 1;
+}
+
 .expertise-icon {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.6s var(--ease-out-quint), box-shadow 0.6s var(--ease-out-quint);
   flex-shrink: 0;
   color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.expertise-icon.blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-.expertise-icon.emerald { background: linear-gradient(135deg, #10b981, #059669); }
-.expertise-icon.purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-.expertise-icon.rose { background: linear-gradient(135deg, #f43f5e, #e11d48); }
-.expertise-icon.orange { background: linear-gradient(135deg, #f97316, #ea580c); }
-.expertise-icon.amber { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.expertise-icon.blue { background: linear-gradient(135deg, var(--color-blue), var(--color-blue-light)); }
+.expertise-icon.emerald { background: linear-gradient(135deg, var(--color-emerald), var(--color-emerald-light)); }
+.expertise-icon.purple { background: linear-gradient(135deg, var(--color-purple), var(--color-purple-light)); }
+.expertise-icon.rose { background: linear-gradient(135deg, var(--color-rose), var(--color-rose-light)); }
+.expertise-icon.orange { background: linear-gradient(135deg, var(--color-orange), var(--color-orange-light)); }
+.expertise-icon.amber { background: linear-gradient(135deg, var(--color-amber), var(--color-amber-light)); }
 
 .expertise-card-inner:hover .expertise-icon {
   transform: translateY(-5px) scale(1.05);
@@ -204,13 +266,13 @@
 .expertise-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--color-dark);
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
 .expertise-card-subtitle {
-  color: #24fbfb;
+  color: var(--color-blue);
   font-weight: 600;
   margin-bottom: 1.25rem;
   font-size: 1rem;
@@ -218,17 +280,18 @@
 }
 
 .expertise-card-desc {
-  color: rgba(203, 213, 225, 0.9);
+  color: var(--color-dark-2);
   line-height: 1.7;
   margin-bottom: 2rem;
   font-size: 0.95rem;
   flex-grow: 1;
+  opacity: 0.9;
 }
 
 .expertise-more {
   display: inline-flex;
   align-items: center;
-  color: #f1f1f4;
+  color: var(--color-blue);
   font-weight: 600;
   transition: all 0.3s ease;
   gap: 0.5rem;
@@ -278,7 +341,7 @@
   z-index: 1000;
   padding: 20px;
   opacity: 0;
-  animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalFadeIn 0.4s var(--ease-out-quint) forwards;
 }
 
 @keyframes modalFadeIn {
@@ -305,10 +368,9 @@
   background: white;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-2xl);
   transform: translateY(30px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalSlideUp 0.4s var(--ease-out-quint) forwards;
 }
 
 @keyframes modalSlideUp {
@@ -336,7 +398,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-out-quint);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -367,7 +429,7 @@
   height: 100%;
   object-fit: cover;
   min-height: 500px;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s var(--ease-out-quint);
 }
 
 .expertise-modal-media:hover .expertise-modal-image {
@@ -389,7 +451,7 @@
   justify-content: center;
   background: white;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s var(--ease-out-quint);
 }
 
 .expertise-modal-icon:hover {
@@ -401,12 +463,12 @@
   height: 32px;
 }
 
-.expertise-modal-icon.blue { color: #3b82f6; }
-.expertise-modal-icon.emerald { color: #10b981; }
-.expertise-modal-icon.purple { color: #8b5cf6; }
-.expertise-modal-icon.rose { color: #f43f5e; }
-.expertise-modal-icon.orange { color: #f97316; }
-.expertise-modal-icon.amber { color: #f59e0b; }
+.expertise-modal-icon.blue { color: var(--color-blue); }
+.expertise-modal-icon.emerald { color: var(--color-emerald); }
+.expertise-modal-icon.purple { color: var(--color-purple); }
+.expertise-modal-icon.rose { color: var(--color-rose); }
+.expertise-modal-icon.orange { color: var(--color-orange); }
+.expertise-modal-icon.amber { color: var(--color-amber); }
 
 .expertise-modal-body {
   padding: 50px;
@@ -426,14 +488,14 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: linear-gradient(to right, #3b82f6, #10b981);
+  background: linear-gradient(to right, var(--color-blue), var(--color-emerald-light));
   border-radius: 2px;
 }
 
 .expertise-modal-title {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #1e293b;
+  color: var(--color-dark);
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -441,7 +503,7 @@
 
 .expertise-modal-subtitle {
   font-size: 1.25rem;
-  color: #64748b;
+  color: var(--color-silver);
   font-weight: 500;
   line-height: 1.5;
 }
@@ -449,8 +511,9 @@
 .expertise-modal-description {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #475569;
+  color: var(--color-dark-2);
   margin-bottom: 40px;
+  opacity: 0.9;
 }
 
 .expertise-modal-features {
@@ -460,7 +523,7 @@
 .features-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--color-dark);
   margin-bottom: 25px;
   position: relative;
   display: inline-block;
@@ -473,7 +536,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(to right, #3b82f6, #10b981);
+  background: linear-gradient(to right, var(--color-blue), var(--color-emerald-light));
   border-radius: 3px;
 }
 
@@ -501,7 +564,7 @@
   border-radius: 8px;
   margin-right: 15px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s var(--ease-out-quint);
 }
 
 .feature-item:hover .feature-icon {
@@ -515,7 +578,7 @@
 }
 
 .feature-text {
-  color: #334155;
+  color: var(--color-dark-2);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -535,7 +598,7 @@
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-out-quint);
   border: none;
   position: relative;
   overflow: hidden;
@@ -558,7 +621,7 @@
 }
 
 .expertise-modal-cta-btn.primary {
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  background: linear-gradient(to right, var(--color-blue), var(--color-purple));
   color: white;
   box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
@@ -572,7 +635,7 @@
   margin-left: 10px;
   width: 18px;
   height: 18px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s var(--ease-out-quint);
 }
 
 .expertise-modal-cta-btn.primary:hover svg {
@@ -581,8 +644,8 @@
 
 .expertise-modal-cta-btn.secondary {
   background: white;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
+  color: var(--color-silver);
+  border: 1px solid var(--color-light-2);
 }
 
 .expertise-modal-cta-btn.secondary:hover {
@@ -605,7 +668,7 @@
 
 @media (max-width: 1024px) {
   .expertise-section {
-    padding: 8rem 2rem;
+    padding: 10rem 2rem;
   }
   
   .expertise-modal-body {
@@ -688,7 +751,7 @@
 
 @media (max-width: 480px) {
   .expertise-section {
-    padding: 6rem 1.5rem;
+    padding: 8rem 1.5rem;
   }
   
   .expertise-badge {
