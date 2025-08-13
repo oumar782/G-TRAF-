@@ -16,11 +16,13 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'Accueil', href: '#A-propos' },
-    { name: 'Nos réalisations', href: '#Nos-Réalisations' },
-    { name: 'Nos Expertises', href: '#Nos-expertises' },
-    { name: 'Notre parcours', href: '#Nos-parcours' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Accueil', to: '/' },
+    { name: 'Nos réalisations', to: '/realisations' },
+    { name: 'Nos Expertises', to: '/expertises' },
+    { name: 'Nos Certifications', to: 'Nos-certifications' },
+    { name: 'Notre parcours', to: '/parcours' },
+    { name: 'Flottes & Location', to: '/flottes' },
+    { name: 'Contact', to: '/contact' },
   ];
 
   const legalLinks = [
