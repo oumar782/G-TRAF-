@@ -1,327 +1,330 @@
-/* Base */
-.contactform-section {
-    padding: 6rem 1rem;
-    background: 
+/* === GtrafPlus Contact Form Styles === */
+.gtp_section {
+  padding: 6rem 1rem;
+  background: 
     radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
-    position: relative;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-  
-  .contactform-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Header */
-  .contactform-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .contactform-badge {
-    display: inline-block;
-    background: rgba(2, 40, 45, 0.900);
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
-    color: #ecebea;
-    font-weight: 600;
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    margin-bottom: 1.5rem;
+.gtp_container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.gtp_header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.gtp_badge {
+  display: inline-block;
+  background: rgba(2, 40, 45, 0.900);
+  color: #ecebea;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.gtp_title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.gtp_title span {
+  background: linear-gradient(to right, #02292a, #b1aeae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gtp_description {
+  font-size: 1.125rem;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Layout */
+.gtp_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .gtp_grid {
+    grid-template-columns: 1fr 2fr;
   }
-  
-  .contactform-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+}
+
+/* Contact Info */
+.gtp_info_card {
+  background: linear-gradient(135deg, #046a6a, #012729);
+  color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gtp_info_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.gtp_info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gtp_info_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gtp_info_icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.gtp_info_icon svg {
+  color: #f9f8f4;
+  width: 20px;
+  height: 20px;
+}
+
+.gtp_info_label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.gtp_info_value {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.gtp_info_sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+/* Stats */
+.gtp_stats {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.gtp_stats_title {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.gtp_stats_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gtp_stats_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.gtp_check {
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Form */
+.gtp_form_container {
+  min-width: 0;
+}
+
+.gtp_form_card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.gtp_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gtp_row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gtp_row {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .contactform-title span {
-    background: linear-gradient(to right, #02292a, #b1aeae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+}
+
+.gtp_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gtp_field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.gtp_field input,
+.gtp_field select,
+.gtp_field textarea {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: white;
+  color: #0f172a;
+  transition: border 0.3s ease;
+}
+
+.gtp_field input:focus,
+.gtp_field select:focus,
+.gtp_field textarea:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.gtp_field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+
+/* Submit Button */
+.gtp_submit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #013a3e, #032a38);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gtp_submit_btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.3);
+}
+
+.gtp_submit_btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.gtp_submit_btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Spinner */
+.gtp_spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fbbf2480;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: gtp_spin 1s linear infinite;
+}
+
+@keyframes gtp_spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Disclaimer */
+.gtp_disclaimer {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Toast Notification */
+.gtp_toast {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: #059669;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+  animation: gtp_slideIn 0.5s ease;
+  max-width: 300px;
+}
+
+.gtp_toast svg {
+  color: white;
+  flex-shrink: 0;
+}
+
+.gtp_toast strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.gtp_toast p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+@keyframes gtp_slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .contactform-description {
-    font-size: 1.125rem;
-    color: #475569;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  /* Layout */
-  .contactform-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .contactform-grid {
-      grid-template-columns: 1fr 2fr;
-    }
-  }
-  
-  /* Contact Info */
-  .contactform-info-card {
-    background: linear-gradient(135deg, #046a6a, #012729);
-    color: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .contactform-info-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contactform-info-list {
-    space-y: 1.5rem;
-  }
-  
-  .contactform-info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contactform-info-icon {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    flex-shrink: 0;
-  }
-  
-  .contactform-info-icon svg {
-    color: #f9f8f4;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .contactform-info-label {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: white;
-  }
-  
-  .contactform-info-value {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-  }
-  
-  .contactform-info-sub {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
-  }
-  
-  /* Stats */
-  .contactform-stats {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contactform-stats-title {
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 1rem;
-  }
-  
-  .contactform-stats-list {
-    space-y: 0.75rem;
-  }
-  
-  .contactform-stats-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.875rem;
-    color: #64748b;
-  }
-  
-  .contactform-check {
-    color: #10b981;
-    font-weight: 600;
-  }
-  
-  /* Form */
-  .contactform-form-container {
-    min-width: 0;
-  }
-  
-  .contactform-form-card {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
-  }
-  
-  .contactform-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .contactform-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  @media (min-width: 768px) {
-    .contactform-row {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  .contactform-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .contactform-field label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #0f172a;
-  }
-  
-  .contactform-field input,
-  .contactform-field select,
-  .contactform-field textarea {
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    background: white;
-    color: #0f172a;
-    transition: border 0.3s ease;
-  }
-  
-  .contactform-field input:focus,
-  .contactform-field select:focus,
-  .contactform-field textarea:focus {
-    outline: none;
-    border-color: #d97706;
-    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
-  }
-  
-  .contactform-field select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 16px;
-  }
-  
-  /* Submit Button */
-  .contactform-submit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    background: linear-gradient(135deg, #013a3e, #032a38);
-    color: white;
-    border: none;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .contactform-submit-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.3);
-  }
-  
-  .contactform-submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-  }
-  
-  .contactform-submit-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Spinner */
-  .contactform-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fbbf2480;
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
-  /* Disclaimer */
-  .contactform-disclaimer {
-    font-size: 0.875rem;
-    color: #64748b;
-    text-align: center;
-    line-height: 1.5;
-  }
-  
-  /* Toast Notification */
-  .contactform-toast {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: #059669;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    z-index: 1000;
-    animation: slideIn 0.5s ease;
-    max-width: 300px;
-  }
-  
-  .contactform-toast svg {
-    color: white;
-    flex-shrink: 0;
-  }
-  
-  .contactform-toast strong {
-    display: block;
-    font-size: 0.95rem;
-  }
-  
-  .contactform-toast p {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    margin: 0;
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
+}

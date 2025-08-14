@@ -1,1092 +1,1216 @@
-/* Variables de design haut de gamme */
+/* ===== G-TRAF+ LUXURY FLEET - STYLES ULTRA PREMIUM ===== */
+/* === VARIABLES DE DESIGN LUXURY === */
 :root {
-  --elite-primary: #1a1a1a;
-  --elite-secondary: #f5f5f5;
-  --elite-accent: #043038; /* Or */
-  --elite-accent-secondary: #c0c0c0; /* Argent */
-  --elite-text: #333;
-  --elite-text-light: #777;
-  --elite-border: rgba(0, 0, 0, 0.1);
-  --elite-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  --elite-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --gtraf-black-diamond: #fefdfd;
+  --gtraf-charcoal-elite: #1a1a1a;
+  --gtraf-white-pearl: #ffffff;
+  --gtraf-white-smoke: #f8f9fa;
+  --gtraf-platinum: #e8e8e8;
+  --gtraf-silver-mist: #c4c4c4;
+  --gtraf-gold-luxury: #036e7e;
+  --gtraf-gold-light: #035665;
+  --gtraf-gold-dark: #044c57;
+  --gtraf-copper-rose: #b76e79;
+  --gtraf-emerald-deep: #004d40;
+  --gtraf-sapphire-blue: #1565c0;
+  --gtraf-ruby-red: #c62828;
+
+  --gtraf-gradient-gold: linear-gradient(135deg, #022627 0%, #1f4848 50%, #033330 100%);
+  --gtraf-gradient-platinum: linear-gradient(135deg, #e8e8e8 0%, #ffffff 50%, #e8e8e8 100%);
+  --gtraf-gradient-noir: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  --gtraf-gradient-overlay: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(26, 26, 26, 0.8) 100%);
+
+  --gtraf-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --gtraf-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --gtraf-shadow-strong: 0 15px 60px rgba(0, 0, 0, 0.15);
+  --gtraf-shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.3);
+  --gtraf-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  --gtraf-transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --gtraf-transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --gtraf-transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --gtraf-space-xs: 0.5rem;
+  --gtraf-space-sm: 1rem;
+  --gtraf-space-md: 1.5rem;
+  --gtraf-space-lg: 2rem;
+  --gtraf-space-xl: 3rem;
+  --gtraf-space-xxl: 4rem;
+
+  --gtraf-radius-sm: 8px;
+  --gtraf-radius-md: 12px;
+  --gtraf-radius-lg: 20px;
+  --gtraf-radius-xl: 30px;
 }
 
-/* Reset et base élégante */
-.elite-fleet-container {
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-  color: var(--elite-text);
+/* === BASE & RESET PREMIUM === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: white;
+  color: var(--gtraf-charcoal-elite);
   line-height: 1.6;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: 
-  radial-gradient(circle at 25% 20%, rgba(5, 27, 172, 0.15) 0%, transparent 50%),
-  radial-gradient(circle at 75% 80%, rgba(227, 228, 230, 0.15) 0%, transparent 50%),
-  radial-gradient(circle at 50% 50%, rgba(20, 51, 255, 0.05) 0%, transparent 70%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* En-tête Prestige */
-.elite-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+/* === ANIMATIONS DÉCORATIVES === */
+@keyframes gtrafFloatParticle {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+}
+
+@keyframes gtrafBadgeShine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* === HERO SECTION === */
+.gtraf-hero-content {
   position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: var(--gtraf-space-xl);
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--gtraf-gradient-gold);
+  color: var(--gtraf-black-diamond);
+  border-radius: var(--gtraf-radius-lg);
 }
 
-.elite-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--elite-accent), transparent);
-}
-
-.elite-badge {
+.gtraf-luxury-badge {
   display: inline-flex;
   align-items: center;
-  font-size: 0.85rem;
+  gap: var(--gtraf-space-xs);
+  padding: var(--gtraf-space-sm) var(--gtraf-space-lg);
+  background: var(--gtraf-white-pearl);
+  color: var(--gtraf-black-diamond);
+  border-radius: 50px;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: white;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--elite-accent);
-  background-color: #043038;
-  border-radius: 50px;
+  margin-bottom: var(--gtraf-space-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--gtraf-shadow-gold);
 }
 
-.elite-icon {
-  width: 16px;
-  height: 16px;
-  fill: white;
-  margin-right: 0.5rem;
-
+.gtraf-crown-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gtraf-black-diamond);
 }
 
-.elite-title {
-  font-size: 2.5rem;
+.gtraf-badge-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: gtrafBadgeShine 3s infinite;
+}
+
+.gtraf-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 300;
-  margin: 0.5rem 0;
-  color: var(--elite-primary);
+  margin-bottom: var(--gtraf-space-md);
+  color: var(--gtraf-white-pearl);
 }
 
-.elite-gradient {
-  background: linear-gradient(90deg, rgb(26, 4, 4), rgb(205, 6, 139));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.elite-description {
-  font-size: 1.1rem;
+.gtraf-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
   max-width: 700px;
-  margin: 0 auto;
-  color: var(--elite-text-light);
+  margin: 0 auto var(--gtraf-space-xl);
 }
 
-/* Section Filtres */
-.elite-filter-section {
-  background-color: white;
-
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--elite-shadow);
-}
-
-.elite-filter-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.elite-search-container {
-  position: relative;
+.gtraf-hero-stats {
   display: flex;
-  align-items: center;
-}
-
-.elite-search-icon {
-  position: absolute;
-  left: 1rem;
-  width: 18px;
-  height: 18px;
-  fill: var(--elite-text-light);
-}
-
-.elite-search-input {
-  width: 100%;
-  padding: 0.8rem 1rem 0.8rem 2.5rem;
-  border: 1px solid var(--elite-border);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: var(--elite-transition);
-  background-color: white;
-}
-
-.elite-search-input:focus {
-  outline: none;
-  border-color: var(--elite-accent);
-  box-shadow: 0 0 0 2px rgba(1, 43, 63, 0.2);
-}
-
-.elite-select-wrapper {
-  position: relative;
-}
-
-.elite-select {
-  appearance: none;
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--elite-border);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  background-color: white;
-  cursor: pointer;
-  transition: var(--elite-transition);
-}
-
-.elite-select:focus {
-  outline: none;
-  border-color: var(--elite-accent);
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-}
-
-.elite-select-arrow {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--elite-text-light);
-  pointer-events: none;
-}
-
-.elite-view-toggle {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.elite-view-button {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 40px;
+  gap: var(--gtraf-space-xl);
+  flex-wrap: wrap;
+}
+
+.gtraf-stat-item strong {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gtraf-white-pearl);
+}
+
+.gtraf-stat-separator {
+  width: 1px;
   height: 40px;
-  border: 1px solid var(--elite-border);
-  border-radius: 8px;
-  background-color: white;
-  cursor: pointer;
-  transition: var(--elite-transition);
+  background: rgba(255,255,255,0.3);
+  margin: 0 var(--gtraf-space-lg);
 }
 
-.elite-view-button:hover {
-  border-color: var(--elite-accent);
-}
-
-.elite-view-button.active {
-  background-color: var(--elite-accent);
-  border-color: var(--elite-accent);
-}
-
-.elite-view-button.active .elite-view-icon {
-  fill: white;
-}
-
-.elite-view-icon {
-  width: 18px;
-  height: 18px;
-  fill: var(--elite-text-light);
-}
-
-.elite-filter-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid var(--elite-border);
-}
-
-.elite-results-count {
-  font-size: 0.9rem;
-  color: var(--elite-text-light);
-}
-
-.elite-reset-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  font-size: 0.9rem;
-  color: var(--elite-text-light);
-  cursor: pointer;
-  transition: var(--elite-transition);
-}
-
-.elite-reset-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--elite-text-light);
-}
-
-.elite-reset-button:hover {
-  color: white;
-}
-
-.elite-reset-button:hover .elite-reset-icon {
-  color: white;
-
-}
-
-/* Onglets Collections */
-.elite-collections-tabs {
-  margin-bottom: 2rem;
-}
-
-.elite-tabs-container {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-
-.elite-tab-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  background-color: var(--elite-secondary);
-  color: var(--elite-text-light);
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--elite-transition);
-}
-
-.elite-tab-button:hover {
-  background-color: rgba(74, 160, 180, 0.1);
-  color: var(--elite-accent);
-}
-
-.elite-tab-button.active {
-  background-color: var(--elite-accent);
-  color: white;
-}
-
-.elite-tab-button.active .elite-tab-icon {
-  fill: white;
-}
-
-.elite-tab-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--elite-text-light);
-}
-
-.elite-tab-button:hover .elite-tab-icon {
-  fill: var(--elite-accent);
-}
-
-/* Affichage des véhicules */
-.elite-vehicles-display {
-  margin-bottom: 3rem;
-}
-
-.elite-grid-view {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.elite-list-view {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-/* Carte véhicule - Vue Grille */
-.elite-vehicle-card {
-  border-radius: 12px;
-  overflow: hidden;
-  transition: var(--elite-transition);
-  background-color: white;
-  box-shadow: var(--elite-shadow);
-}
-
-.elite-vehicle-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.elite-grid-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.elite-card-image-container {
+/* === FILTRES SOPHISTIQUÉS === */
+.gtraf-filter-sanctuary {
+  background: white;
+  margin: -50px var(--gtraf-space-lg) var(--gtraf-space-xl);
+  border-radius: var(--gtraf-radius-xl);
+  padding: var(--gtraf-space-xl);
+  box-shadow: var(--gtraf-shadow-strong);
   position: relative;
-  height: 220px;
+  z-index: 20;
   overflow: hidden;
 }
 
-.elite-vehicle-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.elite-grid-card:hover .elite-vehicle-image {
-  transform: scale(1.05);
-}
-
-.elite-image-overlay {
+.gtraf-filter-sanctuary::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+  height: 4px;
+  background: var(--gtraf-gradient-gold);
 }
 
-.elite-card-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
+.gtraf-filter-header {
+  text-align: center;
+  margin-bottom: var(--gtraf-space-xl);
 }
 
-.elite-badge {
-  display: inline-block;
-  padding: 0.35rem 0.8rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.gtraf-filter-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--gtraf-charcoal-elite);
+  margin-bottom: var(--gtraf-space-sm);
 }
 
-.elite-available {
-  background-color: rgba(40, 167, 69, 0.9);
-  color: white;
-}
-
-.elite-unavailable {
-  background-color: rgba(220, 53, 69, 0.9);
-  color: white;
-}
-
-.elite-quick-action {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 2;
-}
-
-.elite-quick-action-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: var(--elite-text);
-  cursor: pointer;
-  transition: var(--elite-transition);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.elite-quick-action-button:hover {
-  background-color: var(--elite-accent);
-  color: white;
-}
-
-.elite-quick-action-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-.elite-card-details {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.elite-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
-}
-
-.elite-vehicle-designation {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0;
-  flex: 1;
-}
-
-.elite-daily-price {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--elite-accent);
-  margin-left: 1rem;
-}
-
-.elite-vehicle-meta {
-  font-size: 0.9rem;
-  color: var(--elite-text-light);
-  margin: 0 0 1rem;
-}
-
-.elite-vehicle-features {
-  margin: 1rem 0;
-}
-
-.elite-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-  color: var(--elite-text-light);
-}
-
-.elite-feature-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--elite-accent);
-  flex-shrink: 0;
-}
-
-.elite-extra-features {
-  font-size: 0.8rem;
-  color: var(--elite-accent);
-  margin-top: 0.5rem;
+.gtraf-filter-subtitle {
+  color: var(--gtraf-silver-mist);
+  font-size: 1.1rem;
   font-style: italic;
 }
 
-.elite-vehicle-specs {
+.gtraf-filter-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 1rem 0;
+  grid-template-columns: 1fr 200px 200px auto;
+  gap: var(--gtraf-space-lg);
+  margin-bottom: var(--gtraf-space-lg);
+  align-items: end;
 }
 
-.elite-spec-item {
-  text-align: center;
+.gtraf-search-luxury {
+  position: relative;
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-md);
+  overflow: hidden;
+  box-shadow: var(--gtraf-shadow-soft);
 }
 
-.elite-spec-icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--elite-accent);
-  margin-bottom: 0.25rem;
+.gtraf-search-icon {
+  position: absolute;
+  top: 50%;
+  left: var(--gtraf-space-md);
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--gtraf-gold-luxury);
+  z-index: 2;
 }
 
-.elite-spec-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--elite-text-light);
-  margin-bottom: 0.25rem;
+.gtraf-search-input {
+  width: 100%;
+  padding: var(--gtraf-space-md) var(--gtraf-space-md) var(--gtraf-space-md) 3rem;
+  border: 2px solid transparent;
+  background: var(--gtraf-white-pearl);
+  font-size: 1rem;
+  color: var(--gtraf-charcoal-elite);
+  border-radius: var(--gtraf-radius-md);
+  transition: var(--gtraf-transition-smooth);
 }
 
-.elite-spec-value {
-  font-size: 0.9rem;
-  font-weight: 500;
+.gtraf-search-input:focus {
+  outline: none;
+  border-color: var(--gtraf-gold-luxury);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+  transform: translateY(-1px);
 }
 
-.elite-vehicle-footer {
+.gtraf-search-input::placeholder {
+  color: var(--gtraf-silver-mist);
+  font-style: italic;
+}
+
+.gtraf-input-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transition: left 0.5s;
+  pointer-events: none;
+}
+
+.gtraf-search-luxury:hover .gtraf-input-shimmer {
+  left: 100%;
+}
+
+.gtraf-select-luxury {
+  position: relative;
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-md);
+  box-shadow: var(--gtraf-shadow-soft);
+  overflow: hidden;
+}
+
+.gtraf-select {
+  width: 100%;
+  padding: var(--gtraf-space-md);
+  border: 2px solid transparent;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--gtraf-charcoal-elite);
+  cursor: pointer;
+  appearance: none;
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-select:focus {
+  outline: none;
+  border-color: var(--gtraf-gold-luxury);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.gtraf-select-arrow {
+  position: absolute;
+  top: 50%;
+  right: var(--gtraf-space-md);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--gtraf-gold-luxury);
+  pointer-events: none;
+  transition: var(--gtraf-transition-elegant);
+}
+
+.gtraf-select:focus + .gtraf-select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.gtraf-view-selector {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--elite-border);
+  background: var(--gtraf-white-smoke);
+  border-radius: var(--gtraf-radius-md);
+  padding: 4px;
+  box-shadow: var(--gtraf-shadow-inset);
 }
 
-.elite-location-info, .elite-rating-info {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.85rem;
-}
-
-.elite-location-icon, .elite-rating-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--elite-text-light);
-}
-
-.elite-rating-icon {
-  fill: var(--elite-accent);
-}
-
-.elite-card-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-
-.elite-action-button {
+.gtraf-view-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  flex: 1;
-  padding: 0.8rem;
+  width: 44px;
+  height: 44px;
   border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  background: transparent;
+  border-radius: var(--gtraf-radius-sm);
   cursor: pointer;
-  transition: var(--elite-transition);
+  transition: var(--gtraf-transition-smooth);
+  color: var(--gtraf-silver-mist);
 }
 
-.elite-primary {
-  background-color: var(--elite-accent);
-  color: white;
+.gtraf-view-btn.gtraf-active {
+  background: var(--gtraf-white-pearl);
+  color: var(--gtraf-gold-luxury);
+  box-shadow: var(--gtraf-shadow-soft);
+  transform: scale(1.05);
 }
 
-.elite-primary:hover {
-  background-color: #c9a227;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+.gtraf-view-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
-.elite-secondary {
-  background-color: white;
-  color: var(--elite-text);
-  border: 1px solid var(--elite-border);
+.gtraf-filter-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--gtraf-space-lg);
+  border-top: 1px solid var(--gtraf-platinum);
 }
 
-.elite-secondary:hover {
-  border-color: var(--elite-accent);
-  color: var(--elite-accent);
+.gtraf-results-count {
+  display: flex;
+  align-items: baseline;
+  gap: var(--gtraf-space-xs);
 }
 
-.elite-disabled {
-  background-color: #e9ecef;
-  color: #6c757d;
-  cursor: not-allowed;
+.gtraf-count-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gtraf-gold-luxury);
 }
 
-.elite-disabled:hover {
-  background-color: #e9ecef;
-  box-shadow: none;
+.gtraf-count-text {
+  color: var(--gtraf-silver-mist);
+  font-size: 1rem;
 }
 
-.elite-icon-only {
-  flex: 0 0 40px;
+.gtraf-reset-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--gtraf-space-xs);
+  padding: var(--gtraf-space-sm) var(--gtraf-space-lg);
+  border: 1px solid var(--gtraf-platinum);
+  background: transparent;
+  color: var(--gtraf-silver-mist);
+  border-radius: var(--gtraf-radius-lg);
+  cursor: pointer;
+  transition: var(--gtraf-transition-smooth);
+  font-size: 0.9rem;
 }
 
-.elite-action-icon {
+.gtraf-reset-filters:hover {
+  border-color: var(--gtraf-gold-luxury);
+  color: var(--gtraf-gold-luxury);
+  transform: translateY(-1px);
+  box-shadow: var(--gtraf-shadow-soft);
+}
+
+.gtraf-reset-filters svg {
   width: 16px;
   height: 16px;
-  fill: currentColor;
 }
 
-/* Carte véhicule - Vue Liste */
-.elite-list-card {
-  border-radius: 12px;
-  overflow: hidden;
-  transition: var(--elite-transition);
-  background-color: white;
-  box-shadow: var(--elite-shadow);
+/* === SHOWCASE DES COLLECTIONS === */
+.gtraf-collections-showcase {
+  padding: var(--gtraf-space-xxl) var(--gtraf-space-lg);
+  background: white;
 }
 
-.elite-list-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+.gtraf-collection-header {
+  text-align: center;
+  margin-bottom: var(--gtraf-space-xl);
 }
 
-.elite-list-card-layout {
+.gtraf-collection-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gtraf-charcoal-elite);
+  margin-bottom: var(--gtraf-space-lg);
+}
+
+.gtraf-collection-line {
+  width: 100px;
+  height: 3px;
+  background: var(--gtraf-gradient-gold);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.gtraf-collection-tabs {
   display: flex;
+  justify-content: center;
+  gap: var(--gtraf-space-md);
+  flex-wrap: wrap;
 }
 
-.elite-list-card-image {
-  flex: 0 0 280px;
+.gtraf-collection-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--gtraf-space-md);
+  padding: var(--gtraf-space-lg) var(--gtraf-space-xl);
+  background: var(--gtraf-white-pearl);
+  border: 2px solid transparent;
+  border-radius: var(--gtraf-radius-lg);
+  cursor: pointer;
+  transition: var(--gtraf-transition-smooth);
+  box-shadow: var(--gtraf-shadow-soft);
   position: relative;
+  overflow: hidden;
 }
 
-.elite-list-card-details {
-  flex: 1;
-  padding: 1.5rem;
+.gtraf-collection-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gtraf-gradient-gold);
+  opacity: 0;
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-collection-tab:hover::before {
+  left: 0;
+  opacity: 0.05;
+}
+
+.gtraf-collection-tab.gtraf-active {
+  border-color: var(--gtraf-gold-luxury);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, var(--gtraf-white-pearl) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--gtraf-shadow-gold);
+}
+
+.gtraf-tab-icon {
+  font-size: 1.5rem;
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-collection-tab.gtraf-active .gtraf-tab-icon {
+  transform: scale(1.1);
+}
+
+.gtraf-tab-content {
+  text-align: left;
+}
+
+.gtraf-tab-label {
+  font-weight: 600;
+  color: var(--gtraf-charcoal-elite);
+}
+
+.gtraf-tab-count {
+  font-size: 0.8rem;
+  color: var(--gtraf-silver-mist);
+  text-transform: lowercase;
+}
+
+/* === GALERIE DE VÉHICULES === */
+.gtraf-vehicles-gallery {
+  padding: 0 var(--gtraf-space-lg) var(--gtraf-space-xl);
+}
+
+.gtraf-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gtraf-space-xl);
+  margin-top: var(--gtraf-space-lg);
+}
+
+/* === CARTE VÉHICULE - MODE GRILLE === */
+.gtraf-vehicle-card {
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--gtraf-shadow-medium);
+  transition: var(--gtraf-transition-smooth);
+  cursor: pointer;
+}
+
+.gtraf-vehicle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--gtraf-shadow-strong);
+}
+
+.gtraf-card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gtraf-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-vehicle-card:hover .gtraf-card-image {
+  transform: scale(1.05);
+}
+
+.gtraf-image-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7));
+}
+
+.gtraf-card-badges {
+  position: absolute;
+  top: var(--gtraf-space-md);
+  right: var(--gtraf-space-md);
+  z-index: 5;
+}
+
+.gtraf-status-badge {
+  display: inline-block;
+  padding: var(--gtraf-space-xs) var(--gtraf-space-md);
+  border-radius: var(--gtraf-radius-lg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.gtraf-available {
+  background: rgba(76, 175, 80, 0.9);
+  color: var(--gtraf-white-pearl);
+}
+
+.gtraf-reserved {
+  background: rgba(220, 53, 69, 0.9);
+  color: var(--gtraf-white-pearl);
+}
+
+.gtraf-card-content {
+  padding: var(--gtraf-space-lg);
   display: flex;
   flex-direction: column;
 }
 
-.elite-list-card-header {
+.gtraf-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: var(--gtraf-space-md);
 }
 
-.elite-vehicle-pricing {
-  text-align: right;
-  margin-left: 1rem;
-}
-
-.elite-price-label {
-  font-size: 0.8rem;
-  color: var(--elite-text-light);
-}
-
-.elite-vehicle-description {
-  margin: 0 0 1.5rem;
-  color: var(--elite-text-light);
-  line-height: 1.6;
-}
-
-.elite-vehicle-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.elite-stat-item {
-  text-align: center;
-}
-
-.elite-stat-icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--elite-accent);
-  margin-bottom: 0.5rem;
-}
-
-.elite-stat-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--elite-text-light);
-  margin-bottom: 0.25rem;
-}
-
-.elite-stat-value {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/* Aucun résultat */
-.elite-no-results {
-  text-align: center;
-  padding: 4rem 2rem;
-  grid-column: 1 / -1;
-}
-
-.elite-no-results-icon svg {
-  width: 60px;
-  height: 60px;
-  fill: var(--elite-text-light);
-  margin-bottom: 1.5rem;
-}
-
-.elite-no-results-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0 0 1rem;
-  color: var(--elite-primary);
-}
-
-.elite-no-results-message {
-  font-size: 1rem;
-  color: var(--elite-text-light);
-  max-width: 500px;
-  margin: 0 auto 2rem;
-}
-
-.elite-no-results-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  background-color: var(--elite-accent);
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--elite-transition);
-}
-
-.elite-no-results-button:hover {
-  background-color: #c9a227;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-.elite-refresh-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
-/* CTA */
-.elite-cta-section {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.elite-cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 50px;
-  background-color: var(--elite-primary);
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--elite-transition);
-}
-
-.elite-cta-button:hover {
-  background-color: #333;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-.elite-cta-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-/* Modal Véhicule */
-.elite-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  overflow-y: auto;
-}
-
-.elite-modal {
-  background-color: white;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 1200px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  animation: eliteModalFadeIn 0.3s ease-out;
-}
-
-@keyframes eliteModalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.elite-modal-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--elite-transition);
-  z-index: 10;
-}
-
-.elite-modal-close:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.elite-modal-close svg {
-  width: 20px;
-  height: 20px;
-  fill: white;
-}
-
-.elite-modal-header {
-  padding: 2rem 2rem 1rem;
-  border-bottom: 1px solid var(--elite-border);
-}
-
-.elite-modal-title {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin: 0 0 0.5rem;
-  color: var(--elite-primary);
-}
-
-.elite-modal-subtitle {
-  font-size: 1rem;
-  color: var(--elite-text-light);
+.gtraf-vehicle-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gtraf-charcoal-elite);
   margin: 0;
+  flex: 1;
 }
 
-.elite-modal-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.elite-modal-gallery {
+.gtraf-price-tag {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: flex-end;
+  margin-left: var(--gtraf-space-md);
 }
 
-.elite-modal-main-image {
-  height: 400px;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: var(--elite-secondary);
+.gtraf-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gtraf-gold-luxury);
 }
 
-.elite-modal-main-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.gtraf-currency {
+  font-size: 0.8rem;
+  color: var(--gtraf-silver-mist);
+  margin-top: -2px;
 }
 
-.elite-modal-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+.gtraf-vehicle-meta {
+  color: var(--gtraf-silver-mist);
+  font-size: 0.95rem;
+  margin: 0 0 var(--gtraf-space-md);
 }
 
-.elite-modal-thumbnail {
-  height: 80px;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--elite-transition);
-  border: 2px solid transparent;
+.gtraf-vehicle-features {
+  margin: var(--gtraf-space-md) 0;
 }
 
-.elite-modal-thumbnail:hover {
-  border-color: var(--elite-accent);
-}
-
-.elite-modal-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.elite-modal-section {
-  margin-bottom: 2rem;
-}
-
-.elite-modal-section-title {
+.gtraf-feature {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
+  gap: var(--gtraf-space-xs);
+  margin-bottom: var(--gtraf-space-xs);
+  font-size: 0.9rem;
+  color: var(--gtraf-charcoal-elite);
+}
+
+.gtraf-feature-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-more-features {
+  font-size: 0.8rem;
+  color: var(--gtraf-gold-luxury);
+  font-style: italic;
+  margin-top: var(--gtraf-space-xs);
   font-weight: 500;
-  margin: 0 0 1rem;
-  color: var(--elite-primary);
 }
 
-.elite-modal-icon {
-  width: 20px;
-  height: 20px;
-  fill: var(--elite-accent);
-}
-
-.elite-modal-pricing {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.elite-price-tier {
+.gtraf-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: var(--elite-secondary);
-  border-radius: 8px;
+  margin: var(--gtraf-space-md) 0 0;
+  padding-top: var(--gtraf-space-md);
+  border-top: 1px solid var(--gtraf-platinum);
 }
 
-.elite-price-label {
-  font-size: 0.9rem;
-  color: var(--elite-text-light);
-}
-
-.elite-price-amount {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--elite-accent);
-}
-
-.elite-price-savings {
-  font-size: 0.8rem;
-  color: #28a745;
-  margin-top: 0.25rem;
-}
-
-.elite-modal-description {
-  margin: 0 0 1.5rem;
-  color: var(--elite-text-light);
-  line-height: 1.7;
-}
-
-.elite-modal-specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.elite-spec-item {
-  margin-bottom: 1rem;
-}
-
-.elite-spec-label {
-  font-size: 0.8rem;
-  color: var(--elite-text-light);
-  margin-bottom: 0.25rem;
-}
-
-.elite-spec-value {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.elite-modal-features, .elite-modal-inclusions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 1rem;
-}
-
-.elite-feature-item, .elite-inclusion-item {
+.gtraf-location, .gtraf-rating {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--gtraf-space-xs);
   font-size: 0.9rem;
+  color: var(--gtraf-silver-mist);
 }
 
-.elite-feature-icon {
+.gtraf-location-icon {
   width: 16px;
   height: 16px;
-  fill: var(--elite-accent);
 }
 
-.elite-inclusion-icon {
+.gtraf-rating {
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-star {
   width: 16px;
   height: 16px;
-  fill: #28a745;
 }
 
-.elite-modal-actions {
+.gtraf-card-actions {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: var(--gtraf-space-md);
+  margin-top: var(--gtraf-space-md);
 }
 
-/* Responsive */
+.gtraf-card-btn {
+  flex: 1;
+  padding: var(--gtraf-space-md);
+  border: none;
+  border-radius: var(--gtraf-radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--gtraf-transition-smooth);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gtraf-primary {
+  background: var(--gtraf-gradient-gold);
+  color: var(--gtraf-black-diamond);
+}
+
+.gtraf-secondary {
+  background: var(--gtraf-white-pearl);
+  color: var(--gtraf-charcoal-elite);
+  border: 1px solid var(--gtraf-platinum);
+}
+
+.gtraf-secondary svg {
+  width: 18px;
+  height: 18px;
+  color: var(--gtraf-gold-luxury);
+}
+
+/* === PAS DE RÉSULTATS === */
+.gtraf-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--gtraf-space-xxl);
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-lg);
+  box-shadow: var(--gtraf-shadow-soft);
+}
+
+.gtraf-no-results-icon svg {
+  width: 80px;
+  height: 80px;
+  color: var(--gtraf-silver-mist);
+  margin-bottom: var(--gtraf-space-lg);
+}
+
+.gtraf-no-results-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gtraf-charcoal-elite);
+  margin-bottom: var(--gtraf-space-md);
+}
+
+.gtraf-no-results-text {
+  color: var(--gtraf-silver-mist);
+  font-size: 1.1rem;
+  margin-bottom: var(--gtraf-space-xl);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gtraf-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gtraf-space-md);
+  padding: var(--gtraf-space-md) var(--gtraf-space-xl);
+  background: var(--gtraf-gradient-gold);
+  color: var(--gtraf-black-diamond);
+  border: none;
+  border-radius: var(--gtraf-radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--gtraf-transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--gtraf-shadow-gold);
+}
+
+.gtraf-contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.gtraf-contact-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* === MODAL ULTRA PREMIUM === */
+.gtraf-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: gtrafFadeIn 0.4s ease-out;
+}
+
+@keyframes gtrafFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gtraf-modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  max-height: 90vh;
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--gtraf-shadow-strong);
+  animation: gtrafScaleIn 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gtrafScaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.gtraf-modal-close {
+  position: absolute;
+  top: var(--gtraf-space-md);
+  right: var(--gtraf-space-md);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-modal-close:hover {
+  background: var(--gtraf-gold-luxury);
+  transform: scale(1.1);
+}
+
+.gtraf-modal-hero {
+  position: relative;
+  height: 300px;
+  background: var(--gtraf-gradient-overlay);
+}
+
+.gtraf-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gtraf-modal-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--gtraf-space-xl);
+}
+
+.gtraf-modal-badge {
+  position: absolute;
+  top: var(--gtraf-space-lg);
+  left: var(--gtraf-space-lg);
+}
+
+.gtraf-modal-hero-content {
+  color: var(--gtraf-white-pearl);
+}
+
+.gtraf-modal-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 0 var(--gtraf-space-sm);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.gtraf-modal-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.gtraf-modal-content {
+  padding: var(--gtraf-space-xl);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.gtraf-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gtraf-space-xl);
+}
+
+/* === SECTIONS MODAL === */
+.gtraf-modal-section {
+  background: var(--gtraf-white-smoke);
+  border-radius: var(--gtraf-radius-lg);
+  padding: var(--gtraf-space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.gtraf-modal-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gtraf-gradient-gold);
+}
+
+.gtraf-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--gtraf-space-md);
+  margin-bottom: var(--gtraf-space-lg);
+}
+
+.gtraf-section-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gtraf-charcoal-elite);
+  margin: 0;
+}
+
+/* === SECTION TARIFICATION === */
+.gtraf-pricing-section {
+  background: var(--gtraf-gradient-noir);
+  color: var(--gtraf-white-pearl);
+}
+
+.gtraf-pricing-section::before {
+  background: var(--gtraf-gradient-gold);
+}
+
+.gtraf-pricing-section .gtraf-section-title,
+.gtraf-pricing-section .gtraf-section-icon {
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-pricing-tiers {
+  display: grid;
+  gap: var(--gtraf-space-lg);
+}
+
+.gtraf-price-tier {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: var(--gtraf-radius-md);
+  padding: var(--gtraf-space-lg);
+}
+
+.gtraf-price-tier strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gtraf-silver-mist);
+  margin-bottom: var(--gtraf-space-xs);
+}
+
+.gtraf-price-tier span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gtraf-white-pearl);
+}
+
+/* === SPÉCIFICATIONS === */
+.gtraf-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--gtraf-space-lg);
+}
+
+.gtraf-spec-card {
+  text-align: center;
+  padding: var(--gtraf-space-lg);
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-md);
+  border: 2px solid var(--gtraf-platinum);
+  transition: var(--gtraf-transition-smooth);
+}
+
+.gtraf-spec-card:hover {
+  border-color: var(--gtraf-gold-luxury);
+  transform: translateY(-3px);
+  box-shadow: var(--gtraf-shadow-soft);
+}
+
+.gtraf-spec-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-spec-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gtraf-silver-mist);
+  margin-bottom: var(--gtraf-space-xs);
+}
+
+.gtraf-spec-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gtraf-charcoal-elite);
+}
+
+/* === ÉQUIPEMENTS === */
+.gtraf-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gtraf-space-md);
+}
+
+.gtraf-equipment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gtraf-space-md);
+  padding: var(--gtraf-space-md);
+  background: var(--gtraf-white-pearl);
+  border-radius: var(--gtraf-radius-md);
+}
+
+.gtraf-check-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--gtraf-gold-luxury);
+}
+
+/* === SERVICES INCLUS === */
+.gtraf-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gtraf-space-md);
+}
+
+.gtraf-service-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gtraf-space-md);
+}
+
+.gtraf-service-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--gtraf-gold-luxury);
+}
+
+.gtraf-service-text {
+  font-size: 0.95rem;
+  color: var(--gtraf-charcoal-elite);
+}
+
+/* === DESCRIPTION === */
+.gtraf-description-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--gtraf-charcoal-elite);
+}
+
+/* === ACTIONS MODAL === */
+.gtraf-modal-actions {
+  padding: var(--gtraf-space-lg);
+  background: var(--gtraf-white-pearl);
+  border-top: 1px solid var(--gtraf-platinum);
+  display: flex;
+  gap: var(--gtraf-space-lg);
+  flex-wrap: wrap;
+}
+
+.gtraf-action-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: var(--gtraf-space-md) var(--gtraf-space-xl);
+  border: none;
+  border-radius: var(--gtraf-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--gtraf-transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gtraf-space-md);
+  min-height: 50px;
+}
+
+.gtraf-primary-action {
+  background: var(--gtraf-gradient-gold);
+  color: var(--gtraf-black-diamond);
+}
+
+.gtraf-primary-action.gtraf-disabled {
+  background: var(--gtraf-platinum);
+  color: var(--gtraf-silver-mist);
+  cursor: not-allowed;
+}
+
+.gtraf-tertiary-action {
+  background: transparent;
+  color: var(--gtraf-gold-luxury);
+  border: 1px solid var(--gtraf-gold-luxury);
+}
+
+.gtraf-btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* === RESPONSIVE ULTRA SOPHISTIQUÉ === */
 @media (max-width: 1200px) {
-  .elite-modal-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .elite-modal-gallery {
-    order: -1;
+  .gtraf-filter-grid {
+    grid-template-columns: 1fr 180px 180px auto;
+    gap: var(--gtraf-space-md);
   }
 }
 
 @media (max-width: 992px) {
-  .elite-filter-grid {
+  .gtraf-filter-grid {
     grid-template-columns: 1fr 1fr;
+    gap: var(--gtraf-space-md);
   }
-  
-  .elite-list-card-layout {
-    flex-direction: column;
+  .gtraf-collection-tab {
+    padding: var(--gtraf-space-md) var(--gtraf-space-lg);
   }
-  
-  .elite-list-card-image {
-    flex: 0 0 250px;
+  .gtraf-card-btn {
+    padding: var(--gtraf-space-md);
+    font-size: 0.9rem;
   }
-  
-  .elite-vehicle-stats {
-    grid-template-columns: repeat(2, 1fr);
+  .gtraf-action-btn {
+    min-height: 46px;
+    font-size: 0.95rem;
+    padding: var(--gtraf-space-md) var(--gtraf-space-lg);
   }
 }
 
 @media (max-width: 768px) {
-  .elite-header {
-    padding: 1rem 0;
+  .gtraf-hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
   }
-  
-  .elite-title {
-    font-size: 2rem;
+  .gtraf-hero-stats {
+    flex-direction: column;
+    gap: var(--gtraf-space-lg);
   }
-  
-  .elite-filter-grid {
+  .gtraf-stat-separator {
+    width: 40px;
+    height: 1px;
+    transform: rotate(90deg);
+  }
+  .gtraf-filter-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gtraf-space-md);
+  }
+  .gtraf-collection-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gtraf-collection-tab {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  .gtraf-grid-layout {
     grid-template-columns: 1fr;
   }
-  
-  .elite-tabs-container {
-    flex-wrap: wrap;
+  .gtraf-modal-container {
+    margin: var(--gtraf-space-md);
+    max-height: calc(100vh - 2rem);
   }
-  
-  .elite-modal-features, .elite-modal-inclusions {
+  .gtraf-modal-hero {
+    height: 250px;
+  }
+  .gtraf-modal-content {
+    padding: var(--gtraf-space-lg);
+  }
+  .gtraf-modal-grid {
     grid-template-columns: 1fr;
+  }
+  .gtraf-action-btn {
+    min-height: 44px;
+    font-size: 0.9rem;
+    padding: var(--gtraf-space-sm) var(--gtraf-space-lg);
   }
 }
 
-@media (max-width: 576px) {
-  .elite-fleet-container {
-    padding: 1rem;
+@media (max-width: 480px) {
+  .gtraf-filter-sanctuary {
+    margin: -20px var(--gtraf-space-sm) var(--gtraf-space-md);
+    padding: var(--gtraf-space-md);
   }
-  
-  .elite-title {
-    font-size: 1.8rem;
+  .gtraf-action-btn {
+    min-height: 40px;
+    font-size: 0.85rem;
+    padding: var(--gtraf-space-xs) var(--gtraf-space-lg);
+    width: 100%;
   }
-  
-  .elite-grid-view {
-    grid-template-columns: 1fr;
-  }
-  
-  .elite-vehicle-stats {
-    grid-template-columns: 1fr;
-  }
-  
-  .elite-modal-actions {
+  .gtraf-modal-actions {
     flex-direction: column;
+    gap: var(--gtraf-space-sm);
+  }
+  .gtraf-contact-btn {
+    padding: var(--gtraf-space-md) var(--gtraf-space-lg);
+    font-size: 0.95rem;
+    width: 100%;
   }
 }

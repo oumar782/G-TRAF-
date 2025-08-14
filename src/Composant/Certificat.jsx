@@ -17,7 +17,6 @@ const Certifications = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Icônes redessinées avec plus d'élégance
   const ShieldIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -67,37 +66,36 @@ const Certifications = () => {
     </svg>
   );
 
-  // Données certifs, partenaires & awards
   const certifications = [
     {
       icon: ShieldIcon,
       name: "ISO 9001:2015",
-      description: "Management de la qualité",
-      details: "Certification internationale garantissant la qualité de nos processus et services",
+      description: "Système de Management de la Qualité",
+      details: "Nous garantissons une qualité constante à chaque étape, de la conception à la livraison.",
       color: "blue",
       year: "2020"
     },
     {
       icon: AwardIcon,
       name: "Qualibat",
-      description: "Qualification professionnelle",
-      details: "Reconnaissance officielle de notre expertise dans le BTP haut de gamme",
+      description: "Qualification BTP Haut Niveau",
+      details: "Reconnaissance officielle de notre excellence dans les travaux de construction et d'infrastructure.",
       color: "emerald",
       year: "1998"
     },
     {
       icon: LeafIcon,
       name: "RGE Éco-Artisan",
-      description: "Reconnu Garant Environnement",
-      details: "Spécialiste des travaux d'efficacité énergétique et énergies renouvelables",
+      description: "Performance Énergétique & Énergies Renouvelables",
+      details: "Travaux respectueux de l’environnement, optimisant les performances énergétiques.",
       color: "green",
       year: "2015"
     },
     {
       icon: UsersIcon,
       name: "OPPBTP",
-      description: "Sécurité et prévention",
-      details: "Engagement maximal pour la sécurité sur tous nos chantiers",
+      description: "Sécurité & Prévention",
+      details: "Une culture de la sécurité ancrée dans tous nos projets, protégeant nos équipes et nos clients.",
       color: "orange",
       year: "2010"
     }
@@ -106,38 +104,38 @@ const Certifications = () => {
   const partners = [
     { 
       name: "Lafarge Holcim", 
-      category: "Matériaux Premium",
-      description: "Partenaire exclusif pour les bétons haute performance",
+      category: "Matériaux Hautes Performances",
+      description: "Partenaire exclusif pour les bétons de nouvelle génération, gages de durabilité.",
       logo: "LH"
     },
     { 
       name: "Schneider Electric", 
-      category: "Domotique & Énergie",
-      description: "Solutions intelligentes et durables",
+      category: "Énergie & Automatisation",
+      description: "Solutions intelligentes pour optimiser la performance énergétique des bâtiments.",
       logo: "SE"
     },
     { 
       name: "Saint-Gobain", 
       category: "Innovation Matériaux",
-      description: "Technologies de pointe pour l'habitat",
+      description: "Technologies avancées pour des constructions durables et performantes.",
       logo: "SG"
     },
     { 
       name: "Legrand", 
-      category: "Équipements Électriques",
-      description: "Excellence en installations électriques",
+      category: "Infrastructures Électriques",
+      description: "Fiabilité et innovation dans les solutions d’installation électrique.",
       logo: "LG"
     },
     { 
       name: "Velux", 
       category: "Ouvertures Premium",
-      description: "Fenêtres de toit haut de gamme",
+      description: "Fenêtres de toit et solutions lumineuses haut de gamme.",
       logo: "VX"
     },
     { 
       name: "Bosch", 
-      category: "Outillage Professionnel",
-      description: "Équipements de précision",
+      category: "Outillage de Précision",
+      description: "Équipements professionnels pour une exécution parfaite sur chantier.",
       logo: "BS"
     }
   ];
@@ -145,27 +143,26 @@ const Certifications = () => {
   const awards = [
     {
       year: "2024",
-      title: "Prix de l'Excellence BTP",
-      organization: "Fédération Française du Bâtiment",
+      title: "Prix de l’Excellence en Génie Civil",
+      organization: "Fédération Nationale du Bâtiment",
       category: "Innovation & Qualité"
     },
     {
       year: "2023",
-      title: "Trophée de l'Architecture",
+      title: "Trophée de l’Architecture Moderne",
       organization: "Ordre des Architectes",
-      category: "Projet Résidentiel"
+      category: "Projet d’Infrastructure Urbaine"
     },
     {
       year: "2022",
       title: "Label Entreprise Responsable",
-      organization: "CCI Paris Île-de-France",
+      organization: "CCI Guinée",
       category: "Développement Durable"
     }
   ];
 
   return (
     <section className={`certif-section ${isVisible ? 'visible' : ''}`} ref={ref}>
-      {/* Effets de fond sophistiqués */}
       <div className="certif-bg-effects">
         <div className="certif-bg-diamond-1"></div>
         <div className="certif-bg-diamond-2"></div>
@@ -173,7 +170,6 @@ const Certifications = () => {
       </div>
 
       <div className="certif-container">
-        {/* Header Premium */}
         <div className={`certif-header ${isVisible ? 'fade-in' : ''}`}>
           <div className="certif-badge">
             <ShieldIcon />
@@ -184,12 +180,12 @@ const Certifications = () => {
             <span className="title-highlight">d'Exception</span>
           </h2>
           <p className="certif-description">
-            Nos accréditations prestigieuses et alliances stratégiques témoignent de notre quête permanente 
-            de l'excellence, de l'innovation maîtrisée et du développement durable.
+            G-TRAF+ allie expertise technique, innovation et engagement durable.  
+            Nos certifications de prestige et partenariats d’élite assurent à nos clients des réalisations
+            irréprochables, respectant les plus hauts standards internationaux.
           </p>
         </div>
 
-        {/* Certifications - Version Luxe */}
         <div className="certif-certifications">
           <div className={`certif-subheader ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '200ms' }}>
             <div className="section-divider">
@@ -199,7 +195,8 @@ const Certifications = () => {
             </div>
             <h3 className="certif-subtitle">Nos Accréditations</h3>
             <p className="certif-subdesc">
-              Labels internationaux attestant de notre rigueur, notre expertise et notre engagement qualité.
+              Des labels internationaux qui attestent de notre rigueur, de notre savoir-faire et
+              de notre engagement pour des chantiers fiables, sécurisés et durables.
             </p>
           </div>
 
@@ -232,7 +229,6 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* Awards - Design Prestige */}
         <div className={`certif-awards ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '800ms' }}>
           <div className="certif-subheader">
             <div className="section-divider">
@@ -242,7 +238,8 @@ const Certifications = () => {
             </div>
             <h3 className="certif-subtitle">Reconnaissances Sectorielles</h3>
             <p className="certif-subdesc">
-              Nos réalisations distinguées par les institutions les plus exigeantes du secteur.
+              Des distinctions prestigieuses qui saluent notre capacité à livrer des projets d’exception,
+              dans le respect des normes les plus exigeantes.
             </p>
           </div>
 
@@ -268,7 +265,6 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* Partners - Version Élite */}
         <div className={`certif-partners ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '1000ms' }}>
           <div className="certif-subheader">
             <div className="section-divider">
@@ -301,14 +297,13 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* CTA - Version Prestige */}
         <div className={`certif-cta ${isVisible ? 'fade-in' : ''}`} style={{ transitionDelay: '1200ms' }}>
           <div className="certif-cta-box">
             <div className="certif-cta-content">
-              <h3 className="certif-cta-title">Exigez l'Excellence Certifiée</h3>
+              <h3 className="certif-cta-title">Optez pour l’Excellence G-TRAF+</h3>
               <p className="certif-cta-desc">
-                Nos accréditations et partenariats d'exception sont la garantie d'un projet mené avec 
-                l'exigence la plus absolue.
+                Chaque projet que nous livrons reflète notre exigence, notre passion et notre engagement
+                envers l’excellence. Avec G-TRAF+, votre vision devient une réalité durable et haut de gamme.
               </p>
             </div>
             <div className="certif-cta-buttons">

@@ -128,7 +128,7 @@ const Project360Gallery = () => {
         <div className={`portfolio360-header ${isVisible ? 'visible' : ''}`}>
           <div className="portfolio360-badge">NOS RÉALISATIONS D'EXCEPTION</div>
           <h2 className="portfolio360-title">
-            <span>Portfolio</span> Immersif 360°
+            <span>Nos Realisations</span> Immersif 360°
           </h2>
           <p className="portfolio360-subtitle">
             Explorez nos réalisations phares avec une expérience visuelle immersive.
@@ -153,11 +153,7 @@ const Project360Gallery = () => {
               />
               <div className="portfolio360-overlay"></div>
               
-              {/* Budget Badge */}
-              <div className="portfolio360-budget-badge">
-                <div className="portfolio360-budget">{currentProject.budget}</div>
-                <div className="portfolio360-year">{currentProject.year}</div>
-              </div>
+           
               
               {/* Play/Pause Button */}
               <button
@@ -232,13 +228,7 @@ const Project360Gallery = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="portfolio360-cta-button">
-              Voir les détails du projet
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
+           
           </div>
         </div>
 

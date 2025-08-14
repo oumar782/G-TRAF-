@@ -2,25 +2,24 @@ import React, { useState, useMemo } from "react";
 import "../Parkstyle/Catalogue.css";
 
 // === DONNÉES DU PARC AUTOMOBILE G-TRAF+ (Kipé, Conakry, Guinée) ===
-const eliteFleetData = {
+const luxuryFleetData = {
   collections: [
-    { id: "sedan", name: "Série Élégance (Berlines)" },
-    { id: "pickup", name: "Gamme Tout-Terrain" },
-    { id: "utility", name: "Utilitaires Pro" },
-    { id: "premium", name: "Collection Prestige" },
-    { id: "btp", name: "Flotte BTP" } // Nouvelle collection
+    { id: "sedan", name: "Série Élégance (Berlines)", icon: "" },
+    { id: "pickup", name: "Gamme Tout-Terrain", icon: "" },
+    { id: "utility", name: "Utilitaires Pro", icon: "" },
+    { id: "premium", name: "Collection Prestige", icon: "" },
+    { id: "btp", name: "Flotte BTP", icon: "" },
   ],
   destinations: ["Conakry", "Kipé", "Matam", "Kaloum", "Coyah"],
   tarification: [
     { id: "range1", name: "Standard", min: 500000, max: 999999 },
     { id: "range2", name: "Tout-Terrain", min: 1000000, max: 1999999 },
     { id: "range3", name: "Prestige", min: 2000000, max: 5000000 },
-    { id: "range4", name: "BTP", min: 2500000, max: 6000000 } // Nouvelle gamme
+    { id: "range4", name: "BTP", min: 2500000, max: 6000000 },
   ],
-  eliteVehicles: [
-    // === NOUVELLES VOITURES ===
+  luxuryVehicles: [
     {
-      id: "ev1",
+      id: "lv1",
       designation: "Toyota Corolla 1.8L",
       collection: "sedan",
       famille: "Berline Fiable",
@@ -30,29 +29,34 @@ const eliteFleetData = {
       capacite: "5 personnes",
       performance: "105 ch",
       energie: "Essence",
-      tarifs: { quotidien: 600000, hebdomadaire: 3400000, mensuel: 11000000 },
+      tarifs: {
+        quotidien: 600000,
+        hebdomadaire: 3400000,
+        mensuel: 11000000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Conakry",
       galerie: [
-        "https://images.unsplash.com/photo-9ZvJkQzrXpE?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb"
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
       ],
       equipements: [
         "Climatisation",
         "Bluetooth",
         "Caméra de recul",
-        "Vitres électriques"
+        "Vitres électriques",
       ],
       caracteristiques: {
         moteur: "1.8L 4 cylindres",
         poids: "1320 kg",
-        consommation: "6.6L/100km"
+        consommation: "6.6L/100km",
       },
-      presentation: "Version 2023 du best-seller, avec équipements modernisés pour un confort accru.",
-      inclusions: ["Assurance RC", "Livraison", "Assistance 24h"]
+      presentation:
+        "Version 2023 du best-seller, avec équipements modernisés pour un confort accru.",
+      inclusions: ["Assurance RC", "Livraison", "Assistance 24h"],
     },
     {
-      id: "ev2",
+      id: "lv2",
       designation: "Toyota Hilux 2.8L Diesel",
       collection: "pickup",
       famille: "Tout-Terrain",
@@ -62,91 +66,108 @@ const eliteFleetData = {
       capacite: "5 + bac",
       performance: "204 ch",
       energie: "Diesel",
-      tarifs: { quotidien: 1100000, hebdomadaire: 6000000, mensuel: 20000000 },
+      tarifs: {
+        quotidien: 1100000,
+        hebdomadaire: 6000000,
+        mensuel: 20000000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Kipé",
       galerie: [
-        " https://images.unsplash.com/photo-8uLqfKj6V7s?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb"
+        "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
       ],
       equipements: [
         "4x4 automatique",
         "Suspension renforcée",
         "Toit ouvrant",
-        "Système multimédia"
+        "Système multimédia",
       ],
       caracteristiques: {
         moteur: "2.8L Turbo Diesel",
         charge: "1200 kg",
-        empattement: "3.08 m"
+        empattement: "3.08 m",
       },
-      presentation: "Hilux puissant et luxueux, adapté aux terrains exigeants et au transport de personnel.",
-      inclusions: ["Chauffeur", "Assurance complète", "Entretien"]
+      presentation:
+        "Le pickup le plus fiable de sa catégorie, idéal pour les terrains difficiles.",
+      inclusions: ["Opérateur certifié", "Permis de circulation", "Assurance spéciale"],
     },
     {
-      id: "ev3",
-      designation: "Hyundai H-100 Fourgon",
+      id: "lv3",
+      designation: "Hyundai Porter",
       collection: "utility",
-      famille: "Utilitaire Léger",
+      famille: "Utilitaire Compact",
       marque: "Hyundai",
-      edition: "Cargo 2023",
+      edition: "2023",
       annee: 2023,
-      capacite: "3.5 m³",
-      performance: "120 ch",
+      capacite: "2 + 3 m³",
+      performance: "130 ch",
       energie: "Diesel",
-      tarifs: { quotidien: 650000, hebdomadaire: 3700000, mensuel: 12000000 },
+      tarifs: {
+        quotidien: 750000,
+        hebdomadaire: 4200000,
+        mensuel: 14000000,
+      },
       monnaie: "GNF",
-      statut: "reserve",
-      destination: "Matam",
-      galerie: ["/images/vehicles/hyundai-h100.jpg"], // Garder l'image locale ici
+      statut: "disponible",
+      destination: "Conakry",
+      galerie: [
+        "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
+      ],
       equipements: [
         "Portes arrière battantes",
         "Sièges cuir",
         "ABS",
-        "Espace de chargement sécurisé"
+        "Espace de chargement sécurisé",
       ],
       caracteristiques: {
         moteur: "2.5L CRDi",
         charge: "1500 kg",
-        longueur: "5.4 m"
+        longueur: "5.4 m",
       },
-      presentation: "Fourgon moderne et spacieux, parfait pour les livraisons et services logistiques à Conakry.",
-      inclusions: ["Kit de sécurité", "Assurance transport", "Maintenance préventive"]
+      presentation:
+        "Fourgon moderne et spacieux, parfait pour les livraisons et services logistiques à Conakry.",
+      inclusions: ["Kit de sécurité", "Assurance transport", "Maintenance préventive"],
     },
     {
-      id: "ev4",
+      id: "lv4",
       designation: "Mercedes-Benz C-Class",
       collection: "premium",
       famille: "Berline Prestige",
       marque: "Mercedes-Benz",
-      edition: "C200 Executive 2023",
+      edition: "Executive 2023",
       annee: 2023,
       capacite: "5 personnes",
-      performance: "190 ch",
+      performance: "258 ch",
       energie: "Essence",
-      tarifs: { quotidien: 1800000, hebdomadaire: 10000000, mensuel: 35000000 },
+      tarifs: {
+        quotidien: 2500000,
+        hebdomadaire: 14000000,
+        mensuel: 45000000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Kaloum",
       galerie: [
-        " https://images.unsplash.com/photo-5wDdYmRiWxI?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb"
+        "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
       ],
       equipements: [
-        "Cuir Nappa",
+        "Sièges massants",
         "Toit panoramique",
-        "Système GPS",
-        "Caméra de recul"
+        "Système audio Burmester",
+        "Caméra 360°",
       ],
       caracteristiques: {
         moteur: "2.0L Turbo",
-        acceleration: "7.8s 0-100km/h",
-        consommation: "7.5L/100km"
+        vitesse: "250 km/h",
+        acceleration: "6.4s",
       },
-      presentation: "Berline haut de gamme pour dirigeants et événements officiels, alliant confort et standing.",
-      inclusions: ["Chauffeur privé", "Nettoyage complet", "Service VIP"]
+      presentation:
+        "Berline haut de gamme pour dirigeants et événements officiels, alliant confort et standing.",
+      inclusions: ["Chauffeur privé", "Nettoyage complet", "Service VIP"],
     },
     {
-      id: "ev5",
+      id: "lv5",
       designation: "Nissan Patrol 4.0L",
       collection: "pickup",
       famille: "SUV Tout-Terrain",
@@ -156,27 +177,34 @@ const eliteFleetData = {
       capacite: "7 places",
       performance: "280 ch",
       energie: "Essence",
-      tarifs: { quotidien: 1200000, hebdomadaire: 6500000, mensuel: 22000000 },
+      tarifs: {
+        quotidien: 1200000,
+        hebdomadaire: 6500000,
+        mensuel: 22000000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Coyah",
-      galerie: ["/images/vehicles/nissan-patrol.jpg"], // Garder l'image locale ici
+      galerie: [
+        "https://images.unsplash.com/photo-1566473965997-3de9c817e88b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
+      ],
       equipements: [
         "4x4 Intelligent",
         "Suspension renforcée",
         "Sièges ventilés",
-        "Écran tactile"
+        "Écran tactile",
       ],
       caracteristiques: {
         moteur: "4.0L V6",
         volume: "5.6 m³",
-        vitesse: "180 km/h"
+        vitesse: "180 km/h",
       },
-      presentation: "Le SUV robuste par excellence, conçu pour les terrains exigeants et les déplacements sécurisés.",
-      inclusions: ["Protection anti-poussière", "GPS satellite", "Assistance 24/7"]
+      presentation:
+        "Le SUV robuste par excellence, conçu pour les terrains exigeants et les déplacements sécurisés.",
+      inclusions: ["Protection anti-poussière", "GPS satellite", "Assistance 24/7"],
     },
     {
-      id: "ev6",
+      id: "lv6",
       designation: "Isuzu D-Max",
       collection: "pickup",
       famille: "Pickup Pro",
@@ -186,29 +214,34 @@ const eliteFleetData = {
       capacite: "5 + bac",
       performance: "160 ch",
       energie: "Diesel",
-      tarifs: { quotidien: 700000, hebdomadaire: 4000000, mensuel: 13500000 },
+      tarifs: {
+        quotidien: 700000,
+        hebdomadaire: 4000000,
+        mensuel: 13500000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Kipé",
-      galerie: ["/images/vehicles/isuzu-dmax.jpg"], // Garder l'image locale ici
+      galerie: [
+        "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
+      ],
       equipements: [
         "Moteur Diesel fiable",
         "Double cabine",
         "Freins à disque",
-        "Roues alliage"
+        "Roues alliage",
       ],
       caracteristiques: {
         moteur: "2.5L Turbo Diesel",
         charge: "1200 kg",
-        longueur: "5.2 m"
+        longueur: "5.2 m",
       },
-      presentation: "Pickup professionnel robuste, idéal pour les entreprises et les chantiers en Guinée.",
-      inclusions: ["Bâche de protection", "Assurance complète", "Formation conducteur"]
+      presentation:
+        "Pickup professionnel robuste, idéal pour les entreprises et les chantiers en Guinée.",
+      inclusions: ["Contrôle technique", "Assurance flotte", "Entretien inclus"],
     },
-
-    // === CAMIONS BTP ===
     {
-      id: "ev7",
+      id: "lv7",
       designation: "Camion Benne MAN TGM",
       collection: "btp",
       famille: "Camion de Chantier",
@@ -218,64 +251,37 @@ const eliteFleetData = {
       capacite: "18 tonnes",
       performance: "330 ch",
       energie: "Diesel",
-      tarifs: { quotidien: 2800000, hebdomadaire: 15000000, mensuel: 50000000 },
+      tarifs: {
+        quotidien: 2800000,
+        hebdomadaire: 15000000,
+        mensuel: 50000000,
+      },
       monnaie: "GNF",
       statut: "disponible",
       destination: "Coyah",
       galerie: [
-        " https://images.unsplash.com/photo-9aBnOgFtHcA?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb"
+        "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb&w=800",
       ],
       equipements: [
         "Benne hydraulique",
         "Cabine confort",
-        "ABS",
-        "Système de pesage"
+        "Frein moteur",
+        "Système de pesée",
       ],
       caracteristiques: {
         moteur: "6.9L 6 cylindres",
-        charge: "18 tonnes",
-        longueur: "7.2 m"
+        charge: "24 tonnes",
+        vitesse: "85 km/h",
       },
-      presentation: "Camion robuste pour le transport de matériaux de construction sur chantier.",
-      inclusions: ["Chauffeur qualifié", "Assurance chantier", "Entretien"]
+      presentation:
+        "Camion robuste pour chantiers lourds, équipé pour le transport de matériaux en zone difficile.",
+      inclusions: ["Bâche de protection", "Assurance complète", "Formation conducteur"],
     },
-    {
-      id: "ev8",
-      designation: "Camion Grue Liebherr",
-      collection: "btp",
-      famille: "Grue Mobile",
-      marque: "Liebherr",
-      edition: "LTM 1100 2021",
-      annee: 2021,
-      capacite: "100 tonnes",
-      performance: "440 ch",
-      energie: "Diesel",
-      tarifs: { quotidien: 5000000, hebdomadaire: 25000000, mensuel: 80000000 },
-      monnaie: "GNF",
-      statut: "disponible",
-      destination: "Matam",
-      galerie: [
-        " https://images.unsplash.com/photo-9aBnOgFtHcA?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=srgb"
-      ],
-      equipements: [
-        "Grue télescopique 100t",
-        "Stabilisateurs hydrauliques",
-        "Cabine climatisée",
-        "Commande numérique"
-      ],
-      caracteristiques: {
-        moteur: "12.0L Diesel",
-        portée: "60 m",
-        poids: "45 tonnes"
-      },
-      presentation: "Grue mobile haute performance pour levage lourd sur chantiers industriels.",
-      inclusions: ["Opérateur certifié", "Permis de circulation", "Assurance spéciale"]
-    }
-  ]
+  ],
 };
 
 // === COMPOSANT PRINCIPAL ===
-const EliteFleetGallery = () => {
+const LuxuryFleetGallery = () => {
   const [selectedCollection, setSelectedCollection] = useState("all");
   const [recherche, setRecherche] = useState("");
   const [selectedDestination, setSelectedDestination] = useState("all");
@@ -284,18 +290,17 @@ const EliteFleetGallery = () => {
   const [vehiculeSelectionne, setVehiculeSelectionne] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const eliteVehicles = eliteFleetData.eliteVehicles;
-  const collections = eliteFleetData.collections;
-  const destinations = eliteFleetData.destinations;
-  const tarification = eliteFleetData.tarification;
+  const luxuryVehicles = luxuryFleetData.luxuryVehicles;
+  const collections = luxuryFleetData.collections;
+  const destinations = luxuryFleetData.destinations;
+  const tarification = luxuryFleetData.tarification;
 
   // === FILTRAGE OPTIMISÉ AVEC useMemo ===
   const vehiculesFiltres = useMemo(() => {
-    return eliteVehicles.filter((vehicule) => {
+    return luxuryVehicles.filter((vehicule) => {
       if (selectedCollection !== "all" && vehicule.collection !== selectedCollection) {
         return false;
       }
-
       if (
         recherche &&
         !vehicule.designation.toLowerCase().includes(recherche.toLowerCase()) &&
@@ -304,11 +309,9 @@ const EliteFleetGallery = () => {
       ) {
         return false;
       }
-
       if (selectedDestination !== "all" && vehicule.destination !== selectedDestination) {
         return false;
       }
-
       if (selectedTarification !== "all") {
         const gamme = tarification.find((g) => g.id === selectedTarification);
         if (gamme) {
@@ -318,10 +321,9 @@ const EliteFleetGallery = () => {
           }
         }
       }
-
       return true;
     });
-  }, [eliteVehicles, selectedCollection, recherche, selectedDestination, selectedTarification]);
+  }, [luxuryVehicles, selectedCollection, recherche, selectedDestination, selectedTarification]);
 
   // === OUVERTURE / FERMETURE MODAL ===
   const ouvrirModal = (vehicule) => {
@@ -335,105 +337,107 @@ const EliteFleetGallery = () => {
   };
 
   return (
-    <div className="elite-fleet-container" id="Nos-Catalogue">
-      {/* === EN-TÊTE DU PARC === */}
-      <header className="elite-header">
-        <div className="elite-badge">
-          <svg className="elite-icon" viewBox="0 0 24 24">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-          G-TRAF+ | Kipé, Conakry
-        </div>
-        <h1 className="elite-title">
-          Parc Automobile <span className="elite-gradient">Haut de Gamme</span>
-        </h1>
-        <p className="elite-description">
-          Location et vente de voitures d'occasion certifiées et sorties d'usine. <br />
-          À partir de <strong>500.000 GNF/jour</strong> – Pickups à 700.000 GNF – Camions sur demande.
+    <div className="gtraf-luxury-container" id="nos-catalogue-premium">
+      {/* === HERO SECTION ULTRA PREMIUM === */}
+      <div className="gtraf-hero-content">
+       
+        <h1 className="gtraf-hero-title">Flotte de Luxe & Professionnelle</h1>
+        <p className="gtraf-hero-subtitle">
+          Découvrez notre sélection exclusive de véhicules haut de gamme disponibles à la location à Conakry et Kipé.
         </p>
-      </header>
+     
+      </div>
 
-      {/* === FILTRES === */}
-      <div className="elite-filter-section">
-        <div className="elite-filter-grid">
+      {/* === FILTRES SOPHISTIQUÉS === */}
+      <div className="gtraf-filter-sanctuary">
+        <div className="gtraf-filter-header">
+          <h2 className="gtraf-filter-title">Trouvez Votre Véhicule Idéal</h2>
+          <p className="gtraf-filter-subtitle">Filtrez par collection, destination ou budget</p>
+        </div>
+        <div className="gtraf-filter-grid">
           {/* Recherche */}
-          <div className="elite-search-container">
-            <svg className="elite-search-icon" viewBox="0 0 24 24">
-              <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          <div className="gtraf-search-luxury">
+            <svg className="gtraf-search-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.81 16 11.45 16 10c0-3.86-3.14-7-7-7s-7 3.14-7 7 3.14 7 7 7c1.45 0 2.81-.59 3.72-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
             </svg>
             <input
               type="text"
-              placeholder="Rechercher un modèle (ex: Hilux, Corolla)..."
+              placeholder="Rechercher par modèle, marque..."
               value={recherche}
               onChange={(e) => setRecherche(e.target.value)}
-              className="elite-search-input"
+              className="gtraf-search-input"
             />
+            <div className="gtraf-input-shimmer"></div>
+          </div>
+
+          {/* Collection */}
+          <div className="gtraf-select-luxury">
+            <select
+              value={selectedCollection}
+              onChange={(e) => setSelectedCollection(e.target.value)}
+              className="gtraf-select"
+            >
+              <option value="all">Toutes les Collections</option>
+              {collections.map((col) => (
+                <option key={col.id} value={col.id}>
+                  {col.name}
+                </option>
+              ))}
+            </select>
+            <svg className="gtraf-select-arrow" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
           </div>
 
           {/* Destination */}
-          <div className="elite-select-wrapper">
+          <div className="gtraf-select-luxury">
             <select
               value={selectedDestination}
               onChange={(e) => setSelectedDestination(e.target.value)}
-              className="elite-select"
+              className="gtraf-select"
             >
-              <option value="all">Tous les quartiers</option>
+              <option value="all">Toutes les Destinations</option>
               {destinations.map((dest) => (
                 <option key={dest} value={dest}>
                   {dest}
                 </option>
               ))}
             </select>
-            <div className="elite-select-arrow"></div>
+            <svg className="gtraf-select-arrow" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
           </div>
 
-          {/* Gamme de prix */}
-          <div className="elite-select-wrapper">
+          {/* Tarification */}
+          <div className="gtraf-select-luxury">
             <select
               value={selectedTarification}
               onChange={(e) => setSelectedTarification(e.target.value)}
-              className="elite-select"
+              className="gtraf-select"
             >
-              <option value="all">Toutes les gammes</option>
+              <option value="all">Tous les Prix</option>
               {tarification.map((gamme) => (
                 <option key={gamme.id} value={gamme.id}>
                   {gamme.name} ({gamme.min.toLocaleString()} - {gamme.max.toLocaleString()} GNF)
                 </option>
               ))}
             </select>
-            <div className="elite-select-arrow"></div>
-          </div>
-
-          {/* Vue grille / liste */}
-          <div className="elite-view-toggle">
-            <button
-              className={`elite-view-button ${affichage === "galerie" ? "active" : ""}`}
-              onClick={() => setAffichage("galerie")}
-              aria-label="Vue galerie"
-            >
-              <svg className="elite-view-icon" viewBox="0 0 24 24">
-                <path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z" />
-              </svg>
-            </button>
-            <button
-              className={`elite-view-button ${affichage === "liste" ? "active" : ""}`}
-              onClick={() => setAffichage("liste")}
-              aria-label="Vue liste"
-            >
-              <svg className="elite-view-icon" viewBox="0 0 24 24">
-                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
-              </svg>
-            </button>
+            <svg className="gtraf-select-arrow" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
           </div>
         </div>
 
-        {/* Compteur et reset */}
-        <div className="elite-filter-footer">
-          <span className="elite-results-count">
-            {vehiculesFiltres.length} véhicule{vehiculesFiltres.length > 1 ? "s" : ""} disponible{vehiculesFiltres.length > 1 ? "s" : ""}
-          </span>
+        {/* Résumé et Réinitialisation */}
+        <div className="gtraf-filter-summary">
+          <div className="gtraf-results-count">
+            <span className="gtraf-count-number">{vehiculesFiltres.length}</span>
+            <span className="gtraf-count-text">
+              véhicule{vehiculesFiltres.length > 1 ? "s" : ""} trouvé{vehiculesFiltres.length > 1 ? "s" : ""}
+            </span>
+          </div>
           <button
-            className="elite-reset-button"
+            className="gtraf-reset-filters"
             onClick={() => {
               setRecherche("");
               setSelectedDestination("all");
@@ -441,7 +445,7 @@ const EliteFleetGallery = () => {
               setSelectedCollection("all");
             }}
           >
-            <svg className="elite-reset-icon" viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
             </svg>
             Réinitialiser
@@ -449,58 +453,58 @@ const EliteFleetGallery = () => {
         </div>
       </div>
 
-      {/* === ONGLETS COLLECTIONS === */}
-      <div className="elite-collections-tabs">
-        <div className="elite-tabs-container">
+      {/* === SHOWCASE DES COLLECTIONS === */}
+      <div className="gtraf-collections-showcase">
+        <div className="gtraf-collection-header">
+          <h2 className="gtraf-collection-title">Nos Collections</h2>
+          <div className="gtraf-collection-line"></div>
+        </div>
+        <div className="gtraf-collection-tabs">
           <button
-            className={`elite-tab-button ${selectedCollection === "all" ? "active" : ""}`}
+            className={`gtraf-collection-tab ${selectedCollection === "all" ? "gtraf-active" : ""}`}
             onClick={() => setSelectedCollection("all")}
           >
-            <svg className="elite-tab-icon" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
-            </svg>
-            Toute la Collection
+            <div className="gtraf-tab-content">
+              <div className="gtraf-tab-label">Toutes</div>
+              <div className="gtraf-tab-count">{luxuryVehicles.length} véhicules</div>
+            </div>
           </button>
-          {collections.map((collection) => (
-            <button
-              key={collection.id}
-              className={`elite-tab-button ${selectedCollection === collection.id ? "active" : ""}`}
-              onClick={() => setSelectedCollection(collection.id)}
-            >
-              <svg className="elite-tab-icon" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
-              </svg>
-              {collection.name}
-            </button>
-          ))}
+          {collections.map((collection) => {
+            const count = luxuryVehicles.filter((v) => v.collection === collection.id).length;
+            return (
+              <button
+                key={collection.id}
+                className={`gtraf-collection-tab ${selectedCollection === collection.id ? "gtraf-active" : ""}`}
+                onClick={() => setSelectedCollection(collection.id)}
+              >
+                <div className="gtraf-tab-icon">{collection.icon}</div>
+                <div className="gtraf-tab-content">
+                  <div className="gtraf-tab-label">{collection.name}</div>
+                  <div className="gtraf-tab-count">
+                    {count} véhicule{count > 1 ? "s" : ""}
+                  </div>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* === AFFICHAGE DES VÉHICULES === */}
-      <div className={`elite-vehicles-display ${affichage === "galerie" ? "elite-grid-view" : "elite-list-view"}`}>
-        {vehiculesFiltres.length > 0 ? (
-          vehiculesFiltres.map((vehicule) => (
-            <EliteVehicleCard
-              key={vehicule.id}
-              vehicule={vehicule}
-              affichage={affichage}
-              onClick={() => ouvrirModal(vehicule)}
-            />
-          ))
-        ) : (
-          <div className="elite-no-results">
-            <div className="elite-no-results-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-                <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z" />
+      {/* === GALERIE DE VÉHICULES PREMIUM === */}
+      <div className="gtraf-vehicles-gallery">
+        {vehiculesFiltres.length === 0 ? (
+          <div className="gtraf-no-results">
+            <div className="gtraf-no-results-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 7h-4V5c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-2h4c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM9 5h4v2H9V5zm8 14h-6V9h6v10zm4-2h-2v-2h2v2zm0-4h-2v-2h2v2z" />
               </svg>
             </div>
-            <h3 className="elite-no-results-title">Aucun véhicule trouvé</h3>
-            <p className="elite-no-results-message">
-              Contactez-nous pour une recherche personnalisée à Kipé.
+            <h3 className="gtraf-no-results-title">Aucun véhicule trouvé</h3>
+            <p className="gtraf-no-results-text">
+              Aucun véhicule ne correspond à vos critères. Veuillez modifier vos filtres.
             </p>
             <button
-              className="elite-no-results-button"
+              className="gtraf-contact-btn"
               onClick={() => {
                 setRecherche("");
                 setSelectedDestination("all");
@@ -508,168 +512,230 @@ const EliteFleetGallery = () => {
                 setSelectedCollection("all");
               }}
             >
-              <svg className="elite-refresh-icon" viewBox="0 0 24 24">
-                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
-              Voir tous les véhicules
+              Nous Contacter
             </button>
+          </div>
+        ) : (
+          <div className={`gtraf-grid-layout ${affichage}`}>
+            {vehiculesFiltres.map((vehicule) => (
+              <div key={vehicule.id} className="gtraf-vehicle-card" onClick={() => ouvrirModal(vehicule)}>
+                <div className="gtraf-card-image-container">
+                  <img src={vehicule.galerie[0]} alt={vehicule.designation} className="gtraf-card-image" />
+                  <div className="gtraf-image-overlay-gradient"></div>
+                  <div className="gtraf-card-badges">
+                    <span
+                      className={`gtraf-status-badge ${
+                        vehicule.statut === "disponible" ? "gtraf-available" : "gtraf-reserved"
+                      }`}
+                    >
+                      {vehicule.statut === "disponible" ? "Disponible" : "Réservé"}
+                    </span>
+                  </div>
+                </div>
+                <div className="gtraf-card-content">
+                  <h3 className="gtraf-card-title">{vehicule.designation}</h3>
+                  <p className="gtraf-card-subtitle">{vehicule.marque} • {vehicule.annee}</p>
+                  <div className="gtraf-vehicle-stats">
+                    <div className="gtraf-stat">
+                      <strong>{vehicule.capacite}</strong>
+                      <span>Capacité</span>
+                    </div>
+                    <div className="gtraf-stat">
+                      <strong>{vehicule.performance}</strong>
+                      <span>Puissance</span>
+                    </div>
+                    <div className="gtraf-stat">
+                      <strong>{vehicule.tarifs.quotidien.toLocaleString()} GNF</strong>
+                      <span>Par jour</span>
+                    </div>
+                  </div>
+                  <div className="gtraf-card-actions">
+                    <button className="gtraf-card-btn gtraf-primary">
+                      Réserver
+                    </button>
+                    <button className="gtraf-card-btn gtraf-secondary">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="gtraf-eye-icon">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
 
-      {/* === MODAL DÉTAIL VÉHICULE === */}
+      {/* === MODAL PREMIUM === */}
       {modalVisible && vehiculeSelectionne && (
-        <div className="elite-modal-overlay">
-          <div className="elite-modal">
-            <button className="elite-modal-close" onClick={fermerModal}>
-              <svg viewBox="0 0 24 24">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        <div className="gtraf-modal-overlay" onClick={fermerModal}>
+          <div className="gtraf-modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="gtraf-modal-close" onClick={fermerModal}>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 17.59 19 19 17.59 13.41 12z" />
               </svg>
             </button>
-
-            <div className="elite-modal-header">
-              <h2 className="elite-modal-title">{vehiculeSelectionne.designation}</h2>
-              <div className="elite-modal-subtitle">
-                {vehiculeSelectionne.marque} • {vehiculeSelectionne.edition} • {vehiculeSelectionne.annee}
-              </div>
-            </div>
-
-            <div className="elite-modal-content">
-              <div className="elite-modal-gallery">
-                <div className="elite-modal-main-image">
-                  <img src={vehiculeSelectionne.galerie[0]} alt={vehiculeSelectionne.designation} />
+            <div className="gtraf-modal-hero">
+              <img
+                src={vehiculeSelectionne.galerie[0]}
+                alt={vehiculeSelectionne.designation}
+                className="gtraf-modal-image"
+              />
+              <div className="gtraf-modal-hero-overlay">
+                <div className="gtraf-modal-badge">
+                  <span
+                    className={`gtraf-status-badge ${
+                      vehiculeSelectionne.statut === "disponible" ? "gtraf-available" : "gtraf-reserved"
+                    }`}
+                  >
+                    {vehiculeSelectionne.statut === "disponible" ? "Disponible" : "Réservé"}
+                  </span>
+                </div>
+                <div className="gtraf-modal-hero-content">
+                  <h1 className="gtraf-modal-title">{vehiculeSelectionne.designation}</h1>
+                  <p className="gtraf-modal-subtitle">
+                    {vehiculeSelectionne.marque} • {vehiculeSelectionne.edition} • {vehiculeSelectionne.annee}
+                  </p>
                 </div>
               </div>
-
-              <div className="elite-modal-details">
+            </div>
+            <div className="gtraf-modal-content">
+              <div className="gtraf-modal-grid">
                 {/* Tarification */}
-                <div className="elite-modal-section">
-                  <h3 className="elite-modal-section-title">
-                    <svg className="elite-modal-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
+                <div className="gtraf-modal-section gtraf-pricing-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14,10H19V15H14M5,10H10V15H5M14,4H19V9H14M5,4H10V9H5M14,16H19V20H15V16H14M5,16H9V20H5V16M11,20V16H13V20H11M8,4V8H6V4H8M8,16V20H6V16H8M11,4V8H13V4H11Z" />
                     </svg>
-                    Tarification (GNF)
-                  </h3>
-                  <div className="elite-modal-pricing">
-                    <div className="elite-price-tier">
-                      <div className="elite-price-label">Journalier</div>
-                      <div className="elite-price-amount">{vehiculeSelectionne.tarifs.quotidien.toLocaleString()} GNF</div>
+                    <h3 className="gtraf-section-title">Tarification</h3>
+                  </div>
+                  <div className="gtraf-pricing-tiers">
+                    <div className="gtraf-price-tier">
+                      <strong>Quotidien</strong>
+                      <span>{vehiculeSelectionne.tarifs.quotidien.toLocaleString()} {vehiculeSelectionne.monnaie}</span>
                     </div>
-                    <div className="elite-price-tier">
-                      <div className="elite-price-label">Hebdomadaire</div>
-                      <div className="elite-price-amount">{vehiculeSelectionne.tarifs.hebdomadaire.toLocaleString()} GNF</div>
-                      <div className="elite-price-savings">
-                        Économisez {((vehiculeSelectionne.tarifs.quotidien * 7) - vehiculeSelectionne.tarifs.hebdomadaire).toLocaleString()} GNF
-                      </div>
+                    <div className="gtraf-price-tier">
+                      <strong>Hebdomadaire</strong>
+                      <span>{vehiculeSelectionne.tarifs.hebdomadaire.toLocaleString()} {vehiculeSelectionne.monnaie}</span>
                     </div>
-                    <div className="elite-price-tier">
-                      <div className="elite-price-label">Mensuel</div>
-                      <div className="elite-price-amount">{vehiculeSelectionne.tarifs.mensuel.toLocaleString()} GNF</div>
-                      <div className="elite-price-savings">
-                        Économisez {((vehiculeSelectionne.tarifs.quotidien * 30) - vehiculeSelectionne.tarifs.mensuel).toLocaleString()} GNF
-                      </div>
+                    <div className="gtraf-price-tier">
+                      <strong>Mensuel</strong>
+                      <span>{vehiculeSelectionne.tarifs.mensuel.toLocaleString()} {vehiculeSelectionne.monnaie}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Présentation */}
-                <div className="elite-modal-section">
-                  <h3 className="elite-modal-section-title">
-                    <svg className="elite-modal-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
-                    </svg>
-                    Présentation
-                  </h3>
-                  <p className="elite-modal-description">{vehiculeSelectionne.presentation}</p>
-                </div>
-
                 {/* Caractéristiques */}
-                <div className="elite-modal-section">
-                  <h3 className="elite-modal-section-title">
-                    <svg className="elite-modal-icon" viewBox="0 0 24 24">
-                      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+                <div className="gtraf-modal-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.5 9.5c-1.03 0-2.06-.25-3-.75l-4.5 4.5v-3c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1H12l4.5-4.5c.5.95 1.5 1.5 2.5 1.5 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .22.03.43.07.64L15 7.5V10c0 .55.45 1 1 1s1-.45 1-1V8.5l1.93-1.93c.57.4 1.25.64 1.97.64.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z" />
                     </svg>
-                    Caractéristiques
-                  </h3>
-                  <div className="elite-modal-specs">
-                    <div className="elite-spec-item">
-                      <div className="elite-spec-label">Moteur</div>
-                      <div className="elite-spec-value">{vehiculeSelectionne.caracteristiques.moteur}</div>
-                    </div>
-                    <div className="elite-spec-item">
-                      <div className="elite-spec-label">Performance</div>
-                      <div className="elite-spec-value">{vehiculeSelectionne.performance}</div>
-                    </div>
-                    <div className="elite-spec-item">
-                      <div className="elite-spec-label">Capacité</div>
-                      <div className="elite-spec-value">{vehiculeSelectionne.capacite}</div>
-                    </div>
-                    <div className="elite-spec-item">
-                      <div className="elite-spec-label">Énergie</div>
-                      <div className="elite-spec-value">{vehiculeSelectionne.energie}</div>
-                    </div>
+                    <h3 className="gtraf-section-title">Caractéristiques</h3>
+                  </div>
+                  <div className="gtraf-specs-grid">
+                    {Object.entries(vehiculeSelectionne.caracteristiques).map(([key, value]) => (
+                      <div key={key} className="gtraf-spec-card">
+                        <strong>{value}</strong>
+                        <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* Équipements */}
-                <div className="elite-modal-section">
-                  <h3 className="elite-modal-section-title">
-                    <svg className="elite-modal-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
+                <div className="gtraf-modal-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
                     </svg>
-                    Équipements
-                  </h3>
-                  <div className="elite-modal-features">
+                    <h3 className="gtraf-section-title">Équipements de Luxe</h3>
+                  </div>
+                  <div className="gtraf-equipment-grid">
                     {vehiculeSelectionne.equipements.map((equip, idx) => (
-                      <div key={idx} className="elite-feature-item">
-                        <svg className="elite-feature-icon" viewBox="0 0 24 24">
+                      <div key={idx} className="gtraf-equipment-item">
+                        <svg className="gtraf-check-icon" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                         </svg>
-                        {equip}
+                        <span>{equip}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Inclusions */}
-                <div className="elite-modal-section">
-                  <h3 className="elite-modal-section-title">
-                    <svg className="elite-modal-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z" />
+                <div className="gtraf-modal-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-2.18L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
-                    Inclus
-                  </h3>
-                  <div className="elite-modal-inclusions">
-                    {vehiculeSelectionne.inclusions.map((inc, idx) => (
-                      <div key={idx} className="elite-inclusion-item">
-                        <svg className="elite-inclusion-icon" viewBox="0 0 24 24">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-2.18L10 14.17l7.59-7.59L19 8l-9 9z" />
-                        </svg>
-                        {inc}
+                    <h3 className="gtraf-section-title">Services Inclus</h3>
+                  </div>
+                  <div className="gtraf-services-grid">
+                    {vehiculeSelectionne.inclusions.map((service, idx) => (
+                      <div key={idx} className="gtraf-service-item">
+                        <div className="gtraf-service-icon">
+                          <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-2.18L10 14.17l7.59-7.59L19 8l-9 9z" />
+                          </svg>
+                        </div>
+                        <span className="gtraf-service-text">{service}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Actions */}
-                <div className="elite-modal-actions">
-                  <button
-                    className={`elite-action-button elite-primary ${vehiculeSelectionne.statut !== "disponible" ? "elite-disabled" : ""}`}
-                    disabled={vehiculeSelectionne.statut !== "disponible"}
-                  >
-                    <svg className="elite-action-icon" viewBox="0 0 24 24">
-                      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z" />
+                {/* Présentation */}
+                <div className="gtraf-modal-section gtraf-description-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
                     </svg>
-                    Réserver ce véhicule
-                  </button>
-                  <button className="elite-action-button elite-secondary">
-                    <svg className="elite-action-icon" viewBox="0 0 24 24">
-                      <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+                    <h3 className="gtraf-section-title">Présentation</h3>
+                  </div>
+                  <p>{vehiculeSelectionne.presentation}</p>
+                </div>
+
+                {/* Infos Rapides */}
+                <div className="gtraf-modal-section">
+                  <div className="gtraf-section-header">
+                    <svg className="gtraf-section-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
                     </svg>
-                    Contacter G-TRAF+
-                  </button>
+                    <h3 className="gtraf-section-title">Informations Clés</h3>
+                  </div>
+                  <div className="gtraf-vehicle-highlights">
+                    <div className="gtraf-highlight-item">
+                      <span className="gtraf-highlight-label">Édition:</span>
+                      <span className="gtraf-highlight-value">{vehiculeSelectionne.edition}</span>
+                    </div>
+                    <div className="gtraf-highlight-item">
+                      <span className="gtraf-highlight-label">Localisation:</span>
+                      <span className="gtraf-highlight-value">{vehiculeSelectionne.destination}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            {/* Actions */}
+            <div className="gtraf-modal-actions">
+              <button
+                className={`gtraf-action-btn gtraf-primary-action ${
+                  vehiculeSelectionne.statut !== "disponible" ? "gtraf-disabled" : ""
+                }`}
+                disabled={vehiculeSelectionne.statut !== "disponible"}
+              >
+              
+                Demander un Devis
+              </button>
+              <button className="gtraf-action-btn gtraf-tertiary-action">
+                
+                Appeler G-TRAF+
+              </button>
             </div>
           </div>
         </div>
@@ -678,195 +744,4 @@ const EliteFleetGallery = () => {
   );
 };
 
-// === COMPOSANT DE CARTE DE VÉHICULE ===
-const EliteVehicleCard = ({ vehicule, affichage, onClick }) => {
-  const estDisponible = vehicule.statut === "disponible";
-
-  if (affichage === "liste") {
-    return (
-      <div className="elite-vehicle-card elite-list-card" onClick={onClick}>
-        <div className="elite-card-content">
-          <div className="elite-list-card-layout">
-            <div className="elite-list-card-image">
-              <img src={vehicule.galerie[0]} alt={vehicule.designation} className="elite-vehicle-image" />
-              <div className="elite-availability-badge">
-                <span className={`elite-badge ${estDisponible ? "elite-available" : "elite-unavailable"}`}>
-                  {estDisponible ? "Disponible" : "Réservé"}
-                </span>
-              </div>
-            </div>
-
-            <div className="elite-list-card-details">
-              <div className="elite-list-card-header">
-                <div>
-                  <h3 className="elite-vehicle-designation">{vehicule.designation}</h3>
-                  <p className="elite-vehicle-meta">
-                    {vehicule.marque} • {vehicule.edition} • {vehicule.annee}
-                  </p>
-                </div>
-                <div className="elite-vehicle-pricing">
-                  <div className="elite-daily-price">{vehicule.tarifs.quotidien.toLocaleString()} GNF</div>
-                  <div className="elite-price-label">par jour</div>
-                </div>
-              </div>
-
-              <p className="elite-vehicle-description">{vehicule.presentation}</p>
-
-              <div className="elite-vehicle-stats">
-                <div className="elite-stat-item">
-                  <svg className="elite-stat-icon" viewBox="0 0 24 24">
-                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
-                    <circle cx="7.5" cy="14.5" r="1.5" />
-                    <circle cx="16.5" cy="14.5" r="1.5" />
-                  </svg>
-                  <div className="elite-stat-label">Performance</div>
-                  <div className="elite-stat-value">{vehicule.performance}</div>
-                </div>
-                <div className="elite-stat-item">
-                  <svg className="elite-stat-icon" viewBox="0 0 24 24">
-                    <path d="M20 12c0-1.1-.9-2-2-2V7c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L6 19h1l.67-2h8.67l.66 2h1l.67-2H20v-5zm-4-2h-3V7h3v3zM8 7h3v3H8V7zm-2 5h12v3H6v-3z" />
-                  </svg>
-                  <div className="elite-stat-label">Capacité</div>
-                  <div className="elite-stat-value">{vehicule.capacite}</div>
-                </div>
-                <div className="elite-stat-item">
-                  <svg className="elite-stat-icon" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                  </svg>
-                  <div className="elite-stat-label">Quartier</div>
-                  <div className="elite-stat-value">{vehicule.destination}</div>
-                </div>
-                <div className="elite-stat-item">
-                  <svg className="elite-stat-icon" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                  <div className="elite-stat-label">Évaluation</div>
-                  <div className="elite-stat-value">4.9/5</div>
-                </div>
-              </div>
-
-              <div className="elite-card-actions">
-                <button
-                  className={`elite-action-button ${estDisponible ? "elite-primary" : "elite-secondary"}`}
-                  disabled={!estDisponible}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {estDisponible ? "Réserver" : "Indisponible"}
-                </button>
-                <button className="elite-action-button elite-secondary">
-                  <svg className="elite-action-icon" viewBox="0 0 24 24">
-                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                  </svg>
-                  Détails
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="elite-vehicle-card elite-grid-card" onClick={onClick}>
-      <div className="elite-card-image-container">
-        <img src={vehicule.galerie[0]} alt={vehicule.designation} className="elite-vehicle-image" />
-        <div className="elite-image-overlay"></div>
-        <div className="elite-card-badge">
-          <span className={`elite-badge ${estDisponible ? "elite-available" : "elite-unavailable"}`}>
-            {estDisponible ? "Disponible" : "Réservé"}
-          </span>
-        </div>
-        <div className="elite-quick-action">
-          <button className="elite-quick-action-button">
-            <svg className="elite-quick-action-icon" viewBox="0 0 24 24">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div className="elite-card-details">
-        <div className="elite-card-header">
-          <h3 className="elite-vehicle-designation">{vehicule.designation}</h3>
-          <div className="elite-daily-price">{vehicule.tarifs.quotidien.toLocaleString()} GNF</div>
-        </div>
-        <p className="elite-vehicle-meta">
-          {vehicule.marque} • {vehicule.edition} • {vehicule.annee}
-        </p>
-
-        <div className="elite-vehicle-features">
-          {vehicule.equipements.slice(0, 3).map((equip, idx) => (
-            <div key={idx} className="elite-feature-item">
-              <svg className="elite-feature-icon" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              <span>{equip}</span>
-            </div>
-          ))}
-          {vehicule.equipements.length > 3 && (
-            <div className="elite-extra-features">+{vehicule.equipements.length - 3} équipements</div>
-          )}
-        </div>
-
-        <div className="elite-vehicle-specs">
-          <div className="elite-spec-item">
-            <svg className="elite-spec-icon" viewBox="0 0 24 24">
-              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
-              <circle cx="7.5" cy="14.5" r="1.5" />
-              <circle cx="16.5" cy="14.5" r="1.5" />
-            </svg>
-            <div className="elite-spec-label">Perf</div>
-            <div className="elite-spec-value">{vehicule.performance}</div>
-          </div>
-          <div className="elite-spec-item">
-            <svg className="elite-spec-icon" viewBox="0 0 24 24">
-              <path d="M20 12c0-1.1-.9-2-2-2V7c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L6 19h1l.67-2h8.67l.66 2h1l.67-2H20v-5zm-4-2h-3V7h3v3zM8 7h3v3H8V7zm-2 5h12v3H6v-3z" />
-            </svg>
-            <div className="elite-spec-label">Capacité</div>
-            <div className="elite-spec-value">{vehicule.capacite}</div>
-          </div>
-          <div className="elite-spec-item">
-            <svg className="elite-spec-icon" viewBox="0 0 24 24">
-              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z" />
-            </svg>
-            <div className="elite-spec-label">Année</div>
-            <div className="elite-spec-value">{vehicule.annee}</div>
-          </div>
-        </div>
-
-        <div className="elite-vehicle-footer">
-          <div className="elite-location-info">
-            <svg className="elite-location-icon" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-            <span>{vehicule.destination}</span>
-          </div>
-          <div className="elite-rating-info">
-            <svg className="elite-rating-icon" viewBox="0 0 24 24">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-            </svg>
-            <span>4.9/5</span>
-          </div>
-        </div>
-
-        <div className="elite-card-actions">
-          <button
-            className={`elite-action-button ${estDisponible ? "elite-primary" : "elite-secondary"}`}
-            disabled={!estDisponible}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {estDisponible ? "Réserver" : "Indisponible"}
-          </button>
-          <button className="elite-action-button elite-secondary elite-icon-only">
-            <svg className="elite-action-icon" viewBox="0 0 24 24">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default EliteFleetGallery;
+export default LuxuryFleetGallery;

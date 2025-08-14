@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../Style/Contac.css';
+import '../Style/Contac.css'; // ✅ Fichier CSS mis à jour
 
-const ContactForm = () => {
+const GtrafPlusContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +46,6 @@ const ContactForm = () => {
       icon: 'MapPin',
       title: 'Adresse',
       content: 'Conakry KALOUM KOULEWONDY',
-   
     },
     {
       icon: 'Clock',
@@ -60,7 +59,6 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simuler l'envoi
     setTimeout(() => {
       setIsSubmitting(false);
       setShowSuccess(true);
@@ -73,7 +71,6 @@ const ContactForm = () => {
         message: ''
       });
 
-      // Cacher le message après 5 secondes
       setTimeout(() => {
         setShowSuccess(false);
       }, 5000);
@@ -127,10 +124,10 @@ const ContactForm = () => {
   );
 
   return (
-    <section id="contact" className="contactform-section">
+    <section id="gtp_contact" className="gtp_section">
       {/* Success Toast */}
       {showSuccess && (
-        <div className="contactform-toast">
+        <div className="gtp_toast">
           <CheckIcon />
           <div>
             <strong>Demande envoyée !</strong>
@@ -139,25 +136,25 @@ const ContactForm = () => {
         </div>
       )}
 
-      <div className="contactform-container">
+      <div className="gtp_container">
         {/* Header */}
-        <div className="contactform-header">
-          <div className="contactform-badge">CONTACT</div>
-          <h2 className="contactform-title">
+        <div className="gtp_header">
+          <div className="gtp_badge">CONTACT</div>
+          <h2 className="gtp_title">
             Parlons de votre <span>projet</span>
           </h2>
-          <p className="contactform-description">
+          <p className="gtp_description">
             Contactez-nous pour un devis personnalisé et gratuit. Notre équipe d'experts 
             est à votre disposition pour étudier votre projet dans les moindres détails.
           </p>
         </div>
 
-        <div className="contactform-grid">
+        <div className="gtp_grid">
           {/* Contact Info */}
-          <div className="contactform-info">
-            <div className="contactform-info-card">
-              <h3 className="contactform-info-title">Nos coordonnées</h3>
-              <div className="contactform-info-list">
+          <div className="gtp_info">
+            <div className="gtp_info_card">
+              <h3 className="gtp_info_title">Nos coordonnées</h3>
+              <div className="gtp_info_list">
                 {contactInfo.map((info, index) => {
                   const Icon = {
                     Phone: PhoneIcon,
@@ -167,14 +164,14 @@ const ContactForm = () => {
                   }[info.icon];
 
                   return (
-                    <div key={index} className="contactform-info-item">
-                      <div className="contactform-info-icon">
+                    <div key={index} className="gtp_info_item">
+                      <div className="gtp_info_icon">
                         <Icon />
                       </div>
                       <div>
-                        <h4 className="contactform-info-label">{info.title}</h4>
-                        <p className="contactform-info-value">{info.content}</p>
-                        <p className="contactform-info-sub">{info.subtitle}</p>
+                        <h4 className="gtp_info_label">{info.title}</h4>
+                        <p className="gtp_info_value">{info.content}</p>
+                        <p className="gtp_info_sub">{info.subtitle}</p>
                       </div>
                     </div>
                   );
@@ -183,22 +180,22 @@ const ContactForm = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="contactform-stats">
-              <h4 className="contactform-stats-title">Pourquoi nous choisir ?</h4>
-              <div className="contactform-stats-list">
-                <div className="contactform-stats-row">
+            <div className="gtp_stats">
+              <h4 className="gtp_stats_title">Pourquoi nous choisir ?</h4>
+              <div className="gtp_stats_list">
+                <div className="gtp_stats_row">
                   <span>Dévis gratuit</span>
-                  <span className="contactform-check">✓</span>
+                  <span className="gtp_check">✓</span>
                 </div>
-                <div className="contactform-stats-row">
+                <div className="gtp_stats_row">
                   <span>Réponse rapide</span>
-                  <span> 24h</span>
+                  <span>24h</span>
                 </div>
-                <div className="contactform-stats-row">
+                <div className="gtp_stats_row">
                   <span>Expertise certifiée</span>
                   <span>25 ans</span>
                 </div>
-                <div className="contactform-stats-row">
+                <div className="gtp_stats_row">
                   <span>Satisfaction client</span>
                   <span>98%</span>
                 </div>
@@ -207,11 +204,11 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="contactform-form-container">
-            <div className="contactform-form-card">
-              <form onSubmit={handleSubmit} className="contactform-form">
-                <div className="contactform-row">
-                  <div className="contactform-field">
+          <div className="gtp_form_container">
+            <div className="gtp_form_card">
+              <form onSubmit={handleSubmit} className="gtp_form">
+                <div className="gtp_row">
+                  <div className="gtp_field">
                     <label>Nom complet *</label>
                     <input
                       type="text"
@@ -222,7 +219,7 @@ const ContactForm = () => {
                       placeholder="Votre nom complet"
                     />
                   </div>
-                  <div className="contactform-field">
+                  <div className="gtp_field">
                     <label>Email *</label>
                     <input
                       type="email"
@@ -235,8 +232,8 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="contactform-row">
-                  <div className="contactform-field">
+                <div className="gtp_row">
+                  <div className="gtp_field">
                     <label>Téléphone</label>
                     <input
                       type="tel"
@@ -246,7 +243,7 @@ const ContactForm = () => {
                       placeholder="01 23 45 67 89"
                     />
                   </div>
-                  <div className="contactform-field">
+                  <div className="gtp_field">
                     <label>Type de projet *</label>
                     <select
                       name="projectType"
@@ -262,7 +259,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                <div className="contactform-field">
+                <div className="gtp_field">
                   <label>Budget indicatif</label>
                   <select
                     name="budget"
@@ -276,7 +273,7 @@ const ContactForm = () => {
                   </select>
                 </div>
 
-                <div className="contactform-field">
+                <div className="gtp_field">
                   <label>Description de votre projet *</label>
                   <textarea
                     name="message"
@@ -291,11 +288,11 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="contactform-submit-btn"
+                  className="gtp_submit_btn"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="contactform-spinner"></div>
+                      <div className="gtp_spinner"></div>
                       Envoi en cours...
                     </>
                   ) : (
@@ -306,7 +303,7 @@ const ContactForm = () => {
                   )}
                 </button>
 
-                <p className="contactform-disclaimer">
+                <p className="gtp_disclaimer">
                   En envoyant ce formulaire, vous acceptez d'être recontacté par notre équipe 
                   dans le cadre de votre demande de devis.
                 </p>
@@ -319,4 +316,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default GtrafPlusContactForm;
