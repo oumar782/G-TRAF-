@@ -90,6 +90,8 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
     margin-bottom: 100px;
+    border-radius: 50px;
+
   }
 
   .prestige-cards {
@@ -200,6 +202,8 @@
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    border-radius: 50px;
+    
   }
 
   .stat-item {
