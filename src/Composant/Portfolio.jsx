@@ -5,7 +5,7 @@ import project1 from '../assets/Image/P1035850.webp';
 import project2 from '../assets/Image/P1035851.webp';
 import project3 from '../assets/Image/P1035852.webp';
 
-const Project360Gallery = () => {
+const ArchitecturalGallery = () => {
   const [activeProject, setActiveProject] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -118,30 +118,30 @@ const Project360Gallery = () => {
   };
 
   return (
-    <section ref={sectionRef} className="portfolio360-section" id='Nos-Réalisations'>
-      <div className="portfolio360-container">
+    <section ref={sectionRef} className="archi-gallery-section" id='realisations'>
+      <div className="archi-gallery-container">
         {/* Background Elements */}
-        <div className="portfolio360-bg-circle-1"></div>
-        <div className="portfolio360-bg-circle-2"></div>
+        <div className="archi-gallery-bg-circle-1"></div>
+        <div className="archi-gallery-bg-circle-2"></div>
         
         {/* Header */}
-        <div className={`portfolio360-header ${isVisible ? 'visible' : ''}`}>
-          <div className="portfolio360-badge">NOS RÉALISATIONS D'EXCEPTION</div>
-          <h2 className="portfolio360-title">
+        <div className={`archi-gallery-header ${isVisible ? 'archi-gallery-visible' : ''}`}>
+          <div className="archi-gallery-badge">NOS RÉALISATIONS D'EXCEPTION</div>
+          <h2 className="archi-gallery-title">
             <span>Nos Realisations</span> Immersif 360°
           </h2>
-          <p className="portfolio360-subtitle">
+          <p className="archi-gallery-subtitle">
             Explorez nos réalisations phares avec une expérience visuelle immersive.
             Chaque projet incarne notre quête d'excellence architecturale.
           </p>
         </div>
 
         {/* Main Content */}
-        <div className="portfolio360-main-content">
+        <div className="archi-gallery-main-content">
           {/* 360° Showcase */}
-          <div className="portfolio360-showcase">
+          <div className="archi-gallery-showcase">
             <div
-              className="portfolio360-image-container"
+              className="archi-gallery-image-container"
               style={{
                 transform: `rotateY(${mousePosition.x * 5}deg) rotateX(${mousePosition.y * 3}deg)`,
               }}
@@ -149,24 +149,22 @@ const Project360Gallery = () => {
               <img
                 src={currentProject.image}
                 alt={currentProject.title}
-                className="portfolio360-main-image"
+                className="archi-gallery-main-image"
               />
-              <div className="portfolio360-overlay"></div>
-              
-           
+              <div className="archi-gallery-overlay"></div>
               
               {/* Play/Pause Button */}
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="portfolio360-play-button"
+                className="archi-gallery-play-button"
               >
                 {isPlaying ? (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="6" y="5" width="4" height="14" fill="currentColor"/>
                     <rect x="14" y="5" width="4" height="14" fill="currentColor"/>
                   </svg>
                 ) : (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 3L19 12L5 21V3Z" fill="currentColor"/>
                   </svg>
                 )}
@@ -174,14 +172,14 @@ const Project360Gallery = () => {
             </div>
 
             {/* Navigation Controls */}
-            <div className="portfolio360-nav-controls">
-              <button onClick={prevProject} className="portfolio360-nav-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="archi-gallery-nav-controls">
+              <button onClick={prevProject} className="archi-gallery-nav-btn">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <button onClick={nextProject} className="portfolio360-nav-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button onClick={nextProject} className="archi-gallery-nav-btn">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
@@ -189,25 +187,25 @@ const Project360Gallery = () => {
           </div>
 
           {/* Project Details */}
-          <div className={`portfolio360-details ${isVisible ? 'visible' : ''}`}>
-            <div className="portfolio360-category">{currentProject.category}</div>
-            <h3 className="portfolio360-project-title">{currentProject.title}</h3>
-            <p className="portfolio360-location">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className={`archi-gallery-details ${isVisible ? 'archi-gallery-visible' : ''}`}>
+            <div className="archi-gallery-category">{currentProject.category}</div>
+            <h3 className="archi-gallery-project-title">{currentProject.title}</h3>
+            <p className="archi-gallery-location">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               {currentProject.location}
             </p>
-            <p className="portfolio360-description">{currentProject.description}</p>
+            <p className="archi-gallery-description">{currentProject.description}</p>
 
             {/* Technologies */}
-            <div className="portfolio360-tech-section">
+            <div className="archi-gallery-tech-section">
               <h4>Technologies Clés :</h4>
-              <div className="portfolio360-tech-list">
+              <div className="archi-gallery-tech-list">
                 {currentProject.technologies.map((tech, index) => (
-                  <span key={index} className="portfolio360-tech-tag">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <span key={index} className="archi-gallery-tech-tag">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -218,50 +216,47 @@ const Project360Gallery = () => {
             </div>
 
             {/* Stats */}
-            <div className="portfolio360-stats">
+            <div className="archi-gallery-stats">
               {Object.entries(currentProject.stats).map(([key, value], index) => (
-                <div key={index} className="portfolio360-stat-item">
-                  <div className="portfolio360-stat-value">{value}</div>
-                  <div className="portfolio360-stat-label">{key}</div>
+                <div key={index} className="archi-gallery-stat-item">
+                  <div className="archi-gallery-stat-value">{value}</div>
+                  <div className="archi-gallery-stat-label">{key}</div>
                 </div>
               ))}
             </div>
-
-            {/* CTA Button */}
-           
           </div>
         </div>
 
         {/* Thumbnails */}
-        <div className="portfolio360-thumbnails">
+        <div className="archi-gallery-thumbnails">
           {projects.map((project, index) => (
             <button
               key={project.id}
               onClick={() => setActiveProject(index)}
-              className={`portfolio360-thumb ${activeProject === index ? 'active' : ''}`}
+              className={`archi-gallery-thumb ${activeProject === index ? 'archi-gallery-thumb-active' : ''}`}
             >
               <img src={project.image} alt={project.title} />
-              {activeProject === index && <div className="portfolio360-thumb-overlay"></div>}
+              {activeProject === index && <div className="archi-gallery-thumb-overlay"></div>}
             </button>
           ))}
         </div>
 
         {/* Final CTA */}
-        <div className="portfolio360-final-cta">
-          <div className="portfolio360-cta-card">
-            <h3 className="portfolio360-cta-title">Prêt à concrétiser votre vision architecturale ?</h3>
-            <p className="portfolio360-cta-desc">
+        <div className="archi-gallery-final-cta">
+          <div className="archi-gallery-cta-card">
+            <h3 className="archi-gallery-cta-title">Prêt à concrétiser votre vision architecturale ?</h3>
+            <p className="archi-gallery-cta-desc">
               Notre équipe d'experts est à votre disposition pour transformer vos idées en réalités tangibles.
             </p>
-            <div className="portfolio360-cta-buttons">
-              <button className="portfolio360-btn-primary">Demander un devis</button>
-              <button className="portfolio360-btn-secondary">Contactez-nous</button>
+            <div className="archi-gallery-cta-buttons">
+              <button className="archi-gallery-btn-primary">Demander un devis</button>
+              <button className="archi-gallery-btn-secondary">Contactez-nous</button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section>  
   );
 };
 
-export default Project360Gallery;
+export default ArchitecturalGallery;

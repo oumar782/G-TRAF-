@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
-import logo from '../assets/Image/gt.png';
+import logo from '../assets/Image/gt.webp';
 import '../Style/Header.css';
 
 export const GtrafHeader = () => {
