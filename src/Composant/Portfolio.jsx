@@ -75,7 +75,7 @@ const ArchitecturalGallery = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -128,7 +128,7 @@ const ArchitecturalGallery = () => {
         <div className={`archi-gallery-header ${isVisible ? 'archi-gallery-visible' : ''}`}>
           <div className="archi-gallery-badge">NOS RÉALISATIONS D'EXCEPTION</div>
           <h2 className="archi-gallery-title">
-            <span>Nos Realisations</span> Immersif 360°
+            <span>Nos Réalisations</span> Immersives 360°
           </h2>
           <p className="archi-gallery-subtitle">
             Explorez nos réalisations phares avec une expérience visuelle immersive.
@@ -157,14 +157,15 @@ const ArchitecturalGallery = () => {
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 className="archi-gallery-play-button"
+                aria-label={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="6" y="5" width="4" height="14" fill="currentColor"/>
                     <rect x="14" y="5" width="4" height="14" fill="currentColor"/>
                   </svg>
                 ) : (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 3L19 12L5 21V3Z" fill="currentColor"/>
                   </svg>
                 )}
@@ -173,13 +174,13 @@ const ArchitecturalGallery = () => {
 
             {/* Navigation Controls */}
             <div className="archi-gallery-nav-controls">
-              <button onClick={prevProject} className="archi-gallery-nav-btn">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button onClick={prevProject} className="archi-gallery-nav-btn" aria-label="Projet précédent">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <button onClick={nextProject} className="archi-gallery-nav-btn">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button onClick={nextProject} className="archi-gallery-nav-btn" aria-label="Projet suivant">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
@@ -191,7 +192,7 @@ const ArchitecturalGallery = () => {
             <div className="archi-gallery-category">{currentProject.category}</div>
             <h3 className="archi-gallery-project-title">{currentProject.title}</h3>
             <p className="archi-gallery-location">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -201,11 +202,11 @@ const ArchitecturalGallery = () => {
 
             {/* Technologies */}
             <div className="archi-gallery-tech-section">
-              <h4>Technologies Clés :</h4>
+              <h4 className="archi-gallery-tech-title">Technologies Clés :</h4>
               <div className="archi-gallery-tech-list">
                 {currentProject.technologies.map((tech, index) => (
                   <span key={index} className="archi-gallery-tech-tag">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -234,6 +235,7 @@ const ArchitecturalGallery = () => {
               key={project.id}
               onClick={() => setActiveProject(index)}
               className={`archi-gallery-thumb ${activeProject === index ? 'archi-gallery-thumb-active' : ''}`}
+              aria-label={`Voir le projet ${project.title}`}
             >
               <img src={project.image} alt={project.title} />
               {activeProject === index && <div className="archi-gallery-thumb-overlay"></div>}
