@@ -207,22 +207,7 @@ const LuxuryFleetGallery = () => {
         <p className="gtraf-hero-subtitle">
           Découvrez notre sélection exclusive de véhicules haut de gamme disponibles à la location
         </p>
-        <div className="gtraf-hero-stats">
-          <div className="gtraf-stat-item">
-            <strong>{luxuryVehicles.length}+</strong>
-            <span>Véhicules</span>
-          </div>
-          <div className="gtraf-stat-separator"></div>
-          <div className="gtraf-stat-item">
-            <strong>{collections.length}</strong>
-            <span>Collections</span>
-          </div>
-          <div className="gtraf-stat-separator"></div>
-          <div className="gtraf-stat-item">
-            <strong>{destinations.length}</strong>
-            <span>Destinations</span>
-          </div>
-        </div>
+
       </div>
 
       {/* Filtres */}

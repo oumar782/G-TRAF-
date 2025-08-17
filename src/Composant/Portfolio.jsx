@@ -165,7 +165,7 @@ const ArchitecturalGallery = () => {
                     <rect x="14" y="5" width="4" height="14" fill="currentColor"/>
                   </svg>
                 ) : (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="62" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 3L19 12L5 21V3Z" fill="currentColor"/>
                   </svg>
                 )}
@@ -176,7 +176,7 @@ const ArchitecturalGallery = () => {
             <div className="archi-gallery-nav-controls">
               <button onClick={prevProject} className="archi-gallery-nav-btn" aria-label="Projet précédent">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15  18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               <button onClick={nextProject} className="archi-gallery-nav-btn" aria-label="Projet suivant">

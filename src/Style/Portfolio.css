@@ -180,7 +180,7 @@
   height: 32px;
 }
 
-/* Navigation Controls */
+/* Navigation Controls - Modifié pour le responsive */
 .archi-gallery-nav-controls {
   display: flex;
   justify-content: center;
@@ -191,8 +191,8 @@
 .archi-gallery-nav-btn {
   background: white;
   border: 2px solid var(--archi-gallery-primary-light);
-  width: 70px;
-  height: 70px;
+  width: clamp(60px, 8vw, 70px);
+  height: clamp(60px, 8vw, 70px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -211,8 +211,8 @@
 }
 
 .archi-gallery-nav-btn svg {
-  width: 32px;
-  height: 32px;
+  width: clamp(24px, 4vw, 32px);
+  height: clamp(24px, 4vw, 32px);
 }
 
 /* Project Details */
@@ -499,16 +499,14 @@
     height: 400px;
   }
 
-  .archi-gallery-play-button,
-  .archi-gallery-nav-btn {
-    width: 65px;
-    height: 65px;
+  .archi-gallery-play-button {
+    width: clamp(55px, 7vw, 65px);
+    height: clamp(55px, 7vw, 65px);
   }
 
-  .archi-gallery-play-button svg,
-  .archi-gallery-nav-btn svg {
-    width: 28px;
-    height: 28px;
+  .archi-gallery-play-button svg {
+    width: clamp(24px, 3.5vw, 28px);
+    height: clamp(24px, 3.5vw, 28px);
   }
   
   .archi-gallery-thumb {
@@ -593,10 +591,14 @@
     padding: 1.1rem 2rem;
   }
   
-  .archi-gallery-play-button,
-  .archi-gallery-nav-btn {
-    width: 60px;
-    height: 60px;
+  .archi-gallery-play-button {
+    width: clamp(50px, 8vw, 60px);
+    height: clamp(50px, 8vw, 60px);
+  }
+  
+  .archi-gallery-play-button svg {
+    width: clamp(20px, 4vw, 24px);
+    height: clamp(20px, 4vw, 24px);
   }
 }
 
@@ -636,12 +638,6 @@
   .archi-gallery-cta-desc {
     font-size: 1rem;
   }
-
-  .archi-gallery-play-button,
-  .archi-gallery-nav-btn {
-    width: 55px;
-    height: 55px;
-  }
   
   .archi-gallery-thumb {
     width: 70px;
@@ -663,21 +659,9 @@
     font-size: 2rem;
   }
   
-  .archi-gallery-play-button,
-  .archi-gallery-nav-btn {
-    width: 50px;
-    height: 50px;
-  }
-  
   .archi-gallery-thumb {
     width: 60px;
     height: 60px;
-  }
-  
-  .archi-gallery-play-button svg,
-  .archi-gallery-nav-btn svg {
-    width: 24px;
-    height: 24px;
   }
   
   .archi-gallery-tech-tag svg {
@@ -688,5 +672,9 @@
   .archi-gallery-location svg {
     width: 20px;
     height: 20px;
+  }
+  .archi-gallery-play-button svg {
+        width: 60px;
+    height: 80px;
   }
 }
