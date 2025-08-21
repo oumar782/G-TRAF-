@@ -107,7 +107,7 @@ const Histoire = () => {
             <button
   className={`about-button ${isVisible ? 'about-button-animate' : ''}`}
   onClick={() => {
-    const section = document.getElementById('Nos-Réalisations');
+    const section = document.getElementById('realisations');
     if (section) section.scrollIntoView({ behavior: 'smooth' });
   }}
 >

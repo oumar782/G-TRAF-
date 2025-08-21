@@ -12,6 +12,8 @@ const GtrafPlusContactForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const projectTypes = [
     'Construction neuve',
@@ -55,13 +57,57 @@ const GtrafPlusContactForm = () => {
     }
   ];
 
-  const handleSubmit = (e) => {
+  // Fonction pour afficher le toast de succès
+  const showSuccessToast = () => {
+    setShowSuccess(true);
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
+  };
+
+  // Fonction pour afficher le toast d'erreur
+  const showErrorToast = (message) => {
+    setErrorMessage(message);
+    setShowError(true);
+    setTimeout(() => {
+      setShowError(false);
+      setErrorMessage('');
+    }, 6000);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
+    try {
+      // Préparation des données pour l'API (mapping des noms)
+      const apiData = {
+        nom: formData.name,
+        email: formData.email,
+        telephone: formData.phone,
+        project_type: formData.projectType,
+        budget: formData.budget,
+        message: formData.message
+      };
+
+      // Envoi vers l'API
+      const response = await fetch('https://gtrafplusbac.vercel.app/api/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiData)
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `Erreur ${response.status}: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log('Contact créé:', result);
+
+      // Réinitialiser le formulaire
       setFormData({
         name: '',
         email: '',
@@ -71,10 +117,29 @@ const GtrafPlusContactForm = () => {
         message: ''
       });
 
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    }, 1500);
+      // Afficher le toast de succès
+      showSuccessToast();
+
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      
+      // Déterminer le message d'erreur approprié
+      let errorMsg = 'Une erreur inattendue s\'est produite. Veuillez réessayer.';
+      
+      if (error.message.includes('Failed to fetch')) {
+        errorMsg = 'Problème de connexion. Vérifiez votre connexion internet et réessayez.';
+      } else if (error.message.includes('400')) {
+        errorMsg = 'Données du formulaire invalides. Vérifiez vos informations.';
+      } else if (error.message.includes('500')) {
+        errorMsg = 'Erreur du serveur. Veuillez réessayer dans quelques minutes.';
+      } else if (error.message) {
+        errorMsg = error.message;
+      }
+
+      showErrorToast(errorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -123,16 +188,49 @@ const GtrafPlusContactForm = () => {
     </svg>
   );
 
+  const XIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  );
+
+  const AlertTriangleIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+      <line x1="12" y1="9" x2="12" y2="13"></line>
+      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+    </svg>
+  );
+
   return (
     <section id="gtp_contact" className="gtp_section">
       {/* Success Toast */}
       {showSuccess && (
-        <div className="gtp_toast">
+        <div className="gtp_toast gtp_toast_success">
           <CheckIcon />
           <div>
-            <strong>Demande envoyée !</strong>
+            <strong>Demande envoyée avec succès !</strong>
             <p>Nous vous recontacterons dans les 24h pour discuter de votre projet.</p>
           </div>
+        </div>
+      )}
+
+      {/* Error Toast */}
+      {showError && (
+        <div className="gtp_toast gtp_toast_error">
+          <AlertTriangleIcon />
+          <div>
+            <strong>Erreur lors de l'envoi</strong>
+            <p>{errorMessage}</p>
+          </div>
+          <button 
+            onClick={() => setShowError(false)}
+            className="gtp_toast_close"
+            aria-label="Fermer"
+          >
+            <XIcon />
+          </button>
         </div>
       )}
 
@@ -217,6 +315,7 @@ const GtrafPlusContactForm = () => {
                       onChange={handleChange}
                       required
                       placeholder="Votre nom complet"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="gtp_field">
@@ -228,6 +327,7 @@ const GtrafPlusContactForm = () => {
                       onChange={handleChange}
                       required
                       placeholder="votre@email.com"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -241,6 +341,7 @@ const GtrafPlusContactForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="01 23 45 67 89"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="gtp_field">
@@ -250,6 +351,7 @@ const GtrafPlusContactForm = () => {
                       value={formData.projectType}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                     >
                       <option value="">Sélectionnez un type</option>
                       {projectTypes.map((type, idx) => (
@@ -265,6 +367,7 @@ const GtrafPlusContactForm = () => {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
+                    disabled={isSubmitting}
                   >
                     <option value="">Sélectionnez une fourchette</option>
                     {budgetRanges.map((range, idx) => (
@@ -282,6 +385,7 @@ const GtrafPlusContactForm = () => {
                     required
                     rows="5"
                     placeholder="Décrivez votre projet, vos attentes, contraintes spécifiques, délais souhaités..."
+                    disabled={isSubmitting}
                   />
                 </div>
 

@@ -8,7 +8,108 @@
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+/* Styles pour les toasts - À ajouter à votre fichier Contac.css existant */
 
+.gtp_toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  z-index: 9999;
+  animation: slideInRight 0.3s ease-out;
+  font-family: inherit;
+}
+
+.gtp_toast_success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+.gtp_toast_error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.gtp_toast svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gtp_toast_success svg {
+  color: #16a34a;
+}
+
+.gtp_toast_error svg {
+  color: #ef4444;
+}
+
+.gtp_toast div {
+  flex: 1;
+}
+
+.gtp_toast strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.gtp_toast p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.gtp_toast_close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+
+.gtp_toast_close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.gtp_toast_close svg {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+/* Animation d'entrée */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .gtp_toast {
+    left: 20px;
+    right: 20px;
+    max-width: none;
+  }
+}
 .gtp_container {
   max-width: 1400px;
   margin: 0 auto;

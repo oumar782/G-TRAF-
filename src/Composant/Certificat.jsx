@@ -307,14 +307,22 @@ const Certifications = () => {
               </p>
             </div>
             <div className="certif-cta-buttons">
-              <button className="certif-cta-btn-primary">
-                <span>Demander un devis sur mesure</span>
-                <ArrowRightIcon />
-              </button>
-              <button className="certif-cta-btn-secondary">
-                Découvrir nos réalisations
-              </button>
-            </div>
+  <button 
+    className="certif-cta-btn-primary" 
+    onClick={() => window.open('/Notre-contact', '_self')}
+  >
+    <span>Demander un devis sur mesure</span>
+    <ArrowRightIcon />
+  </button>
+  <button 
+  className="certif-cta-btn-secondary" 
+  onClick={() => window.open('/Nos-realisations', '_self')}
+    
+
+>
+  Découvrir nos réalisations
+</button>
+</div>
             <div className="certif-cta-decoration"></div>
           </div>
         </div>

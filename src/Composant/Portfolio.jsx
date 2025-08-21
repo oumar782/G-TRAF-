@@ -251,9 +251,22 @@ const ArchitecturalGallery = () => {
               Notre équipe d'experts est à votre disposition pour transformer vos idées en réalités tangibles.
             </p>
             <div className="archi-gallery-cta-buttons">
-              <button className="archi-gallery-btn-primary">Demander un devis</button>
-              <button className="archi-gallery-btn-secondary">Contactez-nous</button>
-            </div>
+  <button 
+    className="archi-gallery-btn-primary" 
+    onClick={() => window.open('/Notre-contact', '_self')}
+  >
+    <i className="fas fa-file-estimate"></i> Demander un devis
+  </button>
+  <button 
+    className="archi-gallery-btn-secondary whatsapp-btn"
+    onClick={() => {
+      const message = encodeURIComponent('Bonjour, je souhaite vous contacter pour un projet architectural');
+      window.open(`https://wa.me/+224621015699?text=${message}`, '_blank');
+    }}
+  >
+    <i className="fab fa-whatsapp"></i>  Contactez-nous sur  WhatsApp
+  </button>
+</div>
           </div>
         </div>
       </div>

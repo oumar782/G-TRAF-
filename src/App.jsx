@@ -41,10 +41,10 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Accueil />} />
           <Route path="a-propos" element={<APropos />} />
-          <Route path="realisations" element={<Realisations />} />
-          <Route path="expertises" element={<Expertises />} />
-          <Route path="flottes" element={<Flottes />} />
-          <Route path="contact" element={<ContactPage />} />
+          <Route path="Nos-realisations" element={<Realisations />} />
+          <Route path="Nos-expertises" element={<Expertises />} />
+          <Route path="Nos-flottes" element={<Flottes />} />
+          <Route path="Notre-contact" element={<ContactPage />} />
           <Route path="Nos-certifications" element={<Certification />} />
         </Route>
       </Routes>
