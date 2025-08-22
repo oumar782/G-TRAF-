@@ -86,7 +86,7 @@ const Certifications = () => {
     {
       icon: LeafIcon,
       name: "RGE Éco-Artisan",
-      description: "Performance Énergétique & Énergies Renouvelables",
+      description: "Performance Énergétique & Énergies Renouvelables.",
       details: "Travaux respectueux de l’environnement, optimisant les performances énergétiques.",
       color: "green",
       year: "2015"
