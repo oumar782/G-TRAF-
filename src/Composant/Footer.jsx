@@ -15,29 +15,33 @@ const Footer = () => {
     'Décoration d’intérieur et aménagement d’espaces'
   ];
 
+  // 🔥 Corrigé → utiliser href (pas "to")
   const quickLinks = [
-    { name: 'Accueil', to: '/' },
-    { name: 'Nos réalisations', to: '/realisations' },
-    { name: 'Nos Expertises', to: '/expertises' },
-    { name: 'Nos Certifications', to: 'Nos-certifications' },
-    { name: 'Flottes & Location', to: '/flottes' },
-    { name: 'Contact', to: '/contact' },
+    { name: 'Accueil', href: '/' },
+    { name: 'Nos réalisations', href: '/realisations' },
+    { name: 'Nos Expertises', href: '/expertises' },
+    { name: 'Nos Certifications', href: '/nos-certifications' },
+    { name: 'Flottes & Location', href: '/flottes' },
+    { name: 'Contact', href: '/contact' },
   ];
 
+  // 🔥 Corrigé → mettre des liens valides
   const legalLinks = [
-    { name: 'Mentions légales', href: '#' },
-    { name: 'Politique de confidentialité', href: '#' },
-    { name: 'Conditions générales', href: '#' },
-    { name: 'Gestion des cookies', href: '#' }
+    { name: 'Mentions légales', href: '/mentions-legales' },
+    { name: 'Politique de confidentialité', href: '/politique-confidentialite' },
+    { name: 'Conditions générales', href: '/conditions-generales' },
+    { name: 'Gestion des cookies', href: '/cookies' }
   ];
 
+  // 🔥 Corrigé → mettre des vrais liens réseaux sociaux
   const socialLinks = [
-    { name: 'Facebook', icon: 'Facebook', href: '#' },
-    { name: 'LinkedIn', icon: 'LinkedIn', href: '#' },
-    { name: 'Instagram', icon: 'Instagram', href: '#' },
-    { name: 'Twitter', icon: 'Twitter', href: '#' }
+    { name: 'Facebook', icon: 'Facebook', href: 'https://facebook.com/gtrafplus' },
+    { name: 'LinkedIn', icon: 'LinkedIn', href: 'https://linkedin.com/company/gtrafplus' },
+    { name: 'Instagram', icon: 'Instagram', href: 'https://instagram.com/gtrafplus' },
+    { name: 'Twitter', icon: 'Twitter', href: 'https://twitter.com/gtrafplus' }
   ];
 
+  // ===== Icônes =====
   const MapPinIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -141,7 +145,7 @@ const Footer = () => {
             <ul className="footer-links">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#services" className="footer-link">{service}</a>
+                  <a href="/services" className="footer-link">{service}</a>
                 </li>
               ))}
             </ul>
@@ -163,7 +167,7 @@ const Footer = () => {
             <p className="footer-social-desc">Suivez nos projets et réalisations.</p>
             <div className="footer-social-links">
               {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} className="footer-social-link" aria-label={social.name}>
+                <a key={index} href={social.href} className="footer-social-link" aria-label={social.name} target="_blank" rel="noopener noreferrer">
                   {renderIcon(social.icon)}
                 </a>
               ))}
