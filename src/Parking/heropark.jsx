@@ -22,7 +22,7 @@ const LuxuryIconStar = () => (
 );
 
 // ✅ On garde TON image d'origine
-import heroBackground from '../assets/Image/P1035850.webp';
+import heroBackground from '../assets/Image/rover.webp';
 
 const LuxuryHeroSection = () => {
   return (

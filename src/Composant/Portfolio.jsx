@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../Style/Portfolio.css';
 
-import project1 from '../assets/Image/P1035850.webp';
+import project1 from '../assets/Image/projet.webp';
 import project2 from '../assets/Image/P1035851.webp';
 import project3 from '../assets/Image/P1035852.webp';
 

@@ -3,7 +3,7 @@ import '../Style/Hero.css';
 
 // Import des images
 import bg1 from '../assets/Image/P1035980.webp';
-import bg2 from '../assets/Image/P1035799.webp';
+import bg2 from '../assets/Image/pont.webp';
 import bg3 from '../assets/Image/P1035800.webp';
 
 const HeroSection = () => {
