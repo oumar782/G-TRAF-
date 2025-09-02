@@ -20,6 +20,7 @@ export const GtrafHeader = () => {
     { name: 'Nos Expertises', to: '/Nos-expertises' },
     { name: 'Nos Certifications', to: 'Nos-certifications' },
     { name: 'Flottes & Location', to: '/Nos-flottes' },
+    { name: 'vente et location immobilier', to: '/Immobilier' },
     { name: 'Contact', to: '/Notre-contact' },
   ];
 

@@ -15,6 +15,7 @@ import Expertises from './Composant/Expertise.jsx';
 import Flottes from './Composant/Parking.jsx';
 import ContactPage from './Composant/Contact.jsx';
 import Certification from './Composant/Certificat.jsx';
+import Immobilier from './Immobilier/Immobilier.jsx';
 
 // Google Analytics
 const GA_TRACKING_ID = "G-QWVBXGWGD2";
@@ -46,6 +47,7 @@ function App() {
           <Route path="Nos-flottes" element={<Flottes />} />
           <Route path="Notre-contact" element={<ContactPage />} />
           <Route path="Nos-certifications" element={<Certification />} />
+          <Route path="Immobilier" element={<Immobilier />} />
         </Route>
       </Routes>
     </>
