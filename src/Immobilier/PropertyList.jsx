@@ -8,12 +8,17 @@ const PropertyList = ({ properties, onPropertyClick, isFiltered }) => {
       <section className="property-list">
         <div className="container">
           <div className="no-results">
-            <svg className="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-            <h3>Aucun bien trouvé</h3>
-            <p>Essayez de modifier vos critères de recherche pour voir plus de résultats.</p>
+            <div className="no-results-icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3>Aucun bien ne correspond à votre recherche</h3>
+            <p>Modifiez vos critères de filtrage pour découvrir plus de propriétés exclusives.</p>
+            <button className="btn btn-secondary" onClick={() => window.location.reload()}>
+              Réinitialiser les filtres
+            </button>
           </div>
         </div>
       </section>
@@ -24,13 +29,19 @@ const PropertyList = ({ properties, onPropertyClick, isFiltered }) => {
     <section className="property-list">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">
-            {isFiltered ? 'Résultats de votre recherche' : 'Nos biens d\'exception'}
-          </h2>
+          <div className="section-titles">
+            <h2 className="section-title">
+              {isFiltered ? 'Résultats de votre recherche' : 'Notre collection exclusive'}
+            </h2>
+            <div className="property-count">
+              <span className="count-number">{properties.length}</span>
+              <span className="count-label">propriété{properties.length > 1 ? 's' : ''}</span>
+            </div>
+          </div>
           <p className="section-subtitle">
             {isFiltered 
-              ? `${properties.length} bien${properties.length > 1 ? 's' : ''} correspond${properties.length > 1 ? 'ent' : ''} à vos critères`
-              : 'Découvrez notre sélection de propriétés de prestige à Conakry'
+              ? `Biens correspondant parfaitement à vos critères`
+              : 'Découvrez des propriétés d\'exception sélectionnées avec soin'
             }
           </p>
         </div>
@@ -44,6 +55,17 @@ const PropertyList = ({ properties, onPropertyClick, isFiltered }) => {
             />
           ))}
         </div>
+
+        {properties.length > 6 && (
+          <div className="load-more-section">
+            <button className="btn btn-outline">
+              <span>Charger plus de propriétés</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
