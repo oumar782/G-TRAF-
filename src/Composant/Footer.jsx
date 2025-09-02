@@ -135,7 +135,7 @@ const Footer = () => {
               </div>
               <div className="footer-contact-item">
                 <MailIcon />
-                <span>Contacts@gtrafplus.com</span>
+                <span>Contact@gtrafplus.com</span>
               </div>
             </div>
           </div>
