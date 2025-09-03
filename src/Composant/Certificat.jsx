@@ -180,7 +180,7 @@ const Certifications = () => {
             <span className="title-highlight">d'Exception</span>
           </h2>
           <p className="certif-description">
-            G-TRAF+ allie expertise technique, innovation et engagement durable.  
+          G-TraF+ allie expertise technique, innovation et engagement durable.  
             Nos certifications de prestige et partenariats d’élite assurent à nos clients des réalisations
             irréprochables, respectant les plus hauts standards internationaux.
           </p>

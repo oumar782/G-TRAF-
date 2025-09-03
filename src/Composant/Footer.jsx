@@ -22,6 +22,7 @@ const Footer = () => {
     { name: 'Nos Expertises', href: '/expertises' },
     { name: 'Nos Certifications', href: '/nos-certifications' },
     { name: 'Flottes & Location', href: '/flottes' },
+    { name: 'vente et location immobilier', to: '/Immobilier' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -112,13 +113,13 @@ const Footer = () => {
             <div className="footer-logo">
               <img src={Logo} alt="G-TRAF+ Logo" className="logo-img" />
               <div>
-                <h3 className="footer-logo-title">G-TRAF+</h3>
+                <h3 className="footer-logo-title">G-TraF+ </h3>
                 <p className="footer-logo-subtitle">Expertise & Solutions durables</p>
               </div>
             </div>
 
             <p className="footer-description">
-              G-TRAF+ est une entreprise dynamique et pluridisciplinaire spécialisée dans les travaux de construction, 
+            G-TraF+  est une entreprise dynamique et pluridisciplinaire spécialisée dans les travaux de construction, 
               l’aménagement d’infrastructures et la fourniture de matériel professionnel. 
               Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation, 
               dans le respect des normes, des délais et de l’environnement.
@@ -135,7 +136,7 @@ const Footer = () => {
               </div>
               <div className="footer-contact-item">
                 <MailIcon />
-                <span>Contact@gtrafplus.com</span>
+                <span>Contacts@gtrafplus.com</span>
               </div>
             </div>
           </div>
@@ -180,7 +181,7 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              © {currentYear} G-TRAF+. Tous droits réservés. | 
+              © {currentYear} G-TraF+. Tous droits réservés. | 
               <span> Qualité & Sécurité garanties</span>
             </div>
             <div className="footer-legal-links">

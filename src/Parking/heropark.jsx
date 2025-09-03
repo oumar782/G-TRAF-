@@ -39,7 +39,7 @@ const LuxuryHeroSection = () => {
         <div className="luxury-text-section">
           <div className="luxury-badge">
             <LuxuryIconStar />
-            <span>G-TRAF+ | Kipé, Conakry</span>
+            <span>G-TraF+ | Kipé, Conakry</span>
           </div>
 
           <h1 className="luxury-main-heading">

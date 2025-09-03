@@ -65,7 +65,7 @@ const Histoire = () => {
                 </span>
               </h2>
               <p className={`about-description ${isVisible ? 'about-description-animate' : ''}`}>
-                Depuis 1995, <strong>G-TRAF+</strong> réalise des projets d’aménagement, de construction et
+                Depuis 2015, <strong>G-TraF+ </strong> réalise des projets d’aménagement, de construction et
                 de fourniture de matériel dans toute la Guinée. Nous allions savoir-faire technique,
                 respect des délais et engagement environnemental.
               </p>
@@ -130,7 +130,7 @@ const Histoire = () => {
               {/* Floating Stats */}
              
               <div className={`about-stat about-stat-right ${isVisible ? 'about-stat-right-animate' : ''}`}>
-                <div className="about-stat-number">500+</div>
+                <div className="about-stat-number">5+</div>
                 <div className="about-stat-label">Projets réalisés</div>
               </div>
             </div>

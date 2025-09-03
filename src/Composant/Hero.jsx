@@ -120,7 +120,7 @@ const HeroSection = () => {
           <div className={`btp-hero__content ${isVisible ? 'btp-hero__content--visible' : ''}`}>
             <div className="btp-hero__tag">
               <span className="btp-hero__tag-icon">🔷</span>
-              <span>G-TRAF+ | Expertise pluridisciplinaire</span>
+              <span>G-TraF+  | Expertise pluridisciplinaire</span>
             </div>
 
             <h1 className="btp-hero__heading">

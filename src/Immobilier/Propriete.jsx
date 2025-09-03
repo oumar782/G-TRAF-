@@ -166,18 +166,80 @@ const PropertyPage = ({ property, onBack }) => {
               </ul>
             </div>
 
-            <div className="contact-section">
-              <button className="contact-cta btn btn-accent">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span>Contacter G-Traf+</span>
-              </button>
-              <p className="contact-note">
-                Notre équipe vous recontactera dans les 24h pour organiser une visite
-              </p>
-            </div>
+            <div className="premium-contact-section">
+  <div className="premium-contact-card">
+    <div className="premium-contact-header">
+      <div className="premium-contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+      <h3 className="premium-contact-title">Intéressé par cette propriété?</h3>
+      <p className="premium-contact-subtitle">Notre conseiller dédié vous accompagne</p>
+    </div>
+    
+    <div className="premium-contact-content">
+      <div className="premium-contact-features">
+        <div className="premium-contact-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12,6 12,12 16,14"></polyline>
+          </svg>
+          <span>Réponse sous 24h</span>
+        </div>
+        <div className="premium-contact-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Conseiller dédié</span>
+        </div>
+        <div className="premium-contact-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Visite sur rendez-vous</span>
+        </div>
+      </div>
+      
+      <button className="premium-contact-cta">
+        <span className="premium-cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </span>
+        <span className="premium-cta-text">
+          <span className="premium-cta-main">Contacter G-Traf+</span>
+          <span className="premium-cta-sub">Service Premium</span>
+        </span>
+        <span className="premium-cta-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+      </button>
+    </div>
+    
+    <div className="premium-contact-footer">
+      <p className="premium-contact-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        Notre équipe vous recontactera dans les 24h pour organiser une visite
+      </p>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
