@@ -133,7 +133,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="btp-hero__subheading">
-              <span className="btp-hero__highlighted">G-TRAF+</span> est une entreprise dynamique spécialisée dans la{' '}
+              <span className="btp-hero__highlighted">G-TRAF+ (Guinéenne des travaux et fournitures)</span> est une entreprise dynamique spécialisée dans la{' '}
               <span className="btp-hero__highlighted">construction, l'aménagement d'infrastructures et la fourniture de matériel professionnel</span>.
               Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation.
             </p>
