@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Expertise.css';
-
+import { Car } from 'lucide-react';
 // Import images
-import constructionImage from '../assets/Image/P1035972.webp';
-import industrielImage from '../assets/Image/P1035861.webp';
-import designImage from '../assets/Image/P1035841.webp';
-import maintenanceImage from '../assets/Image/P1035825.webp';
-import conseilImage from '../assets/Image/P1035799.webp';
-
+import constructionImage from '../assets/Image/CONSTRUCTION.webp';
+import industrielImage from '../assets/Image/1756921584.webp';
+import designImage from '../assets/Image/1756920444.webp';
+import maintenanceImage from '../assets/Image/1756921970.webp';
+import conseilImage from '../assets/Image/equipe.webp';
+ import immobilierVenteLocationImage from '../assets/Image/1756923064.webp';
+ import locationVoitureImage from '../assets/Image/rover.webp';
 const Expertise = () => {
   const [activeExpertise, setActiveExpertise] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -130,7 +131,38 @@ const Expertise = () => {
         'Veille réglementaire exhaustive'
       ],
       color: 'amber'
+    },
+    {
+      icon: 'Skyscraper',
+      title: 'Conseil & Stratégie Immobilière',
+      subtitle: 'Acheter, vendre ou louer en toute sérénité',
+      description: 'Nous vous accompagnons dans toutes vos transactions immobilières, de la mise en vente à la location, avec une stratégie personnalisée et une expertise du marché.',
+      image: immobilierVenteLocationImage,
+      features: [
+        'Estimation précise et valorisation des biens',
+        'Optimisation de la rentabilité locative',
+        'Accompagnement juridique et administratif',
+        'Stratégies de vente et de mise en location efficaces'
+      ],
+      color: 'blue'
+    },
+    {
+      icon: 'Compass',
+      title: 'Location de Voitures',
+      subtitle: 'Roulez librement, en toute confiance',
+      description: 'Nous mettons à votre disposition une large gamme de véhicules adaptés à tous vos besoins, que ce soit pour un déplacement professionnel, un voyage en famille ou une escapade le week-end.',
+      image: locationVoitureImage,
+      features: [
+        'Véhicules récents et bien entretenus',
+        'Tarifs transparents et compétitifs',
+        'Assistance et assurance incluses',
+        'Réservation simple et rapide en ligne'
+      ],
+      color: 'red'
     }
+    
+    
+    
   ];
 
   const renderIcon = (iconName) => {

@@ -25,7 +25,7 @@ const Hero = () => {
               <span className="hero-highlight"> en Guinée</span>
             </h1>
             <p className="hero-subtitle">
-              G-Traf+ vous accompagne dans la recherche de votre bien d'exception. 
+            G-TRAF+ vous accompagne dans la recherche de votre bien d'exception. 
               Découvrez notre sélection exclusive de propriétés de luxe à Conakry.
             </p>
             

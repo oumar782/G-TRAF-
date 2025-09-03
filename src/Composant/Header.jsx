@@ -35,8 +35,8 @@ export const GtrafHeader = () => {
               <div className="gtraf-header__logo-glow"></div>
             </div>
             <div className="gtraf-header__brand-text">
-              <h1 className="gtraf-header__brand-title">G-TraF+ </h1>
-              <p className="gtraf-header__brand-subtitle">Guinéenne des travaux et fournitures</p>
+              <h1 className="gtraf-header__brand-title">G-TRAF+</h1>
+              <p className="gtraf-header__brand-subtitle">Guinéenne des Travaux et Fournitures</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export const GtrafHeader = () => {
                 <Phone size={18} />
                 <span className="gtraf-header__contact-text">+224 621 01 56 99</span>
               </a>
-              <a href="mailto:Contacts@gtrafplus.com" className="gtraf-header__contact-link">
+              <a href="mailto:contacts@gtrafplus.com" className="gtraf-header__contact-link">
                 <Mail size={18} />
                 <span className="gtraf-header__contact-text">Email</span>
               </a>

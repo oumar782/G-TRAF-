@@ -113,13 +113,13 @@ const Footer = () => {
             <div className="footer-logo">
               <img src={Logo} alt="G-TRAF+ Logo" className="logo-img" />
               <div>
-                <h3 className="footer-logo-title">G-TraF+ </h3>
+                <h3 className="footer-logo-title">G-TRAF+ </h3>
                 <p className="footer-logo-subtitle">Expertise & Solutions durables</p>
               </div>
             </div>
 
             <p className="footer-description">
-            G-TraF+  est une entreprise dynamique et pluridisciplinaire spécialisée dans les travaux de construction, 
+            G-TRAF+  est une entreprise dynamique et pluridisciplinaire spécialisée dans les travaux de construction, 
               l’aménagement d’infrastructures et la fourniture de matériel professionnel. 
               Nous accompagnons collectivités, entreprises et particuliers de la conception à la réalisation, 
               dans le respect des normes, des délais et de l’environnement.

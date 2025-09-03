@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, Eye, Award, Shield, Users2, Wrench, ArrowRight } from 'lucide-react';
 import '../Style/Histoire.css';
-import imageEquipe from '../assets/Image/equipe.webp'; // ✅ import direct de l'image
+import imageEquipe from '../assets/Image/projet.webp'; // ✅ import direct de l'image
 
 const Histoire = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,7 +65,7 @@ const Histoire = () => {
                 </span>
               </h2>
               <p className={`about-description ${isVisible ? 'about-description-animate' : ''}`}>
-                Depuis 2015, <strong>G-TraF+ </strong> réalise des projets d’aménagement, de construction et
+                Depuis 2015, <strong>G-TRAF+</strong> réalise des projets d’aménagement, de construction et
                 de fourniture de matériel dans toute la Guinée. Nous allions savoir-faire technique,
                 respect des délais et engagement environnemental.
               </p>
